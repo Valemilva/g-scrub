@@ -120,25 +120,62 @@ export const navLinks = [
   { href: "#wholesale", label: "Wholesale" },
 ];
 
+// Real FAQ recovered from the previous G-SCRUB storefront (10 questions),
+// lightly adapted for consistency with what's actually live today (the Club
+// Brush Cleaner is "Coming Soon" here, not shipped yet, so Q3 reflects that;
+// Q6 uses "apply" instead of "spray" to match the foaming-pump-action
+// language used everywhere else on the site; Q10 points to the on-site
+// Wholesale section rather than hardcoding an email until the real domain
+// is confirmed and wired in).
 export const faqItems = [
   {
-    question: "Is G-SCRUB safe for golf shoes?",
+    question: "What is G-SCRUB?",
     answer:
-      "G-SCRUB uses a foaming formula made for routine cleaning. Always test on a small area first and follow your shoe's care instructions.",
+      "G-SCRUB is a premium cleaning solution specifically formulated to clean golf shoes. Designed by golfers, for golfers.",
   },
   {
-    question: "What is included in the Shoe Cleaner Kit?",
+    question: "Is G-SCRUB safe for all golf shoe materials?",
     answer:
-      "A foaming cleaner, a brush to scrub soles and textured areas, and a microfiber towel to finish the clean.",
+      "Yes. G-SCRUB is safe for leather, synthetic, mesh, and rubber materials commonly used in golf shoes.",
   },
   {
-    question: "How do I use G-SCRUB?",
+    question: "Can I use the shoe cleaner on golf clubs?",
     answer:
-      "Foam, scrub, wipe, play. Apply the foam to the dirty area, scrub with the brush, wipe with the towel, and get back to the game.",
+      "We do not recommend using the shoe cleaner on golf clubs. We're developing a dedicated club cleaning product designed to safely and effectively clean club heads and grips — join the launch list to hear when it's ready.",
   },
   {
-    question: "Where can I buy G-SCRUB?",
+    question: "Where is G-SCRUB made?",
     answer:
-      "The G-SCRUB Shoe Cleaner Kit is available now on Amazon. Join the launch list for the upcoming club cleaner, refill, towel, and complete bundle.",
+      "Proudly made in the USA, with carefully selected ingredients and strict quality control.",
+  },
+  {
+    question: "What makes G-SCRUB different from regular shoe cleaners?",
+    answer:
+      "Unlike general-purpose cleaners, G-SCRUB was created with golf conditions in mind — tackling mud, sand, grass, and water stains commonly found on the course.",
+  },
+  {
+    question: "How do I use the product?",
+    answer:
+      "Apply G-SCRUB directly to the dirty area, scrub gently with the included brush, and wipe clean with a towel. Let your shoes air dry.",
+  },
+  {
+    question: "How long does one bottle last?",
+    answer:
+      "Each bottle lasts approximately 15-25 full cleanings, depending on how much product you use per session.",
+  },
+  {
+    question: "Is it safe to carry in my golf bag?",
+    answer:
+      "Yes. The bottle is leak-resistant and compact, making it easy to keep in your bag for quick post-round cleanups.",
+  },
+  {
+    question: "Can I use it on other types of shoes?",
+    answer:
+      "Yes. While it's optimized for golf shoes, G-SCRUB can also be used on sneakers, athletic shoes, and casual footwear.",
+  },
+  {
+    question: "Do you offer wholesale or bulk orders?",
+    answer:
+      "We do. Send us your business information through the Wholesale section below to get started.",
   },
 ];

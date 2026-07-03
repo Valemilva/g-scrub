@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Montserrat } from "next/font/google";
-import { SITE_URL, BRAND_TAGLINE } from "@/lib/constants";
+import { SITE_URL, BRAND_TAGLINE, faqItems } from "@/lib/constants";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -82,43 +82,19 @@ const productJsonLd = {
   },
 };
 
+// Generated from faqItems so the structured data always matches what's
+// actually rendered in the FAQ section — no risk of the two drifting apart.
 const faqJsonLd = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "Is G-SCRUB safe for golf shoes?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "G-SCRUB uses a foaming formula made for routine cleaning. Always test on a small area first and follow your shoe's care instructions.",
-      },
+  mainEntity: faqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: item.answer,
     },
-    {
-      "@type": "Question",
-      name: "What is included in the G-SCRUB Shoe Cleaner Kit?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "A foaming cleaner, a brush to scrub soles and textured areas, and a microfiber towel to finish the clean.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How do I use G-SCRUB?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Foam, scrub, wipe, play. Apply the foam to the dirty area, scrub with the brush, wipe with the towel, and get back to the game.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Where can I buy G-SCRUB?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The G-SCRUB Shoe Cleaner Kit is available now on Amazon. Join the launch list for the upcoming club cleaner, refill, deodorizer, towel, and complete kit.",
-      },
-    },
-  ],
+  })),
 };
 
 export default function RootLayout({
