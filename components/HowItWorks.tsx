@@ -1,0 +1,94 @@
+import Reveal from "./Reveal";
+import SectionEyebrow from "./SectionEyebrow";
+
+const steps = [
+  {
+    icon: "🫧",
+    step: "STEP 01",
+    title: "Foam",
+    copy: "Apply the foaming cleaner to the dirty area of the golf shoe.",
+    dark: false,
+  },
+  {
+    icon: "🪥",
+    step: "STEP 02",
+    title: "Scrub",
+    copy: "Use the brush to loosen dirt, grass, and course debris.",
+    dark: false,
+  },
+  {
+    icon: "🧻",
+    step: "STEP 03",
+    title: "Wipe",
+    copy: "Finish with the microfiber towel for a clean look.",
+    dark: false,
+  },
+  {
+    icon: "⛳",
+    step: "STEP 04",
+    title: "Play",
+    copy: "Keep your gear ready for the next round.",
+    dark: true,
+  },
+];
+
+export default function HowItWorks() {
+  return (
+    <section id="how" className="bg-bg py-[clamp(60px,8vw,110px)]">
+      <div className="mx-auto max-w-[1200px] px-6">
+        <Reveal className="mx-auto mb-12 max-w-[620px] text-center">
+          <SectionEyebrow>How It Works</SectionEyebrow>
+          <h2 className="m-0 font-heading text-[clamp(30px,4.5vw,50px)] leading-[1.04] font-extrabold tracking-[-0.015em] text-ink">
+            Foam. Scrub. Wipe. Play.
+          </h2>
+        </Reveal>
+
+        <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-4">
+          {steps.map((s) => (
+            <Reveal key={s.title}>
+              <div
+                className={`h-full rounded-[18px] border p-[30px] ${
+                  s.dark
+                    ? "border-green-deep bg-green-deep shadow-[0_20px_40px_-26px_rgba(15,46,28,0.6)]"
+                    : "border-[rgba(15,68,41,0.09)] bg-white shadow-[0_20px_40px_-30px_rgba(15,46,28,0.4)]"
+                }`}
+              >
+                <div
+                  className={`mb-[18px] flex h-12 w-12 items-center justify-center rounded-[14px] text-2xl ${
+                    s.dark ? "bg-[rgba(196,162,74,0.2)] text-gold" : "bg-bg-alt text-green-primary"
+                  }`}
+                >
+                  {s.icon}
+                </div>
+                <div className="mb-1 font-heading text-[13px] font-black tracking-[0.1em] text-gold">
+                  {s.step}
+                </div>
+                <h3
+                  className={`m-0 mb-2 font-heading text-xl font-extrabold ${
+                    s.dark ? "text-white" : "text-ink"
+                  }`}
+                >
+                  {s.title}
+                </h3>
+                <p
+                  className={`m-0 text-[15px] leading-[1.6] ${
+                    s.dark ? "text-muted-on-dark" : "text-body-2"
+                  }`}
+                >
+                  {s.copy}
+                </p>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal>
+          <p className="mt-[26px] text-center text-[13.5px] text-[#8A9382]">
+            Always test on a small area first and follow care instructions
+            for your specific shoe material.
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+}

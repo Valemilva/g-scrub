@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-heading: var(--font-archivo);
+  --font-body: var(--font-manrope);
+
+  /* Design tokens from the G-SCRUB handoff */
+  --color-bg: #f7f6f0;
+  --color-bg-alt: #eaf3e8;
+  --color-green-deep: #0f4429;
+  --color-green-deep-2: #12592f;
+  --color-green-deep-3: #0c3a22;
+  --color-green-primary: #1b8a3e;
+  --color-green-primary-hover: #159a40;
+  --color-green-bright: #4fc77e;
+  --color-gold: #c4a24a;
+  --color-gold-hover: #d4b458;
+  --color-gold-on-dark: #e0c878;
+  --color-ink: #0f2e1c;
+  --color-body: #5a6357;
+  --color-body-2: #6b7563;
+  --color-muted-on-dark: #b8d2be;
+  --color-muted-on-dark-2: #c8dece;
+  --color-footer-bg: #0a2617;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: #14180f;
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-green-primary);
+  color: #fff;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
+}
+
+/* ===== Keyframes (from design reference) ===== */
+@keyframes gsSway {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes gsBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-16px);
+  }
+}
+
+@keyframes gsRise {
+  0% {
+    transform: translateY(10px) scale(0.5);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(-150px) scale(1.15);
+    opacity: 0;
+  }
+}
+
+@keyframes gsMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes gsShine {
+  0% {
+    left: -70%;
+  }
+  55%,
+  100% {
+    left: 150%;
+  }
+}
+
+@keyframes gsFloat {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(3deg);
+  }
+}
+
+@keyframes gsPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(27, 138, 62, 0.45);
+  }
+  70% {
+    box-shadow: 0 0 0 18px rgba(27, 138, 62, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(27, 138, 62, 0);
+  }
+}
+
+@keyframes gsFadeWord {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  12%,
+  88% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Animation utility classes ===== */
+.anim-sway {
+  animation: gsSway 3.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.anim-bob {
+  animation: gsBob 5.5s ease-in-out infinite;
+}
+.anim-rise {
+  animation: gsRise 4.5s ease-in infinite;
+}
+.anim-marquee {
+  animation: gsMarquee 24s linear infinite;
+}
+.anim-shine::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -70%;
+  width: 45%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.6),
+    transparent
+  );
+  animation: gsShine 3.6s ease-in-out infinite;
+  pointer-events: none;
+}
+.anim-float {
+  animation: gsFloat 6s ease-in-out infinite;
+}
+.anim-pulse {
+  animation: gsPulse 3s ease-out infinite;
+}
+.anim-fade-word {
+  animation: gsFadeWord 1.8s ease-in-out infinite;
+}
+
+/*
+ * Scroll reveal: content is visible by default so it never depends on JS.
+ * JS (Reveal.tsx) adds .js-reveal-armed right before setting the initial
+ * hidden state, then flips to .is-visible once the element enters view.
+ * If JS never runs, .js-reveal-armed never gets added and content stays visible.
+ */
+[data-reveal].js-reveal-armed {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-reveal].js-reveal-armed.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
