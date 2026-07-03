@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "./Reveal";
 import AmazonButton from "./AmazonButton";
+import { AMAZON_RATING } from "@/lib/constants";
 
 const features = [
   {
@@ -75,6 +76,16 @@ export default function ProductShowcase() {
                 <span className="text-[13.5px] text-body-2">{f.copy}</span>
               </div>
             ))}
+          </div>
+
+          <div className="mb-4 flex items-center gap-2 text-sm text-body-2">
+            <span className="text-gold" aria-hidden="true">
+              {"★".repeat(Math.round(AMAZON_RATING.stars))}
+            </span>
+            <span>
+              {AMAZON_RATING.stars.toFixed(1)} on Amazon ({AMAZON_RATING.reviewCount}{" "}
+              {AMAZON_RATING.reviewCount === 1 ? "review" : "reviews"})
+            </span>
           </div>
 
           <AmazonButton>Buy G-SCRUB on Amazon →</AmazonButton>

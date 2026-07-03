@@ -4,7 +4,7 @@ import SectionEyebrow from "./SectionEyebrow";
 const cards = [
   {
     title: "Amazon Available",
-    copy: "Shop the current G-SCRUB Shoe Cleaner Kit on Amazon.",
+    copy: "Shop the current G-SCRUB Shoe Cleaner Kit on Amazon, ranked in Shoe Care Kits and Shoe Brushes.",
   },
   {
     title: "Golf-Focused",

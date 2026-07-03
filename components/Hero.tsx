@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import AmazonButton from "./AmazonButton";
-import { heroRotatingWords } from "@/lib/constants";
+import { heroRotatingWords, AMAZON_RATING } from "@/lib/constants";
 
 const GRASS_SVG =
   "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='34' viewBox='0 0 120 34'%3E%3Cpath d='M0 34 L8 6 L16 34 L26 10 L34 34 L44 2 L54 34 L64 8 L74 34 L84 12 L94 34 L104 4 L112 34 L120 10 L120 34 Z' fill='%231B8A3E'/%3E%3C/svg%3E";
@@ -82,7 +82,7 @@ export default function Hero() {
             {[
               "⛳ Golf Shoe Cleaner",
               "Course-Ready Gear",
-              "Amazon Available",
+              `${AMAZON_RATING.stars.toFixed(1)}★ on Amazon`,
               "🇺🇸 Made in USA",
             ].map((badge) => (
               <span

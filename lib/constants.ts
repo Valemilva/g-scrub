@@ -17,6 +17,15 @@ export function withAffiliateTag(url: string): string {
   return `${url}${separator}tag=${AMAZON_ASSOCIATE_TAG}`;
 }
 
+// Real Amazon listing data for the Shoe Cleaner Kit (ASIN B0FJ7NJDZ6),
+// confirmed from the live product page. Update these numbers as reviews
+// grow — never round up or invent a count. With only 1 review so far, keep
+// this modest rather than a loud "X stars!" badge.
+export const AMAZON_RATING = {
+  stars: 5.0,
+  reviewCount: 1,
+};
+
 // Placeholder — replace with the real production domain when available.
 export const SITE_URL = "https://www.gscrub.com/";
 
