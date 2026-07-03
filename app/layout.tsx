@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Archivo, Manrope } from "next/font/google";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, BRAND_TAGLINE } from "@/lib/constants";
 import "./globals.css";
 
 const archivo = Archivo({
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "G-SCRUB",
-    title: "G-SCRUB | Clean Shoes. Clean Clubs. Better Game.",
+    title: `G-SCRUB | ${BRAND_TAGLINE}`,
     description:
       "A premium golf cleaning system to keep your shoes, clubs, and gear course-ready. Shop the Shoe Cleaner Kit on Amazon.",
     images: ["/images/gscrub-kit.png"],
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "G-SCRUB | Clean Shoes. Clean Clubs. Better Game.",
+    title: `G-SCRUB | ${BRAND_TAGLINE}`,
     description:
       "Premium golf cleaning system. Shop the Shoe Cleaner Kit on Amazon.",
     images: ["/images/gscrub-kit.png"],
@@ -121,7 +121,7 @@ const faqJsonLd = {
       name: "Where can I buy G-SCRUB?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The G-SCRUB Shoe Cleaner Kit is available now on Amazon. Join the launch list for the upcoming club cleaner, refill, towel, and complete bundle.",
+        text: "The G-SCRUB Shoe Cleaner Kit is available now on Amazon. Join the launch list for the upcoming club cleaner, refill, deodorizer, towel, and complete kit.",
       },
     },
   ],

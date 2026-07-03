@@ -41,10 +41,12 @@ export default function Hero() {
             </span>
           </div>
 
-          <h1 className="m-0 mb-[18px] font-heading text-[clamp(40px,6.2vw,72px)] leading-[0.98] font-black tracking-[-0.025em] text-ink">
+          <h1 className="m-0 mb-[18px] font-heading text-[clamp(34px,5.4vw,62px)] leading-[1.03] font-black tracking-[-0.025em] text-ink">
             Clean Shoes.
             <br />
             Clean Clubs.
+            <br />
+            Fresh Gear.
             <br />
             <span className="relative text-green-primary">
               Better Game.

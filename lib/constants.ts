@@ -2,11 +2,32 @@
 
 export const AMAZON_URL = "https://www.amazon.com/dp/B0FJ7NJDZ6";
 
+// Amazon Associates tracking tag — leave empty until confirmed for G-SCRUB.
+// (A tag exists for the CLAUDIO/author-books project, valentinlop0f-20, but
+// it is reused from another project and was flagged "AssociateNotEligible"
+// as of the last check — confirm eligibility before reusing it here.)
+export const AMAZON_ASSOCIATE_TAG = "";
+
+// Appends the Amazon Associates tag to a product URL when one is set, so
+// every "Buy on Amazon" link starts earning commission the moment
+// AMAZON_ASSOCIATE_TAG is filled in — no other code needs to change.
+export function withAffiliateTag(url: string): string {
+  if (!AMAZON_ASSOCIATE_TAG) return url;
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}tag=${AMAZON_ASSOCIATE_TAG}`;
+}
+
 // Placeholder — replace with the real production domain when available.
 export const SITE_URL = "https://www.gscrub.com/";
 
 // Placeholder — replace with the real wholesale / contact inbox.
 export const CONTACT_EMAIL = "info@gscrub.com";
+
+// Full brand tagline (hero, page title, OG/Twitter). The product-level
+// tagline "Clean Shoes. Better Game." (used on the Shoe Cleaner Kit itself)
+// is separate and stays as-is.
+export const BRAND_TAGLINE =
+  "Clean Shoes. Clean Clubs. Fresh Gear. Better Game.";
 
 export type ProductStatus = "Available Now" | "Coming Soon";
 
@@ -18,6 +39,10 @@ export interface Product {
   cta: string;
 }
 
+// The 7 core products of the G-SCRUB system. Only the Shoe Cleaner Kit is
+// live on Amazon today (the kit + brush illustration) — everything else is
+// "Coming Soon" until real products/links are ready. More may be added
+// later; keep new entries "Coming Soon" by default.
 export const products: Product[] = [
   {
     name: "G-SCRUB Shoe Cleaner Kit",
@@ -32,7 +57,7 @@ export const products: Product[] = [
     status: "Coming Soon",
     tagline: "Clean Clubs. Cleaner Contact.",
     description:
-      "A refillable bottle brush designed to clean clubfaces and grooves during or after the round.",
+      "A refillable bottle brush designed to help clean clubfaces and grooves during or after the round.",
     cta: "Join Launch List",
   },
   {
@@ -44,7 +69,23 @@ export const products: Product[] = [
     cta: "Join Launch List",
   },
   {
-    name: "G-SCRUB Golf Towel",
+    name: "G-SCRUB Shoe Deodorizer Spray",
+    status: "Coming Soon",
+    tagline: "Fresh Gear, Every Round.",
+    description:
+      "A quick spray designed to help keep golf shoes smelling fresh between cleanings.",
+    cta: "Join Launch List",
+  },
+  {
+    name: "G-SCRUB Shoe Deodorizer Refill",
+    status: "Coming Soon",
+    tagline: "Refill. Spray. Stay Fresh.",
+    description:
+      "A refill bottle designed to keep the Shoe Deodorizer Spray topped off round after round.",
+    cta: "Join Launch List",
+  },
+  {
+    name: "G-SCRUB Golf Microfiber Towel",
     status: "Coming Soon",
     tagline: "Wipe Clean. Stay Ready.",
     description:
@@ -52,11 +93,11 @@ export const products: Product[] = [
     cta: "Join Launch List",
   },
   {
-    name: "G-SCRUB Complete Golf Cleaning Bundle",
+    name: "G-SCRUB Complete Golf Cleaning Kit",
     status: "Coming Soon",
-    tagline: "The full clean gear system.",
+    tagline: "The Full Clean Gear System.",
     description:
-      "A complete golf cleaning bundle combining shoe cleaner, club cleaner, refill, and towel.",
+      "A complete golf cleaning kit combining shoe cleaner, club cleaner, refill, deodorizer, and towel.",
     cta: "Join Launch List",
   },
 ];

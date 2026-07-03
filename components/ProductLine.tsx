@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
-import { AMAZON_URL, products } from "@/lib/constants";
+import { AMAZON_URL, products, withAffiliateTag } from "@/lib/constants";
 
 export default function ProductLine() {
   return (
@@ -19,7 +19,7 @@ export default function ProductLine() {
         <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p) => {
             const available = p.status === "Available Now";
-            const href = available ? AMAZON_URL : "#launch";
+            const href = available ? withAffiliateTag(AMAZON_URL) : "#launch";
             return (
               <Reveal key={p.name}>
                 <div className="flex h-full flex-col rounded-[20px] border border-[rgba(15,68,41,0.09)] bg-white p-7 shadow-[0_20px_40px_-32px_rgba(15,46,28,0.45)]">
@@ -58,6 +58,23 @@ export default function ProductLine() {
             );
           })}
         </div>
+
+        <Reveal className="mt-14 rounded-[20px] border border-dashed border-[rgba(15,68,41,0.18)] bg-white/60 px-7 py-8 text-center">
+          <span className="mb-2 inline-block font-heading text-xs font-extrabold tracking-[0.14em] text-[#8A9385] uppercase">
+            Future Add-ons
+          </span>
+          <p className="m-0 text-[15px] leading-[1.6] text-body-2">
+            The G-SCRUB system keeps growing. More additions to the golf gear
+            cleaning lineup are on the way —{" "}
+            <a
+              href="#launch"
+              className="font-bold text-green-primary underline-offset-2 hover:underline"
+            >
+              join the launch list
+            </a>{" "}
+            to hear about them first.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
