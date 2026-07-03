@@ -49,18 +49,18 @@ export default function HowItWorks() {
               <div
                 className={`h-full rounded-[18px] border p-[30px] ${
                   s.dark
-                    ? "border-green-deep bg-green-deep shadow-[0_20px_40px_-26px_rgba(15,46,28,0.6)]"
-                    : "border-[rgba(15,68,41,0.09)] bg-white shadow-[0_20px_40px_-30px_rgba(15,46,28,0.4)]"
+                    ? "border-green-deep bg-green-deep shadow-[0_20px_40px_-26px_rgba(17,17,17,0.6)]"
+                    : "border-[rgba(17,17,17,0.09)] bg-white shadow-[0_20px_40px_-30px_rgba(17,17,17,0.4)]"
                 }`}
               >
                 <div
                   className={`mb-[18px] flex h-12 w-12 items-center justify-center rounded-[14px] text-2xl ${
-                    s.dark ? "bg-[rgba(196,162,74,0.2)] text-gold" : "bg-bg-alt text-green-primary"
+                    s.dark ? "bg-[rgba(42,140,42,0.2)] text-green-primary" : "bg-bg-alt text-green-primary"
                   }`}
                 >
                   {s.icon}
                 </div>
-                <div className="mb-1 font-heading text-[13px] font-black tracking-[0.1em] text-gold">
+                <div className="mb-1 font-heading text-[13px] font-black tracking-[0.1em] text-green-primary">
                   {s.step}
                 </div>
                 <h3
@@ -83,7 +83,7 @@ export default function HowItWorks() {
         </div>
 
         <Reveal>
-          <p className="mt-[26px] text-center text-[13.5px] text-[#8A9382]">
+          <p className="mt-[26px] text-center text-[13.5px] text-[#6B6B6B]">
             Always test on a small area first and follow care instructions
             for your specific shoe material.
           </p>

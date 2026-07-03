@@ -35,8 +35,7 @@ export const CONTACT_EMAIL = "info@gscrub.com";
 // Full brand tagline (hero, page title, OG/Twitter). The product-level
 // tagline "Clean Shoes. Better Game." (used on the Shoe Cleaner Kit itself)
 // is separate and stays as-is.
-export const BRAND_TAGLINE =
-  "Clean Shoes. Clean Clubs. Fresh Gear. Better Game.";
+export const BRAND_TAGLINE = "Clean Shoes. Clean Clubs. Better Game.";
 
 export type ProductStatus = "Available Now" | "Coming Soon";
 

@@ -6,7 +6,7 @@ function MarqueeContent() {
       {ITEMS.map((item, i) => (
         <span key={i} className="inline-flex items-center">
           {item}
-          <span className="mx-3 text-gold">•</span>
+          <span className="mx-3 text-green-primary">•</span>
         </span>
       ))}
     </span>
@@ -15,8 +15,8 @@ function MarqueeContent() {
 
 export default function Marquee() {
   return (
-    <div className="overflow-hidden border-t-[3px] border-gold bg-green-deep py-[15px] whitespace-nowrap">
-      <div className="anim-marquee inline-flex font-heading text-xl font-black tracking-[0.04em] text-[#EAF3E8]">
+    <div className="overflow-hidden border-t-[3px] border-green-primary bg-green-deep py-[15px] whitespace-nowrap">
+      <div className="anim-marquee inline-flex font-heading text-xl font-black tracking-[0.04em] text-[#EDEDED]">
         <MarqueeContent />
         <MarqueeContent />
       </div>

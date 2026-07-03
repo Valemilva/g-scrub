@@ -13,13 +13,13 @@ export default function Footer() {
               G-SCRUB
             </span>
           </div>
-          <p className="m-0 font-heading text-[15px] font-bold text-gold">
+          <p className="m-0 font-heading text-[15px] font-bold text-green-primary">
             Clean Gear. Better Game.
           </p>
         </div>
 
         <div className="flex flex-col gap-2.5">
-          <span className="mb-0.5 text-xs font-extrabold tracking-[0.12em] text-[#6E8B77] uppercase">
+          <span className="mb-0.5 text-xs font-extrabold tracking-[0.12em] text-muted-on-dark uppercase">
             Explore
           </span>
           <a href="#products" className="text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white">
@@ -48,7 +48,7 @@ export default function Footer() {
         </div>
 
         <div className="max-w-[360px]">
-          <p className="m-0 text-[13px] leading-[1.6] text-[#6E8B77]">
+          <p className="m-0 text-[13px] leading-[1.6] text-muted-on-dark">
             G-SCRUB products are designed for routine cleaning and gear care.
             Always follow the manufacturer&rsquo;s care instructions for your
             shoes, clubs, and equipment.
@@ -57,7 +57,7 @@ export default function Footer() {
       </div>
 
       <div className="mx-auto mt-[34px] max-w-[1200px] border-t border-[rgba(255,255,255,0.08)] px-6 pt-5">
-        <p className="m-0 text-[13px] text-[#6E8B77]">
+        <p className="m-0 text-[13px] text-muted-on-dark">
           © 2026 G-SCRUB. All rights reserved.
         </p>
       </div>

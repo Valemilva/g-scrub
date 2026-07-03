@@ -22,12 +22,12 @@ export default function ProductLine() {
             const href = available ? withAffiliateTag(AMAZON_URL) : "#launch";
             return (
               <Reveal key={p.name}>
-                <div className="flex h-full flex-col rounded-[20px] border border-[rgba(15,68,41,0.09)] bg-white p-7 shadow-[0_20px_40px_-32px_rgba(15,46,28,0.45)]">
+                <div className="flex h-full flex-col rounded-[20px] border border-[rgba(17,17,17,0.09)] bg-white p-7 shadow-[0_20px_40px_-32px_rgba(17,17,17,0.45)]">
                   <span
                     className={`mb-4 self-start rounded-full px-[11px] py-[5px] text-[11.5px] font-extrabold tracking-[0.1em] uppercase ${
                       available
-                        ? "bg-[rgba(27,138,62,0.12)] text-green-primary"
-                        : "bg-[rgba(196,162,74,0.14)] text-[#A9862E]"
+                        ? "bg-[rgba(42,140,42,0.12)] text-green-primary"
+                        : "bg-[#EDEDED] text-[#111111]"
                     }`}
                   >
                     {p.status}
@@ -35,7 +35,7 @@ export default function ProductLine() {
                   <h3 className="m-0 mb-1.5 font-heading text-[21px] leading-[1.15] font-extrabold text-ink">
                     {p.name}
                   </h3>
-                  <p className="m-0 mb-3 font-heading text-sm font-bold text-gold">
+                  <p className="m-0 mb-3 font-heading text-sm font-bold text-green-primary">
                     {p.tagline}
                   </p>
                   <p className="m-0 mb-[22px] flex-1 text-[14.5px] leading-[1.6] text-body-2">
@@ -48,7 +48,7 @@ export default function ProductLine() {
                     className={`self-start rounded-full border px-5 py-[11px] font-heading text-sm font-extrabold no-underline ${
                       available
                         ? "border-green-primary bg-green-primary text-white hover:bg-green-primary-hover"
-                        : "border-[rgba(15,68,41,0.25)] bg-transparent text-green-deep hover:border-green-primary hover:text-green-primary"
+                        : "border-[rgba(17,17,17,0.25)] bg-transparent text-green-deep hover:border-green-primary hover:text-green-primary"
                     }`}
                   >
                     {p.cta}
@@ -59,8 +59,8 @@ export default function ProductLine() {
           })}
         </div>
 
-        <Reveal className="mt-14 rounded-[20px] border border-dashed border-[rgba(15,68,41,0.18)] bg-white/60 px-7 py-8 text-center">
-          <span className="mb-2 inline-block font-heading text-xs font-extrabold tracking-[0.14em] text-[#8A9385] uppercase">
+        <Reveal className="mt-14 rounded-[20px] border border-dashed border-[rgba(17,17,17,0.18)] bg-white/60 px-7 py-8 text-center">
+          <span className="mb-2 inline-block font-heading text-xs font-extrabold tracking-[0.14em] text-[#6B6B6B] uppercase">
             Future Add-ons
           </span>
           <p className="m-0 text-[15px] leading-[1.6] text-body-2">

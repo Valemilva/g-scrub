@@ -32,7 +32,7 @@ export default function EmailCapture() {
         {joined ? (
           <div
             role="status"
-            className="rounded-2xl border border-[rgba(27,138,62,0.3)] bg-bg-alt p-[22px] font-heading text-[17px] font-bold text-green-primary"
+            className="rounded-2xl border border-[rgba(42,140,42,0.3)] bg-bg-alt p-[22px] font-heading text-[17px] font-bold text-green-primary"
           >
             You&rsquo;re on the list. We&rsquo;ll be in touch before launch. ⛳
           </div>
@@ -46,7 +46,7 @@ export default function EmailCapture() {
               name="email"
               required
               placeholder="Email address"
-              className="min-w-[220px] flex-1 rounded-full border border-[rgba(15,68,41,0.18)] bg-white px-[18px] py-4 text-[15px] text-[#14180F] outline-none"
+              className="min-w-[220px] flex-1 rounded-full border border-[rgba(17,17,17,0.18)] bg-white px-[18px] py-4 text-[15px] text-[#111111] outline-none"
             />
             <button
               type="submit"

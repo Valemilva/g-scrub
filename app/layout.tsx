@@ -1,18 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Manrope } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { SITE_URL, BRAND_TAGLINE } from "@/lib/constants";
 import "./globals.css";
 
-const archivo = Archivo({
-  variable: "--font-archivo",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["600", "700", "800", "900"],
-});
-
-const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "500", "600", "700", "800", "900"],
 });
 
 // NOTE: SITE_URL ("https://www.gscrub.com/") is a placeholder — replace with
@@ -59,7 +53,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0F4429",
+  themeColor: "#111111",
 };
 
 const organizationJsonLd = {
@@ -133,7 +127,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${archivo.variable} ${manrope.variable}`}>
+    <html lang="en" className={montserrat.variable}>
       <head>
         <script
           type="application/ld+json"

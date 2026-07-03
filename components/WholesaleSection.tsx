@@ -56,35 +56,35 @@ export default function WholesaleSection() {
               name="name"
               required
               placeholder="Name"
-              className="rounded-xl border border-[rgba(15,68,41,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#14180F] outline-none"
+              className="rounded-xl border border-[rgba(17,17,17,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#111111] outline-none"
             />
             <input
               name="business"
               placeholder="Business / Golf Course"
-              className="rounded-xl border border-[rgba(15,68,41,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#14180F] outline-none"
+              className="rounded-xl border border-[rgba(17,17,17,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#111111] outline-none"
             />
             <input
               name="email"
               type="email"
               required
               placeholder="Email"
-              className="rounded-xl border border-[rgba(15,68,41,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#14180F] outline-none"
+              className="rounded-xl border border-[rgba(17,17,17,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#111111] outline-none"
             />
             <input
               name="phone"
               placeholder="Phone"
-              className="rounded-xl border border-[rgba(15,68,41,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#14180F] outline-none"
+              className="rounded-xl border border-[rgba(17,17,17,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#111111] outline-none"
             />
             <input
               name="quantity"
               placeholder="Quantity Interested"
-              className="rounded-xl border border-[rgba(15,68,41,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#14180F] outline-none sm:col-span-2"
+              className="rounded-xl border border-[rgba(17,17,17,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#111111] outline-none sm:col-span-2"
             />
             <textarea
               name="message"
               placeholder="Message"
               rows={4}
-              className="resize-y rounded-xl border border-[rgba(15,68,41,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#14180F] outline-none sm:col-span-2"
+              className="resize-y rounded-xl border border-[rgba(17,17,17,0.16)] bg-white px-[17px] py-[15px] text-[15px] text-[#111111] outline-none sm:col-span-2"
             />
             <button
               type="submit"
@@ -93,7 +93,7 @@ export default function WholesaleSection() {
               Send Wholesale Inquiry
             </button>
           </form>
-          <p className="mt-4 text-center text-[13px] text-[#8A9382]">
+          <p className="mt-4 text-center text-[13px] text-body-2">
             Inquiries go to {CONTACT_EMAIL} (placeholder — update with your
             real address).
           </p>

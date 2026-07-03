@@ -14,7 +14,7 @@ export default function SolutionSection() {
   return (
     <section
       id="solution"
-      className="relative bg-[linear-gradient(180deg,#0F4429,#12592F)] py-[clamp(60px,8vw,110px)] text-[#EAF3E8]"
+      className="relative bg-green-deep py-[clamp(60px,8vw,110px)] text-[#EDEDED]"
     >
       <div className="mx-auto max-w-[1200px] px-6">
         <Reveal className="mx-auto mb-10 max-w-[640px] text-center">
@@ -51,11 +51,11 @@ export default function SolutionSection() {
               />
             </div>
             <div
-              className="pointer-events-none absolute top-0 bottom-0 w-[3px] -translate-x-[1.5px] bg-gold shadow-[0_0_14px_rgba(196,162,74,0.7)]"
+              className="pointer-events-none absolute top-0 bottom-0 w-[3px] -translate-x-[1.5px] bg-green-primary shadow-[0_0_14px_rgba(42,140,42,0.7)]"
               style={{ left: revealPct }}
             />
             <div
-              className="pointer-events-none absolute top-1/2 flex h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-gold text-xl shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
+              className="pointer-events-none absolute top-1/2 flex h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-green-primary text-xl shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
               style={{ left: revealPct }}
             >
               ⇔
@@ -76,7 +76,7 @@ export default function SolutionSection() {
               className="absolute inset-0 m-0 h-full w-full cursor-ew-resize opacity-0"
             />
           </div>
-          <p className="mt-4 text-center text-sm text-[#8FB199]">
+          <p className="mt-4 text-center text-sm text-muted-on-dark">
             G-SCRUB brings shoe care, club care, refills, towels, and future
             bundles into one clean golf-focused system.
           </p>

@@ -44,7 +44,7 @@ export default function ProblemSection() {
         <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((card) => (
             <Reveal key={card.title}>
-              <div className="h-full rounded-[18px] border border-[rgba(15,68,41,0.09)] bg-white p-7 shadow-[0_20px_40px_-30px_rgba(15,46,28,0.4)]">
+              <div className="h-full rounded-[18px] border border-[rgba(17,17,17,0.09)] bg-white p-7 shadow-[0_20px_40px_-30px_rgba(17,17,17,0.4)]">
                 <div className="mb-3 text-2xl">{card.icon}</div>
                 <h3 className="m-0 mb-2.5 font-heading text-[19px] font-extrabold text-ink">
                   {card.title}

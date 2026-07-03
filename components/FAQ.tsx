@@ -17,7 +17,7 @@ export default function FAQ() {
           {faqItems.map((item) => (
             <details
               key={item.question}
-              className="rounded-2xl border border-[rgba(15,68,41,0.09)] bg-white px-[22px] py-1.5"
+              className="rounded-2xl border border-[rgba(17,17,17,0.09)] bg-white px-[22px] py-1.5"
             >
               <summary className="flex cursor-pointer items-center justify-between gap-4 py-4 font-heading text-[17px] font-extrabold text-ink">
                 {item.question}

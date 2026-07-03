@@ -12,7 +12,7 @@ export default function BrandStory() {
           </h2>
         </Reveal>
 
-        <Reveal className="text-left text-[17px] leading-[1.75] text-[#4B5347]">
+        <Reveal className="text-left text-[17px] leading-[1.75] text-body">
           <p className="m-0 mb-5">
             G-SCRUB was created from a simple frustration: golf shoes get
             dirty fast, and most golfers do not have a quick, clean, and
@@ -34,7 +34,7 @@ export default function BrandStory() {
         </Reveal>
 
         <Reveal>
-          <p className="mt-8 border-l-[3px] border-gold py-1 pl-5 text-left font-heading text-xl leading-[1.4] font-bold text-ink">
+          <p className="mt-8 border-l-[3px] border-green-primary py-1 pl-5 text-left font-heading text-xl leading-[1.4] font-bold text-ink">
             The goal is simple: help golfers keep their gear clean without
             overcomplicating the game.
           </p>

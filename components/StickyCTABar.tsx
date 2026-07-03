@@ -20,7 +20,7 @@ export default function StickyCTABar() {
 
   return (
     <div
-      className={`fixed right-0 bottom-0 left-0 z-[70] flex flex-wrap items-center justify-center gap-4 border-t-2 border-gold bg-[rgba(15,68,41,0.96)] px-5 py-3 backdrop-blur-md transition-transform duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] ${
+      className={`fixed right-0 bottom-0 left-0 z-[70] flex flex-wrap items-center justify-center gap-4 border-t-2 border-green-primary bg-[rgba(17,17,17,0.96)] px-5 py-3 backdrop-blur-md transition-transform duration-[400ms] ease-[cubic-bezier(.2,.8,.2,1)] ${
         visible ? "translate-y-0" : "translate-y-[130%]"
       }`}
       aria-hidden={!visible}
@@ -32,7 +32,7 @@ export default function StickyCTABar() {
         href={AMAZON_URL}
         target="_blank"
         rel="noopener noreferrer"
-        className="rounded-full bg-gold px-[22px] py-[11px] font-heading text-sm font-extrabold whitespace-nowrap text-[#12160F] no-underline hover:bg-gold-hover"
+        className="rounded-full bg-green-primary px-[22px] py-[11px] font-heading text-sm font-extrabold whitespace-nowrap text-white no-underline hover:bg-green-primary-hover"
       >
         Buy on Amazon →
       </a>

@@ -34,7 +34,7 @@ export default function TrustSection() {
         <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-4">
           {cards.map((c) => (
             <Reveal key={c.title}>
-              <div className="h-full rounded-[18px] border border-[rgba(15,68,41,0.09)] bg-white p-7 shadow-[0_20px_40px_-32px_rgba(15,46,28,0.4)]">
+              <div className="h-full rounded-[18px] border border-[rgba(17,17,17,0.09)] bg-white p-7 shadow-[0_20px_40px_-32px_rgba(17,17,17,0.4)]">
                 <h3 className="m-0 mb-2.5 font-heading text-[18px] font-extrabold text-ink">
                   {c.title}
                 </h3>

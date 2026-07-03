@@ -21,7 +21,7 @@ export default function RefillSystem() {
         </Reveal>
 
         <Reveal className="mb-9 flex flex-wrap items-center justify-center gap-5">
-          <div className="max-w-[230px] min-w-[180px] flex-1 rounded-[18px] border border-[rgba(15,68,41,0.1)] bg-white px-[22px] py-7 shadow-[0_20px_40px_-32px_rgba(15,46,28,0.4)]">
+          <div className="max-w-[230px] min-w-[180px] flex-1 rounded-[18px] border border-[rgba(17,17,17,0.1)] bg-white px-[22px] py-7 shadow-[0_20px_40px_-32px_rgba(17,17,17,0.4)]">
             <div className="mb-2 font-heading text-[15px] font-black text-green-primary">
               BRUSH BOTTLE
             </div>
@@ -29,11 +29,11 @@ export default function RefillSystem() {
               Your reusable club brush cleaner.
             </p>
           </div>
-          <div className="font-heading text-[34px] leading-none font-black text-gold">
+          <div className="font-heading text-[34px] leading-none font-black text-green-primary">
             →
           </div>
-          <div className="max-w-[230px] min-w-[180px] flex-1 rounded-[18px] border border-[rgba(15,68,41,0.1)] bg-white px-[22px] py-7 shadow-[0_20px_40px_-32px_rgba(15,46,28,0.4)]">
-            <div className="mb-2 font-heading text-[15px] font-black text-gold">
+          <div className="max-w-[230px] min-w-[180px] flex-1 rounded-[18px] border border-[rgba(17,17,17,0.1)] bg-white px-[22px] py-7 shadow-[0_20px_40px_-32px_rgba(17,17,17,0.4)]">
+            <div className="mb-2 font-heading text-[15px] font-black text-green-primary">
               REFILL BOTTLE
             </div>
             <p className="m-0 text-sm text-body-2">

@@ -13,10 +13,10 @@ export default function BundleSection() {
     <section className="bg-bg-alt py-[clamp(30px,5vw,70px)] pb-[clamp(60px,8vw,110px)]">
       <div className="mx-auto max-w-[1200px] px-6">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[28px] bg-[linear-gradient(135deg,#0F4429,#12592F_60%,#0C3A22)] p-[clamp(38px,6vw,68px)] text-center text-[#EAF3E8] shadow-[0_40px_80px_-40px_rgba(15,46,28,0.7)]">
-            <div className="pointer-events-none absolute -top-[60px] -right-10 h-[260px] w-[260px] rounded-full bg-[radial-gradient(circle,rgba(196,162,74,0.28),transparent_70%)]" />
+          <div className="relative overflow-hidden rounded-[28px] bg-green-deep p-[clamp(38px,6vw,68px)] text-center text-[#EDEDED] shadow-[0_40px_80px_-40px_rgba(17,17,17,0.7)]">
+            <div className="pointer-events-none absolute -top-[60px] -right-10 h-[260px] w-[260px] rounded-full bg-[radial-gradient(circle,rgba(42,140,42,0.28),transparent_70%)]" />
 
-            <span className="relative mb-4 inline-block text-xs font-extrabold tracking-[0.14em] text-gold-on-dark uppercase">
+            <span className="relative mb-4 inline-block text-xs font-extrabold tracking-[0.14em] text-white uppercase">
               Coming Soon
             </span>
             <h2 className="relative mx-auto mb-[18px] max-w-[760px] font-heading text-[clamp(28px,4.2vw,48px)] leading-[1.05] font-extrabold tracking-[-0.015em] text-white">
@@ -41,7 +41,7 @@ export default function BundleSection() {
 
             <a
               href="#launch"
-              className="relative inline-block rounded-full bg-gold px-[30px] py-[15px] font-heading text-base font-extrabold text-[#12160F] no-underline hover:bg-gold-hover"
+              className="relative inline-block rounded-full bg-green-primary px-[30px] py-[15px] font-heading text-base font-extrabold text-white no-underline hover:bg-green-primary-hover"
             >
               Join the Bundle Launch List
             </a>
