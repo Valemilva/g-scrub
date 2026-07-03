@@ -14,15 +14,16 @@ export default function BrandStory() {
 
         <Reveal className="text-left text-[17px] leading-[1.75] text-body">
           <p className="m-0 mb-5">
-            We&rsquo;re the L&oacute;pez family &mdash; and this is the real
-            story of how we ended up creating G-SCRUB, a product made
-            specifically for golfers like you (and us, though we&rsquo;re
-            still working on our handicaps).
+            Hey, I&rsquo;m Dylan &mdash; and this is the real story of how we
+            ended up creating G-SCRUB, a product made specifically for
+            golfers like you (and me, though I&rsquo;m still working on my
+            handicap).
           </p>
           <p className="m-0 mb-5">
-            It all started because we love golf. Not just playing it &mdash;
-            we like to look good while playing: clean caps, crisp shirts,
-            shiny shoes. That was the plan. But reality had other ideas.
+            It all started because my dad, my brother Stephen, and I love
+            golf. Not just playing it &mdash; we like to look good while
+            playing: clean caps, crisp shirts, shiny shoes. That was the
+            plan. But reality had other ideas.
           </p>
           <p className="m-0 mb-5">
             Our golf balls seemed to have GPS &mdash; not for the green, but
@@ -38,40 +39,20 @@ export default function BrandStory() {
           </p>
           <p className="m-0">
             One day, while scrubbing shoes with an old brush and dish soap
-            (true story), one of us joked: &ldquo;What if we made our
-            own?&rdquo; Through ideas, prototypes, trial and error, and a lot
-            of muddy rounds, G-SCRUB was born &mdash; made by golfers, for
-            golfers, and proudly manufactured in the USA.
+            (true story), I joked: &ldquo;What if we made our own?&rdquo; My
+            dad, who has decades of experience in manufacturing, took it
+            seriously. Stephen got excited too. Through ideas, prototypes,
+            trial and error, and a lot of muddy rounds, G-SCRUB was born
+            &mdash; made by golfers, for golfers, and proudly manufactured
+            in the USA.
           </p>
-        </Reveal>
-
-        <Reveal className="mt-9 grid grid-cols-1 gap-4 text-left sm:grid-cols-2">
-          <div className="rounded-[16px] border border-[rgba(17,17,17,0.09)] bg-bg-alt px-5 py-4">
-            <span className="mb-1 block font-heading text-sm font-black tracking-[0.04em] text-green-primary uppercase">
-              Dad L&oacute;pez
-            </span>
-            <p className="m-0 text-[14.5px] leading-[1.6] text-body-2">
-              Decades of manufacturing experience. The one who took the
-              &ldquo;what if we made our own?&rdquo; joke seriously enough to
-              actually build it.
-            </p>
-          </div>
-          <div className="rounded-[16px] border border-[rgba(17,17,17,0.09)] bg-bg-alt px-5 py-4">
-            <span className="mb-1 block font-heading text-sm font-black tracking-[0.04em] text-green-primary uppercase">
-              The L&oacute;pez Brothers
-            </span>
-            <p className="m-0 text-[14.5px] leading-[1.6] text-body-2">
-              The golfers behind the muddy shoes, the sand-trap stories, and
-              the idea that turned into G-SCRUB.
-            </p>
-          </div>
         </Reveal>
 
         <Reveal>
           <p className="mt-8 border-l-[3px] border-green-primary py-1 pl-5 text-left font-heading text-xl leading-[1.4] font-bold text-ink">
             Thanks for being part of our story. This is just the beginning.
             <span className="mt-2 block text-base font-semibold text-body">
-              &mdash; The L&oacute;pez Family
+              &mdash; Dylan
             </span>
           </p>
         </Reveal>
