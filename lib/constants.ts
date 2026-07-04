@@ -31,11 +31,12 @@ export const AMAZON_RATING = {
 // keep it consistent with the Vercel primary-domain setting.
 export const SITE_URL = "https://g-scrub.com/";
 
-// Real inboxes recovered from the previous G-SCRUB storefront.
-// CONTACT_EMAIL = general contact (footer). WHOLESALE_EMAIL = bulk/pro-shop
-// inquiries (wholesale form).
+// For now everything routes to the working Gmail inbox — the @g-scrub.com
+// addresses (e.g. sales@g-scrub.com) aren't active yet while the domain is
+// mid-transfer. Once domain email is live, point WHOLESALE_EMAIL at
+// sales@g-scrub.com.
 export const CONTACT_EMAIL = "gscrubstore@gmail.com";
-export const WHOLESALE_EMAIL = "sales@g-scrub.com";
+export const WHOLESALE_EMAIL = "gscrubstore@gmail.com";
 
 // Full brand tagline (hero, page title, OG/Twitter). The product-level
 // tagline "Clean Shoes. Better Game." (used on the Shoe Cleaner Kit itself)
