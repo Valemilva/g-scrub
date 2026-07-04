@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: `G-SCRUB | ${BRAND_TAGLINE}`,
     description:
       "A premium golf cleaning system to keep your shoes, clubs, and gear course-ready. Shop the Shoe Cleaner Kit on Amazon.",
-    images: ["/images/gscrub-kit.png"],
+    images: ["/images/gscrub-hero-course.png"],
     url: SITE_URL,
   },
   twitter: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: `G-SCRUB | ${BRAND_TAGLINE}`,
     description:
       "Premium golf cleaning system. Shop the Shoe Cleaner Kit on Amazon.",
-    images: ["/images/gscrub-kit.png"],
+    images: ["/images/gscrub-hero-course.png"],
   },
   robots: {
     index: true,
@@ -63,7 +63,7 @@ const organizationJsonLd = {
   slogan: "Clean Gear. Better Game.",
   description: "Premium golf cleaning system for shoes, clubs, and gear.",
   url: SITE_URL,
-  logo: `${SITE_URL}images/gscrub-kit.png`,
+  logo: `${SITE_URL}images/gscrub-hero-course.png`,
 };
 
 const productJsonLd = {
@@ -74,7 +74,7 @@ const productJsonLd = {
   description:
     "Premium foaming golf shoe cleaner kit with brush and towel that helps remove dirt, grass, and course debris. Clean Shoes. Better Game.",
   category: "Golf gear care",
-  image: `${SITE_URL}images/gscrub-kit.png`,
+  image: `${SITE_URL}images/gscrub-hero-course.png`,
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",

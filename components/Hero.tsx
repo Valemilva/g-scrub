@@ -52,30 +52,18 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className="relative justify-self-center" data-reveal>
-          <div className="relative">
-            <div className="absolute inset-x-[10%] bottom-[-4%] h-[12%] rounded-[50%] bg-[rgba(17,17,17,0.18)] blur-[18px]" />
-            <Image
-              src="/images/gscrub-kit.png"
-              alt="G-SCRUB Premium Golf Shoe Cleaner Kit box with foaming cleaner bottle and wooden brush"
-              width={400}
-              height={400}
-              priority
-              className="relative block w-[min(400px,82vw)] rounded-[14px] shadow-[0_50px_80px_-40px_rgba(17,17,17,0.5)]"
-            />
-          </div>
-
-          <div className="absolute top-4 -right-2 rounded-full bg-green-primary px-4 py-2 font-heading text-[11.5px] font-extrabold tracking-[0.08em] text-white uppercase shadow-[0_10px_24px_-10px_rgba(0,0,0,0.4)]">
+        <div className="relative" data-reveal>
+          <Image
+            src="/images/gscrub-hero-course.png"
+            alt="G-SCRUB Premium Golf Shoe Cleaner Kit on the golf course next to a club and ball, with a mud-caked golf shoe beside it"
+            width={1672}
+            height={941}
+            priority
+            className="block w-full rounded-[16px] shadow-[0_40px_70px_-32px_rgba(17,17,17,0.45)]"
+          />
+          <div className="absolute top-4 right-4 rounded-full bg-green-primary px-4 py-2 font-heading text-[11.5px] font-extrabold tracking-[0.08em] text-white uppercase shadow-[0_10px_24px_-10px_rgba(0,0,0,0.4)]">
             Available Now
           </div>
-
-          <Image
-            src="/images/gscrub-usa-badge.png"
-            alt="Made in USA"
-            width={88}
-            height={88}
-            className="absolute -bottom-4 -left-5 h-[88px] w-[88px] rounded-full shadow-[0_14px_28px_-12px_rgba(17,17,17,0.4)]"
-          />
         </div>
       </div>
     </section>

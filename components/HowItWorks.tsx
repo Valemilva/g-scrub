@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
 import { IconFoam, IconBrush, IconTowel, IconFlag } from "./icons";
@@ -37,11 +38,21 @@ export default function HowItWorks() {
   return (
     <section id="how" className="bg-bg py-[clamp(60px,8vw,110px)]">
       <div className="mx-auto max-w-[1200px] px-6">
-        <Reveal className="mx-auto mb-12 max-w-[620px] text-center">
+        <Reveal className="mx-auto mb-10 max-w-[620px] text-center">
           <SectionEyebrow>How It Works</SectionEyebrow>
           <h2 className="m-0 font-heading text-[clamp(30px,4.5vw,50px)] leading-[1.04] font-extrabold tracking-[-0.015em] text-ink">
             Foam. Scrub. Wipe. Play.
           </h2>
+        </Reveal>
+
+        <Reveal className="mx-auto mb-12 max-w-[880px]">
+          <Image
+            src="/images/gscrub-action-scrub.png"
+            alt="Scrubbing a golf shoe with the G-SCRUB brush on the golf course, foam visible on the sole"
+            width={1448}
+            height={1086}
+            className="block w-full rounded-[18px] shadow-[0_30px_60px_-30px_rgba(17,17,17,0.4)]"
+          />
         </Reveal>
 
         <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-4">

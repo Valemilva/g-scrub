@@ -26,21 +26,20 @@ export default function ProductShowcase() {
   return (
     <section id="products" className="bg-bg-alt py-[clamp(60px,8vw,110px)]">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:gap-14">
-        <Reveal className="relative justify-self-center">
-          <div className="absolute inset-x-[6%] top-[8%] bottom-[-2%] bg-[radial-gradient(circle_at_50%_60%,rgba(17,17,17,0.22),transparent_70%)] blur-[16px]" />
+        <Reveal className="relative">
           <Image
-            src="/images/gscrub-kit.png"
-            alt="G-SCRUB Shoe Cleaner Kit with foaming cleaner bottle and wooden brush"
-            width={360}
-            height={360}
-            className="relative block w-[min(360px,82vw)] rounded-[20px] shadow-[0_40px_70px_-30px_rgba(17,17,17,0.5)]"
+            src="/images/gscrub-course-bench.png"
+            alt="G-SCRUB Shoe Cleaner Kit resting on a clubhouse bench next to golf clubs and a clean golf shoe"
+            width={1672}
+            height={941}
+            className="block w-full rounded-[18px] shadow-[0_40px_70px_-30px_rgba(17,17,17,0.5)]"
           />
           <Image
             src="/images/gscrub-usa-badge.png"
             alt="Made in USA"
-            width={104}
-            height={104}
-            className="absolute -right-4 -bottom-3.5 h-[104px] w-[104px] rounded-full shadow-[0_12px_24px_-10px_rgba(17,17,17,0.45)]"
+            width={92}
+            height={92}
+            className="absolute -bottom-4 -left-4 h-[92px] w-[92px] rounded-full shadow-[0_12px_24px_-10px_rgba(17,17,17,0.45)]"
           />
         </Reveal>
 

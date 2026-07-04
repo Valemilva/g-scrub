@@ -32,10 +32,10 @@ export default function SolutionSection() {
         <Reveal className="mx-auto max-w-[760px]">
           <div className="relative overflow-hidden rounded-[22px] border border-[rgba(255,255,255,0.14)] shadow-[0_40px_80px_-34px_rgba(0,0,0,0.6)] select-none">
             <Image
-              src="/images/gscrub-lifestyle.png"
-              alt="Golf shoes and gear before cleaning — dull and course-worn"
-              width={760}
-              height={507}
+              src="/images/gscrub-shoe-dirty.png"
+              alt="Golf shoe caked in mud and grass before cleaning"
+              width={1448}
+              height={1086}
               className="block w-full grayscale-[0.55] brightness-[0.82] contrast-[1.05] sepia-[0.28]"
             />
             <div
@@ -43,10 +43,10 @@ export default function SolutionSection() {
               style={{ width: revealPct }}
             >
               <Image
-                src="/images/gscrub-lifestyle.png"
-                alt="G-SCRUB golf shoe cleaner between a dirty golf shoe and a fresh clean white golf shoe on the course"
-                width={760}
-                height={507}
+                src="/images/gscrub-shoe-dirty.png"
+                alt="Golf shoe restored to clean after using G-SCRUB"
+                width={1448}
+                height={1086}
                 style={{ width: revealInner, maxWidth: "none" }}
                 className="block h-full object-cover"
               />
