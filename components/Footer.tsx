@@ -5,11 +5,13 @@ export default function Footer() {
     <footer className="bg-footer-bg py-[52px] pb-[34px] text-muted-on-dark">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-7 px-6 sm:grid-cols-2 lg:grid-cols-3">
         <div>
-          <div className="mb-3 flex items-center gap-[11px]">
-            <span className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-green-primary font-heading text-[22px] leading-none font-black text-white">
+          {/* Official lockup: standalone green G (no box) + white wordmark
+              on the dark footer, single line. */}
+          <div className="mb-3 flex items-center gap-2">
+            <span className="font-heading text-[28px] leading-none font-black text-green-primary">
               G
             </span>
-            <span className="font-heading text-xl font-black text-white">
+            <span className="font-heading text-xl font-black whitespace-nowrap text-white">
               G-SCRUB
             </span>
           </div>

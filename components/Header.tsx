@@ -10,11 +10,13 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[60] border-b border-[rgba(17,17,17,0.1)] bg-[rgba(255,255,255,0.85)] backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-[13px]">
-        <a href="#top" className="flex items-center gap-[11px] no-underline">
-          <span className="flex h-[38px] w-[38px] items-center justify-center rounded-[11px] bg-green-primary font-heading text-2xl leading-none font-black text-white">
+        {/* Official lockup: standalone green G letterform (no container box)
+            + black wordmark on one line. Per Brand System v1.1 logo rules. */}
+        <a href="#top" className="flex items-center gap-2 no-underline">
+          <span className="font-heading text-[32px] leading-none font-black text-green-primary">
             G
           </span>
-          <span className="font-heading text-[22px] font-black tracking-[0.01em] text-green-deep">
+          <span className="font-heading text-[21px] font-black tracking-[0.01em] whitespace-nowrap text-ink">
             G-SCRUB
           </span>
         </a>
