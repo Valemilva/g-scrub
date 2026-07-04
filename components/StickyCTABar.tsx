@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AMAZON_URL } from "@/lib/constants";
+import { AMAZON_URL, withAffiliateTag } from "@/lib/constants";
 
 export default function StickyCTABar() {
   const [visible, setVisible] = useState(false);
@@ -25,11 +25,13 @@ export default function StickyCTABar() {
       }`}
       aria-hidden={!visible}
     >
+      {/* Brand-level promise (not the shoe kit's product tagline) — the bar
+          represents the whole G-SCRUB system. */}
       <span className="font-heading text-[15px] font-extrabold text-white">
-        Clean Shoes. Better Game.
+        Clean Gear. Better Game.
       </span>
       <a
-        href={AMAZON_URL}
+        href={withAffiliateTag(AMAZON_URL)}
         target="_blank"
         rel="noopener noreferrer"
         className="rounded-full bg-green-primary px-[22px] py-[11px] font-heading text-sm font-extrabold whitespace-nowrap text-white no-underline hover:bg-green-primary-hover"

@@ -1,6 +1,6 @@
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
-import { AMAZON_URL, products, withAffiliateTag } from "@/lib/constants";
+import { products, withAffiliateTag } from "@/lib/constants";
 
 export default function ProductLine() {
   return (
@@ -18,8 +18,8 @@ export default function ProductLine() {
 
         <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p) => {
-            const available = p.status === "Available Now";
-            const href = available ? withAffiliateTag(AMAZON_URL) : "#launch";
+            const available = p.status === "Available Now" && !!p.amazonUrl;
+            const href = available ? withAffiliateTag(p.amazonUrl!) : "#launch";
             return (
               <Reveal key={p.name}>
                 <div className="flex h-full flex-col rounded-[20px] border border-[rgba(17,17,17,0.09)] bg-white p-7 shadow-[0_20px_40px_-32px_rgba(17,17,17,0.45)]">

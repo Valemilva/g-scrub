@@ -57,10 +57,11 @@ export default function ProductShowcase() {
             Clean Shoes. Better Game.
           </p>
           <p className="m-0 mb-[26px] text-base leading-[1.65] text-body">
-            The original G-SCRUB Shoe Cleaner Kit was created for golfers who
-            want to keep their shoes looking fresh from the course to the
-            clubhouse. The foaming cleaner helps remove dirt, grass, and
-            course debris with a simple foam, scrub, and wipe routine.
+            The original G-SCRUB Shoe Cleaner Kit — the first product in the
+            growing G-SCRUB system — was created for golfers who want to
+            keep their shoes looking fresh from the course to the clubhouse.
+            The foaming cleaner helps remove dirt, grass, and course debris
+            with a simple foam, scrub, and wipe routine.
           </p>
 
           <div className="mb-7 grid grid-cols-1 gap-3 sm:grid-cols-2">

@@ -46,7 +46,7 @@ export default function Hero() {
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13.5px] font-semibold tracking-[0.02em] text-body">
             <span>{AMAZON_RATING.stars.toFixed(1)}★ on Amazon</span>
             <span className="h-1 w-1 rounded-full bg-[rgba(17,17,17,0.3)]" />
-            <span>Golf Shoe Cleaner</span>
+            <span>Shoes · Clubs · Gear</span>
             <span className="h-1 w-1 rounded-full bg-[rgba(17,17,17,0.3)]" />
             <span>Made in USA</span>
           </div>
@@ -62,7 +62,7 @@ export default function Hero() {
             className="block w-full rounded-[16px] shadow-[0_40px_70px_-32px_rgba(17,17,17,0.45)]"
           />
           <div className="absolute top-4 right-4 rounded-full bg-green-primary px-4 py-2 font-heading text-[11.5px] font-extrabold tracking-[0.08em] text-white uppercase shadow-[0_10px_24px_-10px_rgba(0,0,0,0.4)]">
-            Available Now
+            Shoe Kit · Available Now
           </div>
         </div>
       </div>

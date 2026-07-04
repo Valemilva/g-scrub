@@ -27,10 +27,14 @@ export default function Home() {
         <Marquee />
         <ProblemSection />
         <SolutionSection />
+        {/* The full 7-product system comes BEFORE the single available kit,
+            so the page reads as a brand/system home — not a one-product
+            landing. As more products go live on Amazon, they light up here
+            first. */}
+        <ProductLine />
         <HowItWorks />
         <ProductShowcase />
         <BrandStory />
-        <ProductLine />
         <ClubCleanerPreview />
         <RefillSystem />
         <BundleSection />

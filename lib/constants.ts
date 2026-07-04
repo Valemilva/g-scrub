@@ -45,12 +45,16 @@ export interface Product {
   tagline: string;
   description: string;
   cta: string;
+  // Each product gets its own Amazon listing as it launches. To take a
+  // product live: set amazonUrl to its listing and flip status to
+  // "Available Now" — nothing else on the site needs to change.
+  amazonUrl?: string;
 }
 
 // The 7 core products of the G-SCRUB system. Only the Shoe Cleaner Kit is
-// live on Amazon today (the kit + brush illustration) — everything else is
-// "Coming Soon" until real products/links are ready. More may be added
-// later; keep new entries "Coming Soon" by default.
+// live on Amazon today — everything else is "Coming Soon" until its listing
+// exists. G-SCRUB is a multi-product golf gear care brand (shoe care, club
+// care, deodorizers, towels, bundles), not a single-product store.
 export const products: Product[] = [
   {
     name: "G-SCRUB Shoe Cleaner Kit",
@@ -59,6 +63,7 @@ export const products: Product[] = [
     description:
       "Foaming golf shoe cleaner kit designed to help remove dirt, grass, and course debris.",
     cta: "Buy on Amazon",
+    amazonUrl: AMAZON_URL,
   },
   {
     name: "G-SCRUB Club Brush Cleaner",
@@ -129,7 +134,7 @@ export const faqItems = [
   {
     question: "What is G-SCRUB?",
     answer:
-      "G-SCRUB is a premium cleaning solution specifically formulated to clean golf shoes. Designed by golfers, for golfers.",
+      "G-SCRUB is a premium golf gear care system — shoe care, club care, deodorizers, towels, and bundles — designed by golfers, for golfers. The first product, the Shoe Cleaner Kit, is available now on Amazon, with the rest of the line on the way.",
   },
   {
     question: "Is G-SCRUB safe for all golf shoe materials?",
