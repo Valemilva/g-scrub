@@ -3,11 +3,11 @@
 import type { FormEvent } from "react";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { WHOLESALE_EMAIL } from "@/lib/constants";
 
 export default function WholesaleSection() {
-  // CONTACT_EMAIL is a placeholder — replace with the real wholesale inbox
-  // once available. No backend yet, so this opens the user's mail client.
+  // No backend yet, so this opens the visitor's mail client addressed to
+  // the real wholesale inbox.
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
@@ -26,7 +26,7 @@ export default function WholesaleSection() {
     ].join("\n");
 
     const subject = encodeURIComponent("G-SCRUB Wholesale Inquiry");
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${encodeURIComponent(
+    window.location.href = `mailto:${WHOLESALE_EMAIL}?subject=${subject}&body=${encodeURIComponent(
       body
     )}`;
   }
@@ -94,8 +94,7 @@ export default function WholesaleSection() {
             </button>
           </form>
           <p className="mt-4 text-center text-[13px] text-body-2">
-            Inquiries go to {CONTACT_EMAIL} (placeholder — update with your
-            real address).
+            Inquiries go to {WHOLESALE_EMAIL}.
           </p>
         </Reveal>
       </div>

@@ -26,11 +26,16 @@ export const AMAZON_RATING = {
   reviewCount: 1,
 };
 
-// Placeholder — replace with the real production domain when available.
-export const SITE_URL = "https://www.gscrub.com/";
+// Production domain (real brand domain, with hyphen). Being transferred to
+// Vercel — if the primary ends up as www, change this to the www form and
+// keep it consistent with the Vercel primary-domain setting.
+export const SITE_URL = "https://g-scrub.com/";
 
-// Placeholder — replace with the real wholesale / contact inbox.
-export const CONTACT_EMAIL = "info@gscrub.com";
+// Real inboxes recovered from the previous G-SCRUB storefront.
+// CONTACT_EMAIL = general contact (footer). WHOLESALE_EMAIL = bulk/pro-shop
+// inquiries (wholesale form).
+export const CONTACT_EMAIL = "gscrubstore@gmail.com";
+export const WHOLESALE_EMAIL = "sales@g-scrub.com";
 
 // Full brand tagline (hero, page title, OG/Twitter). The product-level
 // tagline "Clean Shoes. Better Game." (used on the Shoe Cleaner Kit itself)

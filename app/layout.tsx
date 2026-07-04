@@ -9,8 +9,8 @@ const montserrat = Montserrat({
   weight: ["400", "500", "600", "700", "800", "900"],
 });
 
-// NOTE: SITE_URL ("https://www.gscrub.com/") is a placeholder — replace with
-// the real production domain once it is registered/deployed.
+// SITE_URL is set to the real brand domain (g-scrub.com) in lib/constants.
+// If the Vercel primary domain ends up as www, update SITE_URL to match.
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "G-SCRUB Golf Cleaning System | Golf Shoe Cleaner & Golf Gear Care",
