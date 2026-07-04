@@ -1,17 +1,12 @@
-"use client";
-
-import { useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
-import { IconChevrons } from "./icons";
 
+// Static before/after, not a drag-to-reveal slider: a reveal slider needs
+// the SAME shoe photographed dirty and clean in the exact same frame, which
+// we don't have (the dirty and clean shots are different shoes/angles). Two
+// labeled panels communicate the same transformation and actually work.
 export default function SolutionSection() {
-  const [reveal, setReveal] = useState(58);
-
-  const revealPct = `${reveal}%`;
-  const revealInner = reveal > 0 ? `${10000 / reveal}%` : "100%";
-
   return (
     <section
       id="solution"
@@ -24,64 +19,43 @@ export default function SolutionSection() {
             A simple system made for golfers.
           </h2>
           <p className="m-0 text-[17px] leading-[1.65] text-muted-on-dark">
-            Drag to scrub — watch your gear go from course-worn to
+            Foam, scrub, wipe — and your gear goes from course-worn to
             course-ready.
           </p>
         </Reveal>
 
-        <Reveal className="mx-auto max-w-[760px]">
-          <div className="relative overflow-hidden rounded-[22px] border border-[rgba(255,255,255,0.14)] shadow-[0_40px_80px_-34px_rgba(0,0,0,0.6)] select-none">
+        <Reveal className="mx-auto grid max-w-[900px] grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5">
+          <figure className="relative m-0 overflow-hidden rounded-[20px] border border-[rgba(255,255,255,0.14)] shadow-[0_30px_60px_-34px_rgba(0,0,0,0.6)]">
             <Image
               src="/images/gscrub-shoe-dirty.png"
               alt="Golf shoe caked in mud and grass before cleaning"
               width={1448}
               height={1086}
-              className="block w-full grayscale-[0.55] brightness-[0.82] contrast-[1.05] sepia-[0.28]"
+              className="block aspect-[4/3] w-full object-cover"
             />
-            <div
-              className="absolute top-0 bottom-0 left-0 overflow-hidden"
-              style={{ width: revealPct }}
-            >
-              <Image
-                src="/images/gscrub-shoe-dirty.png"
-                alt="Golf shoe restored to clean after using G-SCRUB"
-                width={1448}
-                height={1086}
-                style={{ width: revealInner, maxWidth: "none" }}
-                className="block h-full object-cover"
-              />
-            </div>
-            <div
-              className="pointer-events-none absolute top-0 bottom-0 w-[3px] -translate-x-[1.5px] bg-green-primary shadow-[0_0_14px_rgba(42,140,42,0.7)]"
-              style={{ left: revealPct }}
+            <figcaption className="absolute top-3.5 left-3.5 rounded-full bg-[rgba(0,0,0,0.55)] px-[13px] py-[6px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
+              Before
+            </figcaption>
+          </figure>
+
+          <figure className="relative m-0 overflow-hidden rounded-[20px] border border-[rgba(255,255,255,0.14)] shadow-[0_30px_60px_-34px_rgba(0,0,0,0.6)]">
+            <Image
+              src="/images/gscrub-shoe-clean.png"
+              alt="Fresh clean white golf shoe on the course after using G-SCRUB"
+              width={1448}
+              height={1086}
+              className="block aspect-[4/3] w-full object-cover"
             />
-            <div
-              className="pointer-events-none absolute top-1/2 flex h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-green-primary text-white shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
-              style={{ left: revealPct }}
-            >
-              <IconChevrons size={22} />
-            </div>
-            <span className="absolute top-3.5 left-3.5 rounded-full bg-[rgba(0,0,0,0.45)] px-[11px] py-[5px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
-              Worn
-            </span>
-            <span className="absolute top-3.5 right-3.5 rounded-full bg-green-primary px-[11px] py-[5px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
-              Clean
-            </span>
-            <input
-              type="range"
-              min={0}
-              max={100}
-              value={reveal}
-              onChange={(e) => setReveal(Number(e.target.value))}
-              aria-label="Drag to reveal clean gear"
-              className="absolute inset-0 m-0 h-full w-full cursor-ew-resize opacity-0"
-            />
-          </div>
-          <p className="mt-4 text-center text-sm text-muted-on-dark">
-            G-SCRUB brings shoe care, club care, refills, towels, and future
-            bundles into one clean golf-focused system.
-          </p>
+            <figcaption className="absolute top-3.5 left-3.5 rounded-full bg-green-primary px-[13px] py-[6px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
+              After
+            </figcaption>
+          </figure>
         </Reveal>
+
+        <p className="mx-auto mt-6 max-w-[640px] text-center text-sm text-muted-on-dark">
+          G-SCRUB brings shoe care, club care, refills, towels, and future
+          bundles into one clean golf-focused system.
+        </p>
       </div>
     </section>
   );
