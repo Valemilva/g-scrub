@@ -1,24 +1,25 @@
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
+import { IconShoe, IconClub, IconBag, IconSparkle } from "./icons";
 
 const cards = [
   {
-    icon: "👟",
+    Icon: IconShoe,
     title: "Dirty Shoes",
     copy: "Golf shoes take a beating from grass, mud, sand, and wet course conditions.",
   },
   {
-    icon: "🏌️",
+    Icon: IconClub,
     title: "Clubface Debris",
     copy: "Dirt and sand can build up on clubfaces and grooves throughout the round.",
   },
   {
-    icon: "🎒",
+    Icon: IconBag,
     title: "No Simple Routine",
     copy: "Most golfers do not want a bulky cleaning setup in their car or golf bag.",
   },
   {
-    icon: "🧽",
+    Icon: IconSparkle,
     title: "Gear Looks Worn",
     copy: "Even good golf gear can look neglected when it is not cleaned regularly.",
   },
@@ -45,7 +46,9 @@ export default function ProblemSection() {
           {cards.map((card) => (
             <Reveal key={card.title}>
               <div className="h-full rounded-[18px] border border-[rgba(17,17,17,0.09)] bg-white p-7 shadow-[0_20px_40px_-30px_rgba(17,17,17,0.4)]">
-                <div className="mb-3 text-2xl">{card.icon}</div>
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-bg-alt text-green-primary">
+                  <card.Icon size={22} />
+                </div>
                 <h3 className="m-0 mb-2.5 font-heading text-[19px] font-extrabold text-ink">
                   {card.title}
                 </h3>

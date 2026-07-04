@@ -54,41 +54,12 @@ summary {
   list-style: none;
 }
 
-/* ===== Keyframes (from design reference) ===== */
-@keyframes gsSway {
-  0%,
-  100% {
-    transform: rotate(-5deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-}
-
-@keyframes gsBob {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-16px);
-  }
-}
-
-@keyframes gsRise {
-  0% {
-    transform: translateY(10px) scale(0.5);
-    opacity: 0;
-  }
-  20% {
-    opacity: 0.85;
-  }
-  100% {
-    transform: translateY(-150px) scale(1.15);
-    opacity: 0;
-  }
-}
-
+/* ===== Keyframes =====
+ * Premium pass: the cartoonish ambient loops (bobbing product, rising foam
+ * bubbles, swaying grass, floating badge, rotating word) were removed with
+ * their keyframes. What remains is restrained: the marquee, a hover-only
+ * shine on primary CTAs, and scroll reveals.
+ */
 @keyframes gsMarquee {
   0% {
     transform: translateX(0);
@@ -108,55 +79,12 @@ summary {
   }
 }
 
-@keyframes gsFloat {
-  0%,
-  100% {
-    transform: translateY(0) rotate(-2deg);
-  }
-  50% {
-    transform: translateY(-9px) rotate(3deg);
-  }
-}
-
-@keyframes gsPulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(42, 140, 42, 0.45);
-  }
-  70% {
-    box-shadow: 0 0 0 18px rgba(42, 140, 42, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(42, 140, 42, 0);
-  }
-}
-
-@keyframes gsFadeWord {
-  0%,
-  100% {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  12%,
-  88% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 /* ===== Animation utility classes ===== */
-.anim-sway {
-  animation: gsSway 3.4s ease-in-out infinite;
-  transform-origin: bottom center;
-}
-.anim-bob {
-  animation: gsBob 5.5s ease-in-out infinite;
-}
-.anim-rise {
-  animation: gsRise 4.5s ease-in infinite;
-}
 .anim-marquee {
   animation: gsMarquee 24s linear infinite;
 }
+/* Shine is hover-only: a constant loop reads as gimmicky; a single sweep on
+ * hover reads as considered. */
 .anim-shine::after {
   content: "";
   position: absolute;
@@ -170,17 +98,10 @@ summary {
     rgba(255, 255, 255, 0.6),
     transparent
   );
-  animation: gsShine 3.6s ease-in-out infinite;
   pointer-events: none;
 }
-.anim-float {
-  animation: gsFloat 6s ease-in-out infinite;
-}
-.anim-pulse {
-  animation: gsPulse 3s ease-out infinite;
-}
-.anim-fade-word {
-  animation: gsFadeWord 1.8s ease-in-out infinite;
+.anim-shine:hover::after {
+  animation: gsShine 0.9s ease-out;
 }
 
 /*

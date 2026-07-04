@@ -34,7 +34,7 @@ export default function EmailCapture() {
             role="status"
             className="rounded-2xl border border-[rgba(42,140,42,0.3)] bg-bg-alt p-[22px] font-heading text-[17px] font-bold text-green-primary"
           >
-            You&rsquo;re on the list. We&rsquo;ll be in touch before launch. ⛳
+            You&rsquo;re on the list. We&rsquo;ll be in touch before launch.
           </div>
         ) : (
           <form

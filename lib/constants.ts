@@ -110,8 +110,6 @@ export const products: Product[] = [
   },
 ];
 
-export const heroRotatingWords = ["MUD.", "GRASS.", "SAND.", "SWEAT."];
-
 export const navLinks = [
   { href: "#products", label: "Products" },
   { href: "#how", label: "How It Works" },

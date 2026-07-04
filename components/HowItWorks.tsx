@@ -1,30 +1,31 @@
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
+import { IconFoam, IconBrush, IconTowel, IconFlag } from "./icons";
 
 const steps = [
   {
-    icon: "🫧",
+    Icon: IconFoam,
     step: "STEP 01",
     title: "Foam",
     copy: "Apply the foaming cleaner to the dirty area of the golf shoe.",
     dark: false,
   },
   {
-    icon: "🪥",
+    Icon: IconBrush,
     step: "STEP 02",
     title: "Scrub",
     copy: "Use the brush to loosen dirt, grass, and course debris.",
     dark: false,
   },
   {
-    icon: "🧻",
+    Icon: IconTowel,
     step: "STEP 03",
     title: "Wipe",
     copy: "Finish with the microfiber towel for a clean look.",
     dark: false,
   },
   {
-    icon: "⛳",
+    Icon: IconFlag,
     step: "STEP 04",
     title: "Play",
     copy: "Keep your gear ready for the next round.",
@@ -54,11 +55,11 @@ export default function HowItWorks() {
                 }`}
               >
                 <div
-                  className={`mb-[18px] flex h-12 w-12 items-center justify-center rounded-[14px] text-2xl ${
+                  className={`mb-[18px] flex h-12 w-12 items-center justify-center rounded-[14px] ${
                     s.dark ? "bg-[rgba(42,140,42,0.2)] text-green-primary" : "bg-bg-alt text-green-primary"
                   }`}
                 >
-                  {s.icon}
+                  <s.Icon size={24} />
                 </div>
                 <div className="mb-1 font-heading text-[13px] font-black tracking-[0.1em] text-green-primary">
                   {s.step}

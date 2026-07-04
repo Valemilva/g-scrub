@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
+import { IconChevrons } from "./icons";
 
 export default function SolutionSection() {
   const [reveal, setReveal] = useState(58);
@@ -55,10 +56,10 @@ export default function SolutionSection() {
               style={{ left: revealPct }}
             />
             <div
-              className="pointer-events-none absolute top-1/2 flex h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-green-primary text-xl shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
+              className="pointer-events-none absolute top-1/2 flex h-[46px] w-[46px] -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-green-primary text-white shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
               style={{ left: revealPct }}
             >
-              ⇔
+              <IconChevrons size={22} />
             </div>
             <span className="absolute top-3.5 left-3.5 rounded-full bg-[rgba(0,0,0,0.45)] px-[11px] py-[5px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
               Worn

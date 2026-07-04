@@ -1,144 +1,82 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Image from "next/image";
 import AmazonButton from "./AmazonButton";
-import { heroRotatingWords, AMAZON_RATING } from "@/lib/constants";
+import { AMAZON_RATING } from "@/lib/constants";
 
-const GRASS_SVG =
-  "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='34' viewBox='0 0 120 34'%3E%3Cpath d='M0 34 L8 6 L16 34 L26 10 L34 34 L44 2 L54 34 L64 8 L74 34 L84 12 L94 34 L104 4 L112 34 L120 10 L120 34 Z' fill='%232A8C2A'/%3E%3C/svg%3E";
-
+// Premium restraint: no floating bubbles, no cartoon grass strip, no
+// rotating-word gimmick, no bobbing product. The hero sells with type,
+// whitespace, and one clean product presentation — the way premium golf
+// brands (Titleist, FootJoy, Vessel) present gear.
 export default function Hero() {
-  const [wordIdx, setWordIdx] = useState(0);
-
-  useEffect(() => {
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
-    }
-    const timer = setInterval(() => {
-      setWordIdx((i) => (i + 1) % heroRotatingWords.length);
-    }, 1800);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-bg-alt pt-[clamp(52px,7vw,86px)]"
+      className="relative overflow-hidden bg-bg-alt py-[clamp(56px,8vw,104px)]"
     >
-      {/* sun glow */}
-      <div className="pointer-events-none absolute -top-[120px] -right-20 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(255,247,214,0.9),rgba(255,247,214,0)_70%)]" />
-
-      <div className="relative z-[2] mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-8 px-6 md:grid-cols-2 md:gap-14">
+      <div className="relative mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
         <div data-reveal>
-          <div className="mb-[22px] inline-flex items-center gap-2 rounded-full border border-[rgba(17,17,17,0.18)] bg-[rgba(255,255,255,0.6)] px-3.5 py-[7px]">
-            <span className="h-[7px] w-[7px] rounded-full bg-green-primary" />
-            <span className="text-xs font-extrabold tracking-[0.15em] text-green-deep uppercase">
+          <div className="mb-6 inline-flex items-center gap-2 border-b-2 border-green-primary pb-2">
+            <span className="text-xs font-extrabold tracking-[0.18em] text-ink uppercase">
               Premium Golf Cleaning System
             </span>
           </div>
 
-          <h1 className="m-0 mb-[18px] font-heading text-[clamp(40px,6.2vw,72px)] leading-[0.98] font-black tracking-[-0.025em] text-ink">
+          <h1 className="m-0 mb-5 font-heading text-[clamp(40px,6.2vw,72px)] leading-[0.98] font-black tracking-[-0.025em] text-ink">
             Clean Shoes.
             <br />
             Clean Clubs.
             <br />
-            <span className="relative text-green-primary">
-              Better Game.
-              <span className="absolute bottom-0.5 left-0 -z-10 h-[10px] w-full rounded bg-[rgba(42,140,42,0.25)]" />
-            </span>
+            <span className="text-green-primary">Better Game.</span>
           </h1>
 
-          <p className="m-0 mb-3 max-w-[500px] text-[clamp(16px,1.7vw,19px)] leading-[1.6] text-body">
+          <p className="m-0 mb-8 max-w-[480px] text-[clamp(16px,1.7vw,18px)] leading-[1.65] text-body">
             A premium golf cleaning system that keeps your shoes, clubs, and
             gear course-ready — before, during, and after every round.
           </p>
 
-          <div className="mb-[26px] inline-flex items-center gap-2.5 font-heading text-[15px] font-extrabold text-green-deep">
-            <span className="text-[13px] font-bold tracking-[0.08em] text-body uppercase">
-              Goodbye
-            </span>
-            <span className="inline-block min-w-[118px] text-left text-green-primary">
-              {heroRotatingWords[wordIdx]}
-            </span>
-          </div>
-
-          <div className="mb-4 flex flex-wrap gap-3.5">
-            <AmazonButton pulse>Buy on Amazon →</AmazonButton>
+          <div className="mb-7 flex flex-wrap gap-3.5">
+            <AmazonButton>Buy on Amazon →</AmazonButton>
             <a
               href="#solution"
-              className="rounded-full border border-[rgba(17,17,17,0.2)] bg-white px-[30px] py-[17px] font-heading text-[16.5px] font-extrabold text-green-deep no-underline hover:border-green-primary hover:text-green-primary"
+              className="rounded-full border border-[rgba(17,17,17,0.25)] bg-white px-[30px] py-[17px] font-heading text-[16.5px] font-extrabold text-ink no-underline transition-colors hover:border-green-primary hover:text-green-primary"
             >
               Explore the System
             </a>
           </div>
 
-          <div className="flex flex-wrap gap-2.5">
-            {[
-              "⛳ Golf Shoe Cleaner",
-              "Course-Ready Gear",
-              `${AMAZON_RATING.stars.toFixed(1)}★ on Amazon`,
-              "🇺🇸 Made in USA",
-            ].map((badge) => (
-              <span
-                key={badge}
-                className="rounded-full border border-[rgba(17,17,17,0.1)] bg-[rgba(255,255,255,0.65)] px-[13px] py-[7px] text-[13px] font-semibold text-body"
-              >
-                {badge}
-              </span>
-            ))}
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-[13.5px] font-semibold tracking-[0.02em] text-body">
+            <span>{AMAZON_RATING.stars.toFixed(1)}★ on Amazon</span>
+            <span className="h-1 w-1 rounded-full bg-[rgba(17,17,17,0.3)]" />
+            <span>Golf Shoe Cleaner</span>
+            <span className="h-1 w-1 rounded-full bg-[rgba(17,17,17,0.3)]" />
+            <span>Made in USA</span>
           </div>
         </div>
 
-        <div className="relative justify-self-center">
-          {/* foam bubbles */}
-          <span className="anim-rise absolute bottom-[60px] left-[12%] h-4 w-4 rounded-full bg-[rgba(255,255,255,0.9)]" />
-          <span className="absolute bottom-20 left-[30%] h-2.5 w-2.5 animate-[gsRise_5.2s_ease-in_infinite_0.8s] rounded-full bg-[rgba(255,255,255,0.85)]" />
-          <span className="absolute right-[22%] bottom-[50px] h-[13px] w-[13px] animate-[gsRise_4.8s_ease-in_infinite_1.6s] rounded-full bg-[rgba(255,255,255,0.9)]" />
-          <span className="absolute right-[10%] bottom-[90px] h-2 w-2 animate-[gsRise_5.6s_ease-in_infinite_2.3s] rounded-full bg-[rgba(255,255,255,0.85)]" />
-
-          <div className="anim-bob relative">
-            <div className="absolute inset-x-[8%] top-[6%] bottom-[-2%] translate-y-5 bg-[radial-gradient(circle_at_50%_60%,rgba(17,17,17,0.28),transparent_70%)] blur-[14px]" />
+        <div className="relative justify-self-center" data-reveal>
+          <div className="relative">
+            <div className="absolute inset-x-[10%] bottom-[-4%] h-[12%] rounded-[50%] bg-[rgba(17,17,17,0.18)] blur-[18px]" />
             <Image
               src="/images/gscrub-kit.png"
               alt="G-SCRUB Premium Golf Shoe Cleaner Kit box with foaming cleaner bottle and wooden brush"
-              width={360}
-              height={360}
+              width={400}
+              height={400}
               priority
-              className="relative block w-[min(360px,80vw)] rounded-[20px] shadow-[0_40px_70px_-28px_rgba(17,17,17,0.55)]"
+              className="relative block w-[min(400px,82vw)] rounded-[14px] shadow-[0_50px_80px_-40px_rgba(17,17,17,0.5)]"
             />
           </div>
 
-          <div className="absolute top-2 right-0 rounded-full bg-green-primary px-3.5 py-2 font-heading text-xs font-extrabold tracking-[0.05em] text-white uppercase shadow-[0_8px_20px_-8px_rgba(0,0,0,0.4)]">
+          <div className="absolute top-4 -right-2 rounded-full bg-green-primary px-4 py-2 font-heading text-[11.5px] font-extrabold tracking-[0.08em] text-white uppercase shadow-[0_10px_24px_-10px_rgba(0,0,0,0.4)]">
             Available Now
           </div>
 
           <Image
             src="/images/gscrub-usa-badge.png"
             alt="Made in USA"
-            width={96}
-            height={96}
-            className="anim-float absolute -bottom-3 -left-[22px] h-24 w-24 rounded-full shadow-[0_12px_24px_-10px_rgba(17,17,17,0.45)]"
+            width={88}
+            height={88}
+            className="absolute -bottom-4 -left-5 h-[88px] w-[88px] rounded-full shadow-[0_14px_28px_-12px_rgba(17,17,17,0.4)]"
           />
         </div>
-      </div>
-
-      {/* animated grass ground */}
-      <div className="relative z-[1] mt-[-6px] h-16">
-        <div
-          className="absolute right-0 bottom-0 left-0 h-[34px] bg-repeat-x"
-          style={{
-            backgroundSize: "120px 34px",
-            backgroundImage: `url("${GRASS_SVG}")`,
-          }}
-        />
-        <span className="anim-sway absolute bottom-0 left-[14%] h-10 w-[5px] rounded-t-[3px] bg-green-primary" />
-        <span className="absolute bottom-0 left-[38%] h-[52px] w-[5px] animate-[gsSway_4s_ease-in-out_infinite_0.5s] rounded-t-[3px] bg-[#1f7a24] [transform-origin:bottom_center]" />
-        <span className="absolute bottom-0 left-[63%] h-11 w-[5px] animate-[gsSway_3.7s_ease-in-out_infinite_1s] rounded-t-[3px] bg-green-primary [transform-origin:bottom_center]" />
-        <span className="absolute bottom-0 left-[83%] h-14 w-[5px] animate-[gsSway_4.3s_ease-in-out_infinite_0.3s] rounded-t-[3px] bg-[#1f7a24] [transform-origin:bottom_center]" />
       </div>
     </section>
   );

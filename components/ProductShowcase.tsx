@@ -26,7 +26,7 @@ export default function ProductShowcase() {
   return (
     <section id="products" className="bg-bg-alt py-[clamp(60px,8vw,110px)]">
       <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:gap-14">
-        <Reveal className="anim-float relative justify-self-center">
+        <Reveal className="relative justify-self-center">
           <div className="absolute inset-x-[6%] top-[8%] bottom-[-2%] bg-[radial-gradient(circle_at_50%_60%,rgba(17,17,17,0.22),transparent_70%)] blur-[16px]" />
           <Image
             src="/images/gscrub-kit.png"
