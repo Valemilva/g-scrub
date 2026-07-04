@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import CommercialVideo from "@/components/CommercialVideo";
 import Marquee from "@/components/Marquee";
 import ProblemSection from "@/components/ProblemSection";
 import SolutionSection from "@/components/SolutionSection";
@@ -24,6 +25,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <CommercialVideo />
         <Marquee />
         <ProblemSection />
         <SolutionSection />
