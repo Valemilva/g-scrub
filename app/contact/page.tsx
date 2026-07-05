@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL } from "@/lib/constants";
+import { AMAZON_ORDERS_URL, CONTACT_EMAIL } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact | G-SCRUB",
   description:
-    "Get in touch with G-SCRUB — general questions, order help, and wholesale or pro-shop inquiries.",
+    "Reach G-SCRUB for wholesale, pro-shop, and general brand questions. Order support is handled by Amazon.",
 };
 
 export default function ContactPage() {
@@ -14,14 +14,17 @@ export default function ContactPage() {
     <PageShell
       eyebrow="Get in touch"
       title="Contact G-SCRUB"
-      intro="Have a question about G-SCRUB, an order, or carrying us in your shop? We're happy to help."
+      intro="Here's the fastest way to get help, depending on what you need."
     >
-      <h2>General questions &amp; order help</h2>
+      <h2>Order help, tracking &amp; returns</h2>
       <p>
-        Email us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. For
-        help with an order, include your order number, name, and a short
-        description of the issue so we can assist you faster. We do our best to
-        reply within 24&ndash;48 business hours.
+        G-SCRUB products are sold and fulfilled by Amazon, so all order support
+        &mdash; tracking, returns, refunds, and delivery issues &mdash; is
+        handled through Amazon. Manage everything from{" "}
+        <a href={AMAZON_ORDERS_URL} target="_blank" rel="noopener noreferrer">Your
+        Orders on Amazon</a>. See our{" "}
+        <Link href="/shipping-returns">Shipping &amp; Returns</Link> page for
+        details.
       </p>
 
       <h2>Wholesale, pro shops &amp; events</h2>

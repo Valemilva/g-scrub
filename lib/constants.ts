@@ -2,6 +2,10 @@
 
 export const AMAZON_URL = "https://www.amazon.com/dp/B0FJ7NJDZ6";
 
+// Amazon "Your Orders" — where customers track, return, or get help with an
+// order. All order/purchase support is handled by Amazon, not by us.
+export const AMAZON_ORDERS_URL = "https://www.amazon.com/gp/css/order-history";
+
 // Amazon Associates tracking tag — leave empty until confirmed for G-SCRUB.
 // (A tag exists for the CLAUDIO/author-books project, valentinlop0f-20, but
 // it is reused from another project and was flagged "AssociateNotEligible"

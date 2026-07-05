@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import PageShell from "@/components/PageShell";
-import { CONTACT_EMAIL, LEGAL_EFFECTIVE_DATE } from "@/lib/constants";
+import { AMAZON_ORDERS_URL, LEGAL_EFFECTIVE_DATE } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Shipping & Returns | G-SCRUB",
   description:
-    "How G-SCRUB orders ship and how returns work. Orders are placed and fulfilled through Amazon.",
+    "G-SCRUB orders are sold, shipped, and returned through Amazon. Manage your order in your Amazon account.",
 };
 
 export default function ShippingReturnsPage() {
@@ -14,41 +14,43 @@ export default function ShippingReturnsPage() {
       eyebrow="Support"
       title="Shipping & Returns"
       lastUpdated={LEGAL_EFFECTIVE_DATE}
-      intro="G-SCRUB products are sold and fulfilled through Amazon, so shipping and returns follow Amazon's process for your order. Here's what to expect."
+      intro="G-SCRUB products are sold and fulfilled by Amazon. Shipping, tracking, returns, and refunds are all handled through Amazon — the fastest place to manage anything about your order is your Amazon account."
     >
       <h2>Shipping</h2>
       <p>
         Orders are placed on Amazon and shipped according to the delivery
         options and timeframe shown on the product listing at checkout. G-SCRUB
-        currently sells within the United States. You&rsquo;ll receive tracking
-        through your Amazon account once your order ships.
+        currently sells within the United States. Tracking is available in your
+        Amazon account once your order ships.
       </p>
 
       <h2>Returns &amp; refunds</h2>
       <p>
-        Because orders are completed on Amazon, returns and refunds are handled
-        through Amazon&rsquo;s returns process — the fastest way to start one is
-        from <strong>Your Orders</strong> in your Amazon account. Amazon&rsquo;s
-        return window and conditions apply.
+        Returns and refunds are managed entirely through Amazon. To start one,
+        go to <a href={AMAZON_ORDERS_URL} target="_blank" rel="noopener noreferrer">Your
+        Orders</a> in your Amazon account and follow Amazon&rsquo;s return
+        process. Amazon&rsquo;s return window and conditions apply.
       </p>
       <p>
         For hygiene and safety reasons, opened or used cleaning products may not
-        be eligible for return. Please review the return details on your order
-        before requesting one.
+        be eligible for return — check the return details on your Amazon order.
       </p>
 
-      <h2>Damaged or incorrect items</h2>
+      <h2>Damaged, wrong, or missing items</h2>
       <p>
-        Inspect your order when it arrives. If an item shows up damaged or
-        you received the wrong product, start a claim through Amazon right away —
-        or reach out to us and we&rsquo;ll help make it right.
+        If an item arrives damaged, incorrect, or doesn&rsquo;t show up, please
+        contact Amazon directly through{" "}
+        <a href={AMAZON_ORDERS_URL} target="_blank" rel="noopener noreferrer">Your
+        Orders</a>. Because Amazon fulfills and ships every order, they can
+        resolve delivery and order issues fastest.
       </p>
 
-      <h2>Need help with an order?</h2>
+      <h2>Where order support lives</h2>
       <p>
-        Email us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with
-        your order number and a short description, and we&rsquo;ll point you in
-        the right direction.
+        All order support — tracking, returns, refunds, and delivery problems —
+        is handled by Amazon, not by G-SCRUB. Manage everything from{" "}
+        <a href={AMAZON_ORDERS_URL} target="_blank" rel="noopener noreferrer">Your
+        Orders on Amazon</a>.
       </p>
     </PageShell>
   );
