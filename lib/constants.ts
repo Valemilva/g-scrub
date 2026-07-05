@@ -121,13 +121,18 @@ export const products: Product[] = [
   },
 ];
 
+// Nav anchors use the "/#id" form so they work from subpages (legal pages,
+// etc.) — clicking returns to the home page and scrolls to the section.
 export const navLinks = [
-  { href: "#products", label: "Products" },
-  { href: "#how", label: "How It Works" },
-  { href: "#story", label: "Story" },
-  { href: "#lineup", label: "Coming Soon" },
-  { href: "#wholesale", label: "Wholesale" },
+  { href: "/#products", label: "Products" },
+  { href: "/#how", label: "How It Works" },
+  { href: "/#story", label: "Story" },
+  { href: "/#lineup", label: "Coming Soon" },
+  { href: "/#wholesale", label: "Wholesale" },
 ];
+
+// Effective date shown on the legal pages. Update when the policies change.
+export const LEGAL_EFFECTIVE_DATE = "July 5, 2026";
 
 // Real FAQ recovered from the previous G-SCRUB storefront (10 questions),
 // lightly adapted for consistency with what's actually live today (the Club

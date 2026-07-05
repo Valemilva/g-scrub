@@ -1,9 +1,13 @@
-import { AMAZON_URL, CONTACT_EMAIL } from "@/lib/constants";
+import Link from "next/link";
+import { AMAZON_URL, withAffiliateTag } from "@/lib/constants";
+
+const linkClass =
+  "text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white";
 
 export default function Footer() {
   return (
     <footer className="bg-footer-bg py-[52px] pb-[34px] text-muted-on-dark">
-      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-7 px-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-8 px-6 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           {/* Official lockup: standalone green G (no box) + white wordmark
               on the dark footer, single line. */}
@@ -24,38 +28,62 @@ export default function Footer() {
           <span className="mb-0.5 text-xs font-extrabold tracking-[0.12em] text-muted-on-dark uppercase">
             Explore
           </span>
-          <a href="#products" className="text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white">
+          <Link href="/#products" className={linkClass}>
             Products
-          </a>
+          </Link>
+          <Link href="/#how" className={linkClass}>
+            How It Works
+          </Link>
+          <Link href="/#story" className={linkClass}>
+            Story
+          </Link>
           <a
-            href={AMAZON_URL}
+            href={withAffiliateTag(AMAZON_URL)}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white"
+            className={linkClass}
           >
-            Amazon
-          </a>
-          <a href="#wholesale" className="text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white">
-            Wholesale
-          </a>
-          <a
-            href={`mailto:${CONTACT_EMAIL}`}
-            className="text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white"
-          >
-            Contact
-          </a>
-          <a href="#top" className="text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white">
-            Privacy
+            Shop on Amazon
           </a>
         </div>
 
-        <div className="max-w-[360px]">
-          <p className="m-0 text-[13px] leading-[1.6] text-muted-on-dark">
-            G-SCRUB products are designed for routine cleaning and gear care.
-            Always follow the manufacturer&rsquo;s care instructions for your
-            shoes, clubs, and equipment.
-          </p>
+        <div className="flex flex-col gap-2.5">
+          <span className="mb-0.5 text-xs font-extrabold tracking-[0.12em] text-muted-on-dark uppercase">
+            Support
+          </span>
+          <Link href="/how-to-use" className={linkClass}>
+            How to Use
+          </Link>
+          <Link href="/shipping-returns" className={linkClass}>
+            Shipping &amp; Returns
+          </Link>
+          <Link href="/contact" className={linkClass}>
+            Contact
+          </Link>
+          <Link href="/#wholesale" className={linkClass}>
+            Wholesale
+          </Link>
         </div>
+
+        <div className="flex flex-col gap-2.5">
+          <span className="mb-0.5 text-xs font-extrabold tracking-[0.12em] text-muted-on-dark uppercase">
+            Legal
+          </span>
+          <Link href="/privacy" className={linkClass}>
+            Privacy Policy
+          </Link>
+          <Link href="/terms" className={linkClass}>
+            Terms of Service
+          </Link>
+        </div>
+      </div>
+
+      <div className="mx-auto mt-[38px] max-w-[1200px] px-6">
+        <p className="m-0 max-w-[560px] text-[13px] leading-[1.6] text-muted-on-dark">
+          G-SCRUB products are designed for routine cleaning and gear care.
+          Always follow the manufacturer&rsquo;s care instructions for your
+          shoes, clubs, and equipment.
+        </p>
       </div>
 
       <div className="mx-auto mt-[34px] max-w-[1200px] border-t border-[rgba(255,255,255,0.08)] px-6 pt-5">
