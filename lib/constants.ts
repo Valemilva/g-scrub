@@ -50,15 +50,31 @@ export const BRAND_TAGLINE = "Clean Shoes. Clean Clubs. Better Game.";
 export type ProductStatus = "Available Now" | "Coming Soon";
 
 export interface Product {
+  // Stable URL slug for the product page: /products/<slug>
+  slug: string;
   name: string;
   status: ProductStatus;
   tagline: string;
+  // Short line used on product cards.
   description: string;
   cta: string;
   // Each product gets its own Amazon listing as it launches. To take a
   // product live: set amazonUrl to its listing and flip status to
   // "Available Now" — nothing else on the site needs to change.
   amazonUrl?: string;
+  // --- Product-detail-page fields (optional; filled in as products ship) ---
+  // Gallery images (first is the primary/card image). Omit for products with
+  // no real photos yet — the page shows a branded placeholder instead.
+  images?: string[];
+  // Display price, e.g. "23.99". Shown on the detail page buy box. Prices are
+  // set on Amazon and can change — keep this in sync with the live listing.
+  priceUSD?: string;
+  // Longer body copy for the detail page.
+  longDescription?: string;
+  // Feature bullets (from the Amazon listing for live products).
+  features?: string[];
+  // "What's included" list.
+  whatsIncluded?: string[];
 }
 
 // The 7 core products of the G-SCRUB system. Only the Shoe Cleaner Kit is
@@ -67,6 +83,7 @@ export interface Product {
 // care, deodorizers, towels, bundles), not a single-product store.
 export const products: Product[] = [
   {
+    slug: "shoe-cleaner-kit",
     name: "G-SCRUB Shoe Cleaner Kit",
     status: "Available Now",
     tagline: "Clean Shoes. Better Game.",
@@ -74,56 +91,100 @@ export const products: Product[] = [
       "Foaming golf shoe cleaner kit designed to help remove dirt, grass, and course debris.",
     cta: "Buy on Amazon",
     amazonUrl: AMAZON_URL,
+    priceUSD: "23.99",
+    images: [
+      "/images/gscrub-kit-packshot.png",
+      "/images/gscrub-hero-course.png",
+      "/images/gscrub-course-bench.png",
+      "/images/gscrub-action-scrub.png",
+      "/images/gscrub-shoe-clean.png",
+    ],
+    longDescription:
+      "The original G-SCRUB Shoe Cleaner Kit — the first product in the growing G-SCRUB system — was created for golfers who want to keep their shoes looking fresh from the course to the clubhouse. The foaming cleaner lifts dirt, grass, and course debris, and the included brush and simple foam-scrub-wipe routine make cleanup quick enough to do right at the cart.",
+    features: [
+      "Powerful foaming formula — removes dirt, grass stains, and sweat without damaging leather, mesh, or synthetic materials.",
+      "Gentle yet effective brush — ergonomic design with soft, durable bristles for tough spots while protecting your shoes.",
+      "Safe for all shoe types — alcohol-free, ammonia-free, eco-friendly, and biodegradable.",
+      "Quick 3-step process — apply, scrub, and wipe clean in minutes.",
+      "Compact & travel-ready — 4 oz bottle fits in any golf bag for pre- or post-round care.",
+    ],
+    whatsIncluded: [
+      "One 4 oz G-SCRUB foaming cleaner bottle",
+      "One ergonomic cleaning brush",
+    ],
   },
   {
+    slug: "club-brush-cleaner",
     name: "G-SCRUB Club Brush Cleaner",
     status: "Coming Soon",
     tagline: "Clean Clubs. Cleaner Contact.",
     description:
       "A refillable bottle brush designed to help clean clubfaces and grooves during or after the round.",
     cta: "Join Launch List",
+    longDescription:
+      "The next G-SCRUB product is a refillable bottle brush built to help clean clubfaces and grooves during or after the round — cleaning solution and scrubbing power together in one golf-bag-friendly tool. For cleaning only; it does not sharpen, modify, or alter club grooves.",
   },
   {
+    slug: "club-cleaner-refill",
     name: "G-SCRUB Club Cleaner Refill",
     status: "Coming Soon",
     tagline: "Refill. Scrub. Play.",
     description:
       "A larger refill bottle designed to keep the club brush cleaner ready for multiple rounds.",
     cta: "Join Launch List",
+    longDescription:
+      "A larger refill bottle designed to keep the G-SCRUB Club Brush Cleaner topped up across multiple rounds. Buy the brush bottle once, then keep it filled.",
   },
   {
+    slug: "shoe-deodorizer-spray",
     name: "G-SCRUB Shoe Deodorizer Spray",
     status: "Coming Soon",
     tagline: "Fresh Gear, Every Round.",
     description:
       "A quick spray designed to help keep golf shoes smelling fresh between cleanings.",
     cta: "Join Launch List",
+    longDescription:
+      "A quick spray designed to help keep golf shoes smelling fresh between cleanings — a light finish to the G-SCRUB routine so your gear stays course-ready.",
   },
   {
+    slug: "shoe-deodorizer-refill",
     name: "G-SCRUB Shoe Deodorizer Refill",
     status: "Coming Soon",
     tagline: "Refill. Spray. Stay Fresh.",
     description:
       "A refill bottle designed to keep the Shoe Deodorizer Spray topped off round after round.",
     cta: "Join Launch List",
+    longDescription:
+      "A refill bottle designed to keep the G-SCRUB Shoe Deodorizer Spray topped off round after round.",
   },
   {
+    slug: "golf-microfiber-towel",
     name: "G-SCRUB Golf Microfiber Towel",
     status: "Coming Soon",
     tagline: "Wipe Clean. Stay Ready.",
     description:
       "A microfiber golf towel designed to pair with the full G-SCRUB cleaning system.",
     cta: "Join Launch List",
+    longDescription:
+      "A microfiber golf towel designed to pair with the full G-SCRUB cleaning system — wipe away loosened dirt and finish the clean.",
   },
   {
+    slug: "complete-golf-cleaning-kit",
     name: "G-SCRUB Complete Golf Cleaning Kit",
     status: "Coming Soon",
     tagline: "The Full Clean Gear System.",
     description:
       "A complete golf cleaning kit combining shoe cleaner, club cleaner, refill, deodorizer, and towel.",
     cta: "Join Launch List",
+    longDescription:
+      "The complete G-SCRUB bundle brings together shoe cleaner, club cleaner, refill, deodorizer, and towel into one full golf gear cleaning solution — great for golfers, gifts, tournaments, and pro shops.",
   },
 ];
+
+// Look up a product by slug (used by the product detail route).
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((p) => p.slug === slug);
+}
 
 // Nav anchors use the "/#id" form so they work from subpages (legal pages,
 // etc.) — clicking returns to the home page and scrolls to the section.

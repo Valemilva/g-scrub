@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import Reveal from "./Reveal";
 import AmazonButton from "./AmazonButton";
 import { AMAZON_RATING } from "@/lib/constants";
@@ -88,7 +89,15 @@ export default function ProductShowcase() {
             </span>
           </div>
 
-          <AmazonButton>Buy G-SCRUB on Amazon →</AmazonButton>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+            <AmazonButton>Buy G-SCRUB on Amazon →</AmazonButton>
+            <Link
+              href="/products/shoe-cleaner-kit"
+              className="font-heading text-[15px] font-extrabold text-green-deep no-underline hover:text-green-primary"
+            >
+              View full details →
+            </Link>
+          </div>
         </Reveal>
       </div>
     </section>

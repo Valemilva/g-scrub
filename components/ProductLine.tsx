@@ -1,6 +1,8 @@
+import Link from "next/link";
+import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
-import { products, withAffiliateTag } from "@/lib/constants";
+import { products } from "@/lib/constants";
 
 export default function ProductLine() {
   return (
@@ -19,41 +21,62 @@ export default function ProductLine() {
         <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3">
           {products.map((p) => {
             const available = p.status === "Available Now" && !!p.amazonUrl;
-            const href = available ? withAffiliateTag(p.amazonUrl!) : "#launch";
+            const image = p.images?.[0];
             return (
-              <Reveal key={p.name}>
-                <div className="flex h-full flex-col rounded-[20px] border border-[rgba(17,17,17,0.09)] bg-white p-7 shadow-[0_20px_40px_-32px_rgba(17,17,17,0.45)]">
-                  <span
-                    className={`mb-4 self-start rounded-full px-[11px] py-[5px] text-[11.5px] font-extrabold tracking-[0.1em] uppercase ${
-                      available
-                        ? "bg-[rgba(42,140,42,0.12)] text-green-primary"
-                        : "bg-[#EDEDED] text-[#111111]"
-                    }`}
-                  >
-                    {p.status}
-                  </span>
-                  <h3 className="m-0 mb-1.5 font-heading text-[21px] leading-[1.15] font-extrabold text-ink">
-                    {p.name}
-                  </h3>
-                  <p className="m-0 mb-3 font-heading text-sm font-bold text-green-primary">
-                    {p.tagline}
-                  </p>
-                  <p className="m-0 mb-[22px] flex-1 text-[14.5px] leading-[1.6] text-body-2">
-                    {p.description}
-                  </p>
-                  <a
-                    href={href}
-                    target={available ? "_blank" : "_self"}
-                    rel="noopener noreferrer"
-                    className={`self-start rounded-full border px-5 py-[11px] font-heading text-sm font-extrabold no-underline ${
-                      available
-                        ? "border-green-primary bg-green-primary text-white hover:bg-green-primary-hover"
-                        : "border-[rgba(17,17,17,0.25)] bg-transparent text-green-deep hover:border-green-primary hover:text-green-primary"
-                    }`}
-                  >
-                    {p.cta}
-                  </a>
-                </div>
+              <Reveal key={p.slug}>
+                <Link
+                  href={`/products/${p.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-[20px] border border-[rgba(17,17,17,0.09)] bg-white no-underline shadow-[0_20px_40px_-32px_rgba(17,17,17,0.45)] transition-shadow hover:shadow-[0_28px_50px_-30px_rgba(17,17,17,0.5)]"
+                >
+                  {/* Visual */}
+                  <div className="relative aspect-[4/3] w-full overflow-hidden bg-bg-alt">
+                    {image ? (
+                      <Image
+                        src={image}
+                        alt={p.name}
+                        width={600}
+                        height={450}
+                        className="block h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center">
+                        <span className="font-heading text-xs font-extrabold tracking-[0.14em] text-body-2 uppercase">
+                          Photos coming soon
+                        </span>
+                      </div>
+                    )}
+                    <span
+                      className={`absolute top-3 left-3 rounded-full px-[11px] py-[5px] text-[11px] font-extrabold tracking-[0.09em] uppercase ${
+                        available
+                          ? "bg-green-primary text-white"
+                          : "bg-[rgba(17,17,17,0.75)] text-white"
+                      }`}
+                    >
+                      {p.status}
+                    </span>
+                  </div>
+
+                  {/* Body */}
+                  <div className="flex flex-1 flex-col p-6">
+                    <h3 className="m-0 mb-1 font-heading text-[19px] leading-[1.15] font-extrabold text-ink">
+                      {p.name}
+                    </h3>
+                    <p className="m-0 mb-2.5 font-heading text-[13.5px] font-bold text-green-primary">
+                      {p.tagline}
+                    </p>
+                    <p className="m-0 mb-4 flex-1 text-[14px] leading-[1.6] text-body-2">
+                      {p.description}
+                    </p>
+                    <div className="flex items-center justify-between">
+                      <span className="font-heading text-[17px] font-black text-ink">
+                        {available && p.priceUSD ? `$${p.priceUSD}` : " "}
+                      </span>
+                      <span className="font-heading text-sm font-extrabold text-green-primary group-hover:underline">
+                        View details →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
               </Reveal>
             );
           })}
@@ -66,12 +89,12 @@ export default function ProductLine() {
           <p className="m-0 text-[15px] leading-[1.6] text-body-2">
             The G-SCRUB system keeps growing. More additions to the golf gear
             cleaning lineup are on the way —{" "}
-            <a
-              href="#launch"
+            <Link
+              href="/#launch"
               className="font-bold text-green-primary underline-offset-2 hover:underline"
             >
               join the launch list
-            </a>{" "}
+            </Link>{" "}
             to hear about them first.
           </p>
         </Reveal>
