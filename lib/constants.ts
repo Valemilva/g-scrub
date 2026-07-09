@@ -95,9 +95,10 @@ export const products: Product[] = [
     images: [
       "/images/gscrub-kit-packshot.png",
       "/images/gscrub-hero-course.png",
-      "/images/gscrub-course-bench.png",
-      "/images/gscrub-action-scrub.png",
-      "/images/gscrub-shoe-clean.png",
+      "/images/gscrub-howto-foam.png",
+      "/images/gscrub-howto-scrub.png",
+      "/images/gscrub-howto-wipe.png",
+      "/images/gscrub-before-after-same-shoe.png",
     ],
     longDescription:
       "The original G-SCRUB Shoe Cleaner Kit — the first product in the growing G-SCRUB system — was created for golfers who want to keep their shoes looking fresh from the course to the clubhouse. The foaming cleaner lifts dirt, grass, and course debris, and the included brush and simple foam-scrub-wipe routine make cleanup quick enough to do right at the cart.",

@@ -47,7 +47,7 @@ export default function HowItWorks() {
 
         <Reveal className="mx-auto mb-12 max-w-[880px]">
           <Image
-            src="/images/gscrub-action-scrub.png"
+            src="/images/gscrub-howto-scrub.png"
             alt="Scrubbing a golf shoe with the G-SCRUB brush on the golf course, foam visible on the sole"
             width={1448}
             height={1086}

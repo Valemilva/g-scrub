@@ -2,10 +2,9 @@ import Image from "next/image";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
 
-// Static before/after, not a drag-to-reveal slider: a reveal slider needs
-// the SAME shoe photographed dirty and clean in the exact same frame, which
-// we don't have (the dirty and clean shots are different shoes/angles). Two
-// labeled panels communicate the same transformation and actually work.
+// Real before/after of the same shoe, same angle, dirty vs. clean — replaces
+// the earlier two-different-shoes panel workaround now that we have a true
+// matched pair.
 export default function SolutionSection() {
   return (
     <section
@@ -24,29 +23,19 @@ export default function SolutionSection() {
           </p>
         </Reveal>
 
-        <Reveal className="mx-auto grid max-w-[900px] grid-cols-1 items-stretch gap-4 sm:grid-cols-2 sm:gap-5">
+        <Reveal className="mx-auto max-w-[900px]">
           <figure className="relative m-0 overflow-hidden rounded-[20px] border border-[rgba(255,255,255,0.14)] shadow-[0_30px_60px_-34px_rgba(0,0,0,0.6)]">
             <Image
-              src="/images/gscrub-shoe-dirty.png"
-              alt="Golf shoe caked in mud and grass before cleaning"
-              width={1448}
-              height={1086}
-              className="block aspect-[4/3] w-full object-cover"
+              src="/images/gscrub-before-after-same-shoe.png"
+              alt="The same golf shoe, same angle: caked in mud and grass before G-SCRUB, spotless white after"
+              width={1536}
+              height={1024}
+              className="block aspect-[3/2] w-full object-cover"
             />
             <figcaption className="absolute top-3.5 left-3.5 rounded-full bg-[rgba(0,0,0,0.55)] px-[13px] py-[6px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
               Before
             </figcaption>
-          </figure>
-
-          <figure className="relative m-0 overflow-hidden rounded-[20px] border border-[rgba(255,255,255,0.14)] shadow-[0_30px_60px_-34px_rgba(0,0,0,0.6)]">
-            <Image
-              src="/images/gscrub-shoe-clean.png"
-              alt="Fresh clean white golf shoe on the course after using G-SCRUB"
-              width={1448}
-              height={1086}
-              className="block aspect-[4/3] w-full object-cover"
-            />
-            <figcaption className="absolute top-3.5 left-3.5 rounded-full bg-green-primary px-[13px] py-[6px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
+            <figcaption className="absolute top-3.5 right-3.5 rounded-full bg-green-primary px-[13px] py-[6px] font-heading text-xs font-extrabold tracking-[0.1em] text-white uppercase">
               After
             </figcaption>
           </figure>

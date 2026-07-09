@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageShell from "@/components/PageShell";
 
 export const metadata: Metadata = {
@@ -17,6 +18,13 @@ export default function HowToUsePage() {
       <h2>The routine</h2>
 
       <h3>1. Foam</h3>
+      <Image
+        src="/images/gscrub-howto-foam.png"
+        alt="Applying G-SCRUB foaming cleaner to a dirty golf shoe"
+        width={1448}
+        height={1086}
+        className="!mt-4 !mb-5 block w-full rounded-[16px]"
+      />
       <p>
         Apply the foaming cleaner directly to the dirty area of the golf shoe.
         There&rsquo;s no need to soak the shoe — a light, even layer of foam is
@@ -24,6 +32,13 @@ export default function HowToUsePage() {
       </p>
 
       <h3>2. Scrub</h3>
+      <Image
+        src="/images/gscrub-howto-scrub.png"
+        alt="Scrubbing a golf shoe with the G-SCRUB brush"
+        width={1448}
+        height={1086}
+        className="!mt-4 !mb-5 block w-full rounded-[16px]"
+      />
       <p>
         Use the included brush to gently work the foam into soles, edges, and
         textured areas. Short back-and-forth strokes help loosen caked-on mud
@@ -31,6 +46,13 @@ export default function HowToUsePage() {
       </p>
 
       <h3>3. Wipe</h3>
+      <Image
+        src="/images/gscrub-howto-wipe.png"
+        alt="Wiping a golf shoe clean with the G-SCRUB microfiber towel"
+        width={1448}
+        height={1086}
+        className="!mt-4 !mb-5 block w-full rounded-[16px]"
+      />
       <p>
         Finish with the microfiber towel to wipe away the loosened dirt and
         foam for a clean look. Then let your shoes air dry.

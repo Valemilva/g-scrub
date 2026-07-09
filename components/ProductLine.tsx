@@ -36,7 +36,7 @@ export default function ProductLine() {
                         alt={p.name}
                         width={600}
                         height={450}
-                        className="block h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                        className="block h-full w-full object-contain p-4 transition-transform duration-300 group-hover:scale-[1.03]"
                       />
                     ) : (
                       <div className="flex h-full w-full items-center justify-center">
