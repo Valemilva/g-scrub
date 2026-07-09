@@ -50,6 +50,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  verification: {
+    other: {
+      "google-site-verification": "MCBU-ptz3yVnCr1R2A89xNG180Y8EFzXdSBLQ80LFyk",
+    },
+  },
 };
 
 export const viewport: Viewport = {
