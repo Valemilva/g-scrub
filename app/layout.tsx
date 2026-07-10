@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { Montserrat } from "next/font/google";
-import { SITE_URL, BRAND_TAGLINE, faqItems } from "@/lib/constants";
+import { SITE_URL, BRAND_TAGLINE, GA_MEASUREMENT_ID, faqItems } from "@/lib/constants";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -123,7 +124,28 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
         />
       </head>
-      <body className="flex min-h-full flex-col antialiased">{children}</body>
+      <body className="flex min-h-full flex-col antialiased">
+        {children}
+
+        {/* Google Analytics 4. Enhanced measurement handles SPA route
+            changes (History API) and outbound "Buy on Amazon" clicks. */}
+        {GA_MEASUREMENT_ID && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga4-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${GA_MEASUREMENT_ID}');
+              `}
+            </Script>
+          </>
+        )}
+      </body>
     </html>
   );
 }

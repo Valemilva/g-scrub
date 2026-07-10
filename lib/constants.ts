@@ -35,6 +35,12 @@ export const AMAZON_RATING = {
 // keep it consistent with the Vercel primary-domain setting.
 export const SITE_URL = "https://g-scrub.com/";
 
+// Google Analytics 4 Measurement ID (property "G-SCRUB" under the
+// valentinlopez2007 GA account). Enhanced measurement is on, so SPA route
+// changes and outbound clicks (e.g. "Buy on Amazon") are tracked
+// automatically. Leave empty to disable analytics.
+export const GA_MEASUREMENT_ID = "G-R1FMKHEDGH";
+
 // For now everything routes to the working Gmail inbox — the @g-scrub.com
 // addresses (e.g. sales@g-scrub.com) aren't active yet while the domain is
 // mid-transfer. Once domain email is live, point WHOLESALE_EMAIL at
