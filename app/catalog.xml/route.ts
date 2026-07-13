@@ -43,6 +43,9 @@ ${additionalImages}
       <g:brand>G-SCRUB</g:brand>
       <g:google_product_category>1933</g:google_product_category>
       <g:identifier_exists>no</g:identifier_exists>
+      <g:age_group>adult</g:age_group>
+      <g:gender>unisex</g:gender>
+      <g:color>White</g:color>
     </item>`;
     })
     .join("\n");
