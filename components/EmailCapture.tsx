@@ -3,16 +3,44 @@
 import { useState, type FormEvent } from "react";
 import Reveal from "./Reveal";
 import SectionEyebrow from "./SectionEyebrow";
+import { CONTACT_EMAIL } from "@/lib/constants";
+
+type Status = "idle" | "submitting" | "done" | "error";
 
 export default function EmailCapture() {
-  const [joined, setJoined] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [error, setError] = useState("");
 
-  // No backend yet — this handler is structured so a real provider
-  // (Formspree, Mailchimp, ConvertKit, Supabase, etc.) can be wired in
-  // later by replacing the body of this function with a fetch() call.
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setJoined(true);
+    const form = e.currentTarget;
+    const email = (
+      (form.elements.namedItem("email") as HTMLInputElement)?.value ?? ""
+    ).trim();
+
+    setStatus("submitting");
+    setError("");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, source: "launch-list" }),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        // Fail honestly — never show "you're on the list" if it wasn't stored.
+        setError(
+          data?.error ??
+            "Couldn’t save your email. Please try again in a moment.",
+        );
+        setStatus("error");
+        return;
+      }
+      setStatus("done");
+    } catch {
+      setError("Network error. Please try again.");
+      setStatus("error");
+    }
   }
 
   return (
@@ -29,7 +57,7 @@ export default function EmailCapture() {
           </p>
         </Reveal>
 
-        {joined ? (
+        {status === "done" ? (
           <div
             role="status"
             className="rounded-2xl border border-[rgba(42,140,42,0.3)] bg-bg-alt p-[22px] font-heading text-[17px] font-bold text-green-primary"
@@ -45,16 +73,31 @@ export default function EmailCapture() {
               type="email"
               name="email"
               required
+              disabled={status === "submitting"}
               placeholder="Email address"
-              className="min-w-[220px] flex-1 rounded-full border border-[rgba(17,17,17,0.18)] bg-white px-[18px] py-4 text-[15px] text-[#111111] outline-none"
+              className="min-w-[220px] flex-1 rounded-full border border-[rgba(17,17,17,0.18)] bg-white px-[18px] py-4 text-[15px] text-[#111111] outline-none disabled:opacity-60"
             />
             <button
               type="submit"
-              className="rounded-full bg-green-primary px-7 py-4 font-heading text-[15px] font-extrabold text-white hover:bg-green-primary-hover"
+              disabled={status === "submitting"}
+              className="rounded-full bg-green-primary px-7 py-4 font-heading text-[15px] font-extrabold text-white hover:bg-green-primary-hover disabled:opacity-70"
             >
-              Join Launch List
+              {status === "submitting" ? "Joining…" : "Join Launch List"}
             </button>
           </form>
+        )}
+
+        {status === "error" && (
+          <p role="alert" className="mt-4 text-[14px] text-body-2">
+            {error} You can also email us at{" "}
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="font-semibold text-green-primary hover:underline"
+            >
+              {CONTACT_EMAIL}
+            </a>
+            .
+          </p>
         )}
       </div>
     </section>
