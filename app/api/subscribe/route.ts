@@ -44,10 +44,8 @@ export async function POST(request: Request) {
   if (!apiKey || !audienceId) {
     // Not configured (or the pasted value has no recognizable token/UUID) —
     // fail honestly instead of pretending it worked.
-    const rawKey = process.env.RESEND_API_KEY ?? "";
-    const rawAud = process.env.RESEND_AUDIENCE_ID ?? "";
     console.error(
-      `[subscribe] diag keyLen=${rawKey.length} keyHasRe=${rawKey.includes("re_")} keyMatched=${!!apiKey} audLen=${rawAud.length} audMatched=${!!audienceId}`,
+      "[subscribe] RESEND_API_KEY or RESEND_AUDIENCE_ID missing or malformed; email not stored.",
     );
     return NextResponse.json(
       { error: "Signups aren’t available right now." },
