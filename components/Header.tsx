@@ -4,6 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import AmazonButton from "./AmazonButton";
 import { navLinks } from "@/lib/constants";
+import { BLOG_POSTS } from "@/lib/blog";
+
+// The Blog link appears only once a post exists, so the nav never points at an
+// empty page. It lights up on its own the first time `blog:ingest` picks one up.
+const links =
+  BLOG_POSTS.length > 0
+    ? [...navLinks, { href: "/blog", label: "Blog" }]
+    : navLinks;
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +31,7 @@ export default function Header() {
         </Link>
 
         <nav className="hidden items-center gap-[30px] min-[881px]:flex">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -52,7 +60,7 @@ export default function Header() {
 
       {menuOpen && (
         <div className="flex flex-col border-t border-[rgba(17,17,17,0.08)] px-6 pt-1.5 pb-4 min-[881px]:hidden">
-          {navLinks.map((link) => (
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
