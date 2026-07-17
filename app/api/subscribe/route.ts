@@ -31,12 +31,21 @@ export async function POST(request: Request) {
     );
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  // These are pasted into Vercel by hand, so a value can pick up stray
+  // whitespace or even a copied emoji (a non-Latin1 char in the Authorization
+  // header throws a TypeError). Extract the well-formed token/UUID defensively
+  // so a messy paste degrades to a clean 503 instead of a crash.
+  const apiKey = (process.env.RESEND_API_KEY ?? "").match(
+    /re_[A-Za-z0-9_-]+/,
+  )?.[0];
+  const audienceId = (process.env.RESEND_AUDIENCE_ID ?? "").match(
+    /[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i,
+  )?.[0];
   if (!apiKey || !audienceId) {
-    // Not configured yet — fail honestly instead of pretending it worked.
+    // Not configured (or the pasted value has no recognizable token/UUID) —
+    // fail honestly instead of pretending it worked.
     console.error(
-      "[subscribe] RESEND_API_KEY or RESEND_AUDIENCE_ID is not set; email not stored.",
+      "[subscribe] RESEND_API_KEY or RESEND_AUDIENCE_ID missing or malformed; email not stored.",
     );
     return NextResponse.json(
       { error: "Signups aren’t available right now." },
