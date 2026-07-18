@@ -37,7 +37,7 @@ export default function AthleticVideo() {
             See It In Action
           </p>
           <h2 className="m-0 mt-3 font-heading text-[clamp(28px,4vw,44px)] leading-[1.05] font-extrabold tracking-[-0.015em] text-white">
-            Clean kicks, in 33 seconds.
+            Clean kicks, in seconds.
           </h2>
         </div>
 
