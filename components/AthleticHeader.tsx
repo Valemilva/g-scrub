@@ -10,6 +10,7 @@ import Link from "next/link";
 // a hamburger under 881px, CTA on the right.
 const athleticLinks = [
   { href: "#lineup", label: "The Line-Up" },
+  { href: "#faq", label: "FAQ" },
   { href: "#notify", label: "Launch List" },
   { href: "/golf", label: "Golf Line" },
 ];

@@ -73,8 +73,7 @@ export default function HowToUsePage() {
         </li>
         <li>
           <strong>Safe on common shoe materials.</strong> The foaming formula is
-          made for leather, synthetic, mesh, and rubber commonly used in golf
-          shoes.
+          made for synthetic, mesh, and rubber commonly used in golf shoes.
         </li>
         <li>
           <strong>Bag-friendly.</strong> The kit is compact and built to travel,

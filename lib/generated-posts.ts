@@ -6,7 +6,7 @@ export const GENERATED_POSTS: BlogPost[] = [
   {
     "slug": "grass-stains-golf-shoes",
     "title": "How to Get Grass Stains Off Golf Shoes",
-    "description": "Grass stains set fast on white golf shoes. Here's the routine that lifts them without wrecking the leather or mesh underneath.",
+    "description": "Grass stains set fast on white golf shoes. Here's the routine that lifts them without wrecking the mesh or upper underneath.",
     "date": "2026-07-18",
     "readMins": 4,
     "tags": [

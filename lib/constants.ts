@@ -109,7 +109,7 @@ export const products: Product[] = [
     longDescription:
       "The original G-SCRUB Shoe Cleaner Kit — the first product in the growing G-SCRUB system — was created for golfers who want to keep their shoes looking fresh from the course to the clubhouse. The foaming cleaner lifts dirt, grass, and course debris, and the included brush and simple foam-scrub-wipe routine make cleanup quick enough to do right at the cart.",
     features: [
-      "Powerful foaming formula — removes dirt, grass stains, and sweat without damaging leather, mesh, or synthetic materials.",
+      "Powerful foaming formula — removes dirt, grass stains, and sweat without damaging mesh, synthetic, or rubber materials.",
       "Gentle yet effective brush — ergonomic design with soft, durable bristles for tough spots while protecting your shoes.",
       "Safe for all shoe types — alcohol-free, ammonia-free, eco-friendly, and biodegradable.",
       "Quick 3-step process — apply, scrub, and wipe clean in minutes.",
@@ -223,9 +223,9 @@ export const faqItems = [
       "G-SCRUB is a premium golf gear care system — shoe care, club care, deodorizers, towels, and bundles — designed by golfers, for golfers. The first product, the Shoe Cleaner Kit, is available now on Amazon, with the rest of the line on the way.",
   },
   {
-    question: "Is G-SCRUB safe for all golf shoe materials?",
+    question: "Is G-SCRUB safe for my golf shoe materials?",
     answer:
-      "Yes. G-SCRUB is safe for leather, synthetic, mesh, and rubber materials commonly used in golf shoes.",
+      "G-SCRUB is designed for the synthetic, mesh, and rubber materials common on golf shoes. For any specialty or delicate material, we recommend spot-testing a small area first.",
   },
   {
     question: "Can I use the shoe cleaner on golf clubs?",
@@ -266,5 +266,56 @@ export const faqItems = [
     question: "Do you offer wholesale or bulk orders?",
     answer:
       "We do. Send us your business information through the Wholesale section below to get started.",
+  },
+];
+
+// Athletic Care FAQ — same structure as the golf FAQ, adapted for the
+// all-sport line. This line is PRE-LAUNCH, so answers never claim it's on
+// sale (no Amazon), and material safety never claims leather (untested).
+export const athleticFaqItems = [
+  {
+    question: "What is G-SCRUB Athletic Care?",
+    answer:
+      "G-SCRUB Athletic Care is the all-sport shoe care line from G-SCRUB — a foam cleaner, all-sport brush, and more — built for the sneakers, cleats, and trainers you actually play in. The line is launching soon; join the list to be first.",
+  },
+  {
+    question: "What shoes can I clean with it?",
+    answer:
+      "It's built for all-sport footwear — basketball shoes, running shoes, trainers, cleats, and everyday sneakers — on courts, turf, and pavement.",
+  },
+  {
+    question: "Is it safe for my shoe materials?",
+    answer:
+      "It's designed for the synthetic, mesh, knit, and rubber materials common on athletic shoes. For any specialty or delicate material, we recommend spot-testing a small area first.",
+  },
+  {
+    question: "Is it available now?",
+    answer:
+      "Not yet — the Athletic Care line is launching soon and isn't on sale yet. Join the launch list and you'll be the first to know when it drops, plus early-access pricing.",
+  },
+  {
+    question: "How does it work?",
+    answer:
+      "Same simple routine: apply the foaming cleaner, work it in with the all-sport brush, and wipe clean. Then let your shoes air dry.",
+  },
+  {
+    question: "Where is it made?",
+    answer:
+      "Proudly made in the USA, with carefully selected ingredients and strict quality control.",
+  },
+  {
+    question: "What makes it different from a regular sneaker cleaner?",
+    answer:
+      "It's built around real athletic wear — court dust, turf, field mud, and sweat — not just surface dirt, with a foaming formula and a brush made for soles, sidewalls, and mesh.",
+  },
+  {
+    question: "Will it be gym-bag friendly?",
+    answer:
+      "Yes — the bottle is designed to be compact and leak-resistant, so it travels with you to the court, the field, or the gym.",
+  },
+  {
+    question: "Do you make golf products too?",
+    answer:
+      "We do. The original G-SCRUB Golf line — shoe care, club care, and more — is live now. Head over to the Golf line to shop it.",
   },
 ];

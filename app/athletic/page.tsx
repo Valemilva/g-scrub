@@ -3,9 +3,10 @@ import Image from "next/image";
 import Link from "next/link";
 import AthleticHeader from "@/components/AthleticHeader";
 import AthleticVideo from "@/components/AthleticVideo";
+import AthleticFAQ from "@/components/AthleticFAQ";
 import AthleticNotify from "@/components/AthleticNotify";
 import Footer from "@/components/Footer";
-import { SITE_URL } from "@/lib/constants";
+import { SITE_URL, athleticFaqItems } from "@/lib/constants";
 import {
   IconFoam,
   IconBrush,
@@ -69,9 +70,25 @@ const LINEUP = [
   },
 ];
 
+// FAQ structured data — generated from athleticFaqItems so the schema always
+// matches what's rendered.
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: athleticFaqItems.map((item) => ({
+    "@type": "Question",
+    name: item.question,
+    acceptedAnswer: { "@type": "Answer", text: item.answer },
+  })),
+};
+
 export default function AthleticPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <AthleticHeader />
 
       <main className="flex-1 bg-[#0b0b0b]">
@@ -197,6 +214,9 @@ export default function AthleticPage() {
             </Link>
           </div>
         </section>
+
+        {/* ===== FAQ ===== */}
+        <AthleticFAQ />
 
         {/* ===== Launch list ===== */}
         <section
