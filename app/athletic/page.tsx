@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AthleticHeader from "@/components/AthleticHeader";
+import AthleticVideo from "@/components/AthleticVideo";
 import AthleticNotify from "@/components/AthleticNotify";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/constants";
@@ -130,6 +131,9 @@ export default function AthleticPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== Brand film ===== */}
+        <AthleticVideo />
 
         {/* ===== Line-up ===== */}
         <section
