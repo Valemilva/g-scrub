@@ -190,7 +190,11 @@ summary {
   from { transform: scale(1.02); }
   to { transform: scale(1.09); }
 }
-.gw-kenburns {
+/* The drift only starts once .gw-live lands on the gateway root (one frame
+ * after mount): animating two full-screen layers from the first frame forces
+ * a giant GPU raster that can hold the whole hero on a black frame for
+ * seconds. Painting static first, then animating, avoids the stall. */
+.gw-live .gw-kenburns {
   animation: gwKenburns 28s ease-in-out infinite alternate;
 }
 @keyframes gwFade {

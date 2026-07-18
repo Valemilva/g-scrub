@@ -62,12 +62,19 @@ function trackChoice(line: "golf" | "athletic") {
 
 export default function BrandGateway() {
   const [hover, setHover] = useState<Side>(null);
+  // Ken Burns starts only after the first static paint (see .gw-live in CSS).
+  const [live, setLive] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     const hash = window.location.hash;
     if (GOLF_ANCHORS.includes(hash)) router.replace(`/golf${hash}`);
   }, [router]);
+
+  useEffect(() => {
+    const t = setTimeout(() => setLive(true), 600);
+    return () => clearTimeout(t);
+  }, []);
 
   const shift = hover === "golf" ? SHIFT : hover === "athletic" ? -SHIFT : 0;
   const top = SEAM_TOP + shift;
@@ -87,7 +94,9 @@ export default function BrandGateway() {
         : "brightness(1)";
 
   return (
-    <main className="h-[100dvh] w-full overflow-hidden bg-[#06090c]">
+    <main
+      className={`h-[100dvh] w-full overflow-hidden bg-[#06090c] ${live ? "gw-live" : ""}`}
+    >
       {/* ===== Desktop: one composed image, diagonal split, animated seam ===== */}
       <div className="relative hidden h-full md:block">
         <div className="gw-fade absolute inset-0">
