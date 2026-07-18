@@ -73,21 +73,18 @@ export default function AthleticPage() {
       {/* Athletic top bar — dark variant, separate from the golf Header. */}
       <header className="sticky top-0 z-[60] border-b border-white/10 bg-[rgba(6,10,14,0.82)] backdrop-blur-md">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-[13px]">
-          {/* Real G-SCRUB logo on a white plate so the black "G-S" of the
-              wordmark stays legible over the dark Athletic header, plus the
-              cyan sub-brand tag. */}
+          {/* Real G-SCRUB wordmark on a white plate so the black "G-S" stays
+              legible over the dark Athletic header, plus the cyan sub-brand tag.
+              No separate green G — the wordmark already opens with the G. */}
           <Link href="/" className="flex items-center gap-2.5 no-underline">
-            <span className="flex items-center gap-1.5 rounded-[10px] bg-white px-2.5 py-1.5">
-              <span className="font-heading text-[24px] leading-none font-black text-green-primary">
-                G
-              </span>
+            <span className="flex items-center rounded-[10px] bg-white px-3 py-1.5">
               <Image
                 src="/images/gscrub-wordmark.webp"
                 alt="G-SCRUB"
                 width={900}
                 height={205}
                 priority
-                className="h-[20px] w-auto"
+                className="h-[22px] w-auto"
               />
             </span>
             <span className="hidden text-[10px] font-extrabold tracking-[0.28em] text-[#4fc7ec] uppercase sm:block">

@@ -12,20 +12,17 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[60] border-b border-[rgba(17,17,17,0.1)] bg-[rgba(255,255,255,0.85)] backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-[13px]">
-        {/* Official lockup (new logo, Jul 2026): standalone green G letterform
-            + the real G-SCRUB wordmark artwork (bubbly CRUB). The wordmark PNG
-            has a transparent background so it sits cleanly on the light header. */}
-        <Link href="/" className="flex items-center gap-2 no-underline">
-          <span className="font-heading text-[32px] leading-none font-black text-green-primary">
-            G
-          </span>
+        {/* Official G-SCRUB wordmark artwork (bubbly CRUB), transparent bg so
+            it sits cleanly on the light header. No separate green G letterform —
+            the wordmark already opens with the G, so a leading G read redundant. */}
+        <Link href="/" className="flex items-center no-underline">
           <Image
             src="/images/gscrub-wordmark.webp"
             alt="G-SCRUB"
             width={900}
             height={205}
             priority
-            className="h-[26px] w-auto"
+            className="h-[28px] w-auto"
           />
         </Link>
 
