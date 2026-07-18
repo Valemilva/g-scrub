@@ -1,18 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-
-type Side = "golf" | "athletic" | null;
-
-// Diagonal seam of the hero artwork, as % of width at the top / bottom edges.
-// These match where the light-streak divider sits inside the composed image.
-const SEAM_TOP = 56.5;
-const SEAM_BOTTOM = 40.5;
-// How far the seam slides toward the other side when a side is hovered.
-const SHIFT = 6.5;
 
 // Old home-page anchors (/#products etc.) now live on /golf — forward them so
 // every link shared before the gateway existed keeps working.
@@ -37,15 +28,51 @@ const BLUR_ATHLETIC =
   "data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAADwBgCdASocACcAPu1qrVEppaQipWzJMB2JQBdgtySpk4CV9ZS38IXaKSOBp85xOv9gHemxbLklaIfXIWbdGToAAP71fTBNrpfckVFMwKb3m4nO8iC7CspaL+stIHE0/105hD5s637CJh2cW30use9tp+RjhfqYcbg/sjQ98qvzkzFcBUnIOB8NVMVSMhvEAkXq8NspIp3hd3SbNHGvvrGixlkf9xF0u2L9ALNgLY8+8GKBNeQPBuKUUeFiIoy+HVsKDz8OUcRbzFk5LJW4iqjAsFIPaFxHaV3iNSGvojqUlZc20i3V/4rWQdplbpKvPPMBstli4Mjar2atvBxIDkfUQwXtRJ4E6WzEARTeCGU9HB7Ma8g36Tk+ARsFb/dKJ0iXetpQwFoVVJ2rQ1omxWy+v4PhPplkw+JSAO6I606U2K4whJr8W3tEl4AAAA==";
 
 // Deterministic bubble field (no Math.random — avoids hydration mismatch).
+// Spread across the whole viewport, denser near the center seam; roughly half
+// sway sideways while rising for a more natural soap-bubble feel.
 const BUBBLES = [
-  { left: "46%", size: 14, duration: 16, delay: 0 },
-  { left: "50%", size: 9, duration: 13, delay: 2.5 },
-  { left: "48%", size: 20, duration: 19, delay: 5 },
-  { left: "53%", size: 11, duration: 15, delay: 8 },
-  { left: "44%", size: 8, duration: 12, delay: 10.5 },
-  { left: "51%", size: 16, duration: 18, delay: 13 },
-  { left: "47%", size: 10, duration: 14, delay: 15.5 },
+  { left: "4%", size: 9, duration: 19, delay: 1, sway: true },
+  { left: "9%", size: 14, duration: 22, delay: 6, sway: false },
+  { left: "15%", size: 7, duration: 16, delay: 11, sway: true },
+  { left: "21%", size: 11, duration: 20, delay: 3, sway: false },
+  { left: "27%", size: 8, duration: 15, delay: 14, sway: true },
+  { left: "33%", size: 16, duration: 23, delay: 8, sway: false },
+  { left: "38%", size: 10, duration: 17, delay: 0.5, sway: true },
+  { left: "43%", size: 13, duration: 18, delay: 12, sway: false },
+  { left: "46%", size: 18, duration: 21, delay: 4, sway: true },
+  { left: "49%", size: 8, duration: 14, delay: 9, sway: false },
+  { left: "52%", size: 22, duration: 24, delay: 2, sway: true },
+  { left: "55%", size: 12, duration: 16, delay: 15, sway: false },
+  { left: "60%", size: 9, duration: 18, delay: 7, sway: true },
+  { left: "66%", size: 15, duration: 21, delay: 0, sway: false },
+  { left: "71%", size: 7, duration: 15, delay: 10, sway: true },
+  { left: "77%", size: 12, duration: 19, delay: 5, sway: false },
+  { left: "83%", size: 10, duration: 17, delay: 13, sway: true },
+  { left: "89%", size: 16, duration: 22, delay: 3.5, sway: false },
+  { left: "94%", size: 8, duration: 16, delay: 8.5, sway: true },
+  { left: "97%", size: 12, duration: 20, delay: 12.5, sway: false },
 ];
+
+// Shared renderer so desktop and mobile draw the exact same field.
+function BubbleField() {
+  return (
+    <div className="pointer-events-none absolute inset-0 z-10">
+      {BUBBLES.map((b, i) => (
+        <span
+          key={i}
+          className={b.sway ? "gw-bubble gw-bubble-sway" : "gw-bubble"}
+          style={{
+            left: b.left,
+            width: b.size,
+            height: b.size,
+            animationDuration: `${b.duration}s`,
+            animationDelay: `${b.delay}s`,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 function trackChoice(line: "golf" | "athletic") {
   try {
@@ -61,7 +88,6 @@ function trackChoice(line: "golf" | "athletic") {
 }
 
 export default function BrandGateway() {
-  const [hover, setHover] = useState<Side>(null);
   const router = useRouter();
 
   useEffect(() => {
@@ -69,19 +95,10 @@ export default function BrandGateway() {
     if (GOLF_ANCHORS.includes(hash)) router.replace(`/golf${hash}`);
   }, [router]);
 
-  const shift = hover === "golf" ? SHIFT : hover === "athletic" ? -SHIFT : 0;
-  const top = SEAM_TOP + shift;
-  const bottom = SEAM_BOTTOM + shift;
-
-  // Dimming is done with solid overlays (cheap compositor quads), NOT CSS
-  // filters on the image layers — full-screen filters forced a multi-second
-  // software raster on slower machines and the hero opened on black.
-  const golfDim = hover === "athletic" ? 0.62 : 0;
-  const athleticDim = hover === "golf" ? 0.66 : 0;
-
   return (
     <main className="h-[100dvh] w-full overflow-hidden bg-[#06090c]">
-      {/* ===== Desktop: one composed image, diagonal split, animated seam ===== */}
+      {/* ===== Desktop: the composed split hero; hover feedback lives on the
+          CTA cards only (a side-to-side dim overlay was tried and cut). ===== */}
       <div className="relative hidden h-full md:block">
         <div className="absolute inset-0">
           {/* Base layer: the full composed image, untouched (no filters).
@@ -110,46 +127,11 @@ export default function BrandGateway() {
             />
           </div>
 
-          {/* Side dimmers — solid overlays clipped to each side of the seam.
-              The seam position (and both clip edges) animates on hover. */}
-          <div
-            className="absolute inset-0 bg-black"
-            style={{
-              clipPath: `polygon(0 0, ${top}% 0, ${bottom}% 100%, 0 100%)`,
-              opacity: golfDim,
-              transition:
-                "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease",
-            }}
-          />
-          <div
-            className="absolute inset-0 bg-black"
-            style={{
-              clipPath: `polygon(${top}% 0, 100% 0, 100% 100%, ${bottom}% 100%)`,
-              opacity: athleticDim,
-              transition:
-                "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease",
-            }}
-          />
-
           {/* Readability scrim for the CTA row. */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
 
-          {/* Soap bubbles drifting up along the seam. */}
-          <div className="pointer-events-none absolute inset-0">
-            {BUBBLES.map((b, i) => (
-              <span
-                key={i}
-                className="gw-bubble"
-                style={{
-                  left: b.left,
-                  width: b.size,
-                  height: b.size,
-                  animationDuration: `${b.duration}s`,
-                  animationDelay: `${b.delay}s`,
-                }}
-              />
-            ))}
-          </div>
+          {/* Soap bubbles rising across the whole screen. */}
+          <BubbleField />
         </div>
 
         {/* Entrance curtain — fades out over the already-painted hero. */}
@@ -172,10 +154,6 @@ export default function BrandGateway() {
           href="/golf"
           aria-label="Enter G-SCRUB Golf — Clean Shoes. Better Game."
           className="group absolute inset-y-0 left-0 z-20 w-[48.5%] outline-none"
-          onMouseEnter={() => setHover("golf")}
-          onMouseLeave={() => setHover(null)}
-          onFocus={() => setHover("golf")}
-          onBlur={() => setHover(null)}
           onClick={() => trackChoice("golf")}
         >
           <div
@@ -205,10 +183,6 @@ export default function BrandGateway() {
           href="/athletic"
           aria-label="Enter G-SCRUB Athletic Care — Built for Performance."
           className="group absolute inset-y-0 right-0 z-20 w-[51.5%] outline-none"
-          onMouseEnter={() => setHover("athletic")}
-          onMouseLeave={() => setHover(null)}
-          onFocus={() => setHover("athletic")}
-          onBlur={() => setHover(null)}
           onClick={() => trackChoice("athletic")}
         >
           <div
@@ -291,6 +265,9 @@ export default function BrandGateway() {
           />
         </div>
         <div className="pointer-events-none absolute left-0 right-0 top-1/2 z-20 h-[2px] -translate-y-1/2 bg-gradient-to-r from-green-primary via-white/80 to-[#18b7e6]" />
+
+        {/* Soap bubbles rising over both panels. */}
+        <BubbleField />
 
         <Link
           href="/athletic"
