@@ -84,7 +84,19 @@ export default function BrandGateway() {
       {/* ===== Desktop: one composed image, diagonal split, animated seam ===== */}
       <div className="relative hidden h-full md:block">
         <div className="absolute inset-0">
-          {/* Base layer: the full composed image, untouched (no filters). */}
+          {/* Base layer: the full composed image, untouched (no filters).
+              A persistent blurred backdrop sits underneath: next/image drops
+              its own blur on `load`, but painting waits for DECODE — on slow
+              machines that gap showed pure black. This div never goes away;
+              the sharp image simply paints over it. */}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${BLUR_HERO})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
           <div className="absolute inset-0">
             <Image
               src="/images/gateway-hero.webp"
@@ -231,6 +243,14 @@ export default function BrandGateway() {
           className="group relative flex-1 overflow-hidden outline-none"
           onClick={() => trackChoice("golf")}
         >
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${BLUR_GOLF})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
           <div className="absolute inset-0">
             <Image
               src="/images/gateway-golf-half.webp"
@@ -278,6 +298,14 @@ export default function BrandGateway() {
           className="group relative flex-1 overflow-hidden outline-none"
           onClick={() => trackChoice("athletic")}
         >
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${BLUR_ATHLETIC})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
           <div className="absolute inset-0">
             <Image
               src="/images/gateway-athletic-half.webp"
