@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import AthleticHeader from "@/components/AthleticHeader";
 import AthleticNotify from "@/components/AthleticNotify";
 import Footer from "@/components/Footer";
 import { SITE_URL } from "@/lib/constants";
@@ -70,44 +71,7 @@ const LINEUP = [
 export default function AthleticPage() {
   return (
     <>
-      {/* Athletic top bar — dark variant, separate from the golf Header. */}
-      <header className="sticky top-0 z-[60] border-b border-white/10 bg-[rgba(6,10,14,0.82)] backdrop-blur-md">
-        <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-[13px]">
-          {/* Real G-SCRUB wordmark on a white plate so the black "G-S" stays
-              legible over the dark Athletic header, plus the cyan sub-brand tag.
-              No separate green G — the wordmark already opens with the G. */}
-          <Link href="/" className="flex items-center gap-2.5 no-underline">
-            <span className="flex items-center rounded-[10px] bg-white px-3 py-1.5">
-              <Image
-                src="/images/gscrub-wordmark.webp"
-                alt="G-SCRUB"
-                width={900}
-                height={205}
-                priority
-                className="h-[22px] w-auto"
-              />
-            </span>
-            <span className="hidden text-[10px] font-extrabold tracking-[0.28em] text-[#4fc7ec] uppercase sm:block">
-              Athletic Care
-            </span>
-          </Link>
-
-          <nav className="flex items-center gap-3 sm:gap-5">
-            <Link
-              href="/golf"
-              className="hidden text-[14px] font-semibold text-white/70 no-underline hover:text-white sm:block"
-            >
-              Golf Line
-            </Link>
-            <a
-              href="#notify"
-              className="rounded-full bg-[#18b7e6] px-5 py-[11px] font-heading text-sm font-extrabold text-[#04121a] no-underline hover:bg-[#3cc6ef]"
-            >
-              Get Launch Updates
-            </a>
-          </nav>
-        </div>
-      </header>
+      <AthleticHeader />
 
       <main className="flex-1 bg-[#0b0b0b]">
         {/* ===== Hero ===== */}
@@ -168,7 +132,10 @@ export default function AthleticPage() {
         </section>
 
         {/* ===== Line-up ===== */}
-        <section className="athletic-grid border-t border-white/[0.06] py-[clamp(60px,8vw,110px)]">
+        <section
+          id="lineup"
+          className="athletic-grid scroll-mt-20 border-t border-white/[0.06] py-[clamp(60px,8vw,110px)]"
+        >
           <div className="mx-auto max-w-[1100px] px-6">
             <p className="m-0 text-center text-[12px] font-extrabold tracking-[0.3em] text-[#4fc7ec] uppercase">
               The Line-Up
@@ -230,7 +197,7 @@ export default function AthleticPage() {
         {/* ===== Launch list ===== */}
         <section
           id="notify"
-          className="border-t border-white/[0.06] py-[clamp(60px,8vw,110px)]"
+          className="scroll-mt-20 border-t border-white/[0.06] py-[clamp(60px,8vw,110px)]"
         >
           <div className="mx-auto max-w-[640px] px-6 text-center">
             <p className="m-0 text-[12px] font-extrabold tracking-[0.3em] text-[#4fc7ec] uppercase">
