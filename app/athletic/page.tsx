@@ -113,6 +113,8 @@ export default function AthleticPage() {
               alt=""
               fill
               priority
+              placeholder="blur"
+              blurDataURL="data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAADwBgCdASocACcAPu1qrVEppaQipWzJMB2JQBdgtySpk4CV9ZS38IXaKSOBp85xOv9gHemxbLklaIfXIWbdGToAAP71fTBNrpfckVFMwKb3m4nO8iC7CspaL+stIHE0/105hD5s637CJh2cW30use9tp+RjhfqYcbg/sjQ98qvzkzFcBUnIOB8NVMVSMhvEAkXq8NspIp3hd3SbNHGvvrGixlkf9xF0u2L9ALNgLY8+8GKBNeQPBuKUUeFiIoy+HVsKDz8OUcRbzFk5LJW4iqjAsFIPaFxHaV3iNSGvojqUlZc20i3V/4rWQdplbpKvPPMBstli4Mjar2atvBxIDkfUQwXtRJ4E6WzEARTeCGU9HB7Ma8g36Tk+ARsFb/dKJ0iXetpQwFoVVJ2rQ1omxWy+v4PhPplkw+JSAO6I606U2K4whJr8W3tEl4AAAA=="
               sizes="100vw"
               className="object-cover object-[70%_center]"
             />

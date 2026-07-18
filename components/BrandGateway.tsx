@@ -27,6 +27,15 @@ const GOLF_ANCHORS = [
   "#faq",
 ];
 
+// Inline blur placeholders: the composed hero takes a moment to decode on
+// slower machines, and without these the gateway opens on a black frame.
+const BLUR_HERO =
+  "data:image/webp;base64,UklGRs4AAABXRUJQVlA4IMIAAABQBACdASocABAAPu1iqU2ppaOiMAgBMB2JYgC7AYxE3mLqsSgrsWaTjKGAAP7n+7MTJoCMvfh45T46YGwX7ipG4D5RPDEQKJfProUHH2qduY1hbsnj6gmWJgKFG5q+KFWHBuxTlwZepn2MfzkvuHqz0AsKQaarvGt7/cbigw7JKHJ5ib79j7C04UA2hk8GpWgSsEEA5peAbRZUKatMY/u4N5yM0GoLeLf6lsHMi3Au3vsB0YAdPVfyidyLZILAYQAAAA==";
+const BLUR_GOLF =
+  "data:image/webp;base64,UklGRkgBAABXRUJQVlA4IDwBAAAQBwCdASocACcAPu1wr1MppiQipWmZMB2JYgC/Od2viMMkEKzJ+cgcGe3fNPD7h1VBOmm1kbJ1+Yp6advM2DuHQAD++AR15JsSvjV5gSf232nkJc6ENrmaAbcqUxcUrfmUVTVlOKiE9ayPrWbkr88l3Ovta223tm4R33Zpbgl1+H9zPfaa1mgGNw/zvfhBfh6U8p/JSGUiWPRMgMnP4oshv+bADgH5/eNLXTph1wIOnAYGt1dvVxZExAhrnqBCwOgkHHwS1uB28hlRkloTJRgVH2AP8Qu7auHqUYbSQ3952LuEcJAVj0bj6MKXkhgrcdmvOoo3teXUEGW9M559+JP829qYrDfZnwWCC1M3tCxh1c1Rco3tCtFbJ4IACRkA+Xjh4I3JMCEKfZtjXYxB3YgcdBW0p5j36WHOAAAA";
+const BLUR_ATHLETIC =
+  "data:image/webp;base64,UklGRlgBAABXRUJQVlA4IEwBAADwBgCdASocACcAPu1qrVEppaQipWzJMB2JQBdgtySpk4CV9ZS38IXaKSOBp85xOv9gHemxbLklaIfXIWbdGToAAP71fTBNrpfckVFMwKb3m4nO8iC7CspaL+stIHE0/105hD5s637CJh2cW30use9tp+RjhfqYcbg/sjQ98qvzkzFcBUnIOB8NVMVSMhvEAkXq8NspIp3hd3SbNHGvvrGixlkf9xF0u2L9ALNgLY8+8GKBNeQPBuKUUeFiIoy+HVsKDz8OUcRbzFk5LJW4iqjAsFIPaFxHaV3iNSGvojqUlZc20i3V/4rWQdplbpKvPPMBstli4Mjar2atvBxIDkfUQwXtRJ4E6WzEARTeCGU9HB7Ma8g36Tk+ARsFb/dKJ0iXetpQwFoVVJ2rQ1omxWy+v4PhPplkw+JSAO6I606U2K4whJr8W3tEl4AAAA==";
+
 // Deterministic bubble field (no Math.random — avoids hydration mismatch).
 const BUBBLES = [
   { left: "46%", size: 14, duration: 16, delay: 0 },
@@ -90,6 +99,8 @@ export default function BrandGateway() {
             <div className="gw-kenburns absolute inset-0">
               <Image
                 src="/images/gateway-hero.webp"
+                placeholder="blur"
+                blurDataURL={BLUR_HERO}
                 alt=""
                 fill
                 priority
@@ -115,6 +126,8 @@ export default function BrandGateway() {
             <div className="gw-kenburns absolute inset-0">
               <Image
                 src="/images/gateway-hero.webp"
+                placeholder="blur"
+                blurDataURL={BLUR_HERO}
                 alt=""
                 fill
                 priority
@@ -235,6 +248,8 @@ export default function BrandGateway() {
           <div className="gw-kenburns absolute inset-0">
             <Image
               src="/images/gateway-golf-half.webp"
+              placeholder="blur"
+              blurDataURL={BLUR_GOLF}
               alt=""
               fill
               priority
@@ -280,6 +295,8 @@ export default function BrandGateway() {
           <div className="gw-kenburns absolute inset-0">
             <Image
               src="/images/gateway-athletic-half.webp"
+              placeholder="blur"
+              blurDataURL={BLUR_ATHLETIC}
               alt=""
               fill
               priority

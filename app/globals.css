@@ -192,7 +192,6 @@ summary {
 }
 .gw-kenburns {
   animation: gwKenburns 28s ease-in-out infinite alternate;
-  will-change: transform;
 }
 @keyframes gwFade {
   from { opacity: 0; }
