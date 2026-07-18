@@ -4,14 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import AmazonButton from "./AmazonButton";
 import { navLinks } from "@/lib/constants";
-import { BLOG_POSTS } from "@/lib/blog";
-
-// The Blog link appears only once a post exists, so the nav never points at an
-// empty page. It lights up on its own the first time `blog:ingest` picks one up.
-const links =
-  BLOG_POSTS.length > 0
-    ? [...navLinks, { href: "/blog", label: "Blog" }]
-    : navLinks;
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -19,19 +11,21 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-[60] border-b border-[rgba(17,17,17,0.1)] bg-[rgba(255,255,255,0.85)] backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-[13px]">
-        {/* Official lockup: standalone green G letterform (no container box)
-            + black wordmark on one line. Per Brand System v1.1 logo rules. */}
+        {/* Official lockup (new logo, Jul 2026): standalone green G letterform
+            + wordmark where "G-S" is ink and "CRUB" is the brand blue — the
+            crisp text recreation of the bubbles logo artwork. */}
         <Link href="/" className="flex items-center gap-2 no-underline">
           <span className="font-heading text-[32px] leading-none font-black text-green-primary">
             G
           </span>
-          <span className="font-heading text-[21px] font-black tracking-[0.01em] whitespace-nowrap text-ink">
-            G-SCRUB
+          <span className="font-heading text-[21px] font-black tracking-[0.01em] whitespace-nowrap">
+            <span className="text-ink">G-S</span>
+            <span className="text-[#1E9BE9]">CRUB</span>
           </span>
         </Link>
 
         <nav className="hidden items-center gap-[30px] min-[881px]:flex">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -60,7 +54,7 @@ export default function Header() {
 
       {menuOpen && (
         <div className="flex flex-col border-t border-[rgba(17,17,17,0.08)] px-6 pt-1.5 pb-4 min-[881px]:hidden">
-          {links.map((link) => (
+          {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}

@@ -1,0 +1,309 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+
+type Side = "golf" | "athletic" | null;
+
+// Diagonal seam of the hero artwork, as % of width at the top / bottom edges.
+// These match where the light-streak divider sits inside the composed image.
+const SEAM_TOP = 56.5;
+const SEAM_BOTTOM = 40.5;
+// How far the seam slides toward the other side when a side is hovered.
+const SHIFT = 6.5;
+
+// Old home-page anchors (/#products etc.) now live on /golf — forward them so
+// every link shared before the gateway existed keeps working.
+const GOLF_ANCHORS = [
+  "#products",
+  "#how",
+  "#story",
+  "#lineup",
+  "#wholesale",
+  "#solution",
+  "#launch",
+  "#faq",
+];
+
+// Deterministic bubble field (no Math.random — avoids hydration mismatch).
+const BUBBLES = [
+  { left: "46%", size: 14, duration: 16, delay: 0 },
+  { left: "50%", size: 9, duration: 13, delay: 2.5 },
+  { left: "48%", size: 20, duration: 19, delay: 5 },
+  { left: "53%", size: 11, duration: 15, delay: 8 },
+  { left: "44%", size: 8, duration: 12, delay: 10.5 },
+  { left: "51%", size: 16, duration: 18, delay: 13 },
+  { left: "47%", size: 10, duration: 14, delay: 15.5 },
+];
+
+function trackChoice(line: "golf" | "athletic") {
+  try {
+    // GA4 custom event — shows up alongside enhanced-measurement data.
+    (
+      window as unknown as {
+        gtag?: (...args: unknown[]) => void;
+      }
+    ).gtag?.("event", "select_brand_line", { line });
+  } catch {
+    // Analytics must never block navigation.
+  }
+}
+
+export default function BrandGateway() {
+  const [hover, setHover] = useState<Side>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const hash = window.location.hash;
+    if (GOLF_ANCHORS.includes(hash)) router.replace(`/golf${hash}`);
+  }, [router]);
+
+  const shift = hover === "golf" ? SHIFT : hover === "athletic" ? -SHIFT : 0;
+  const top = SEAM_TOP + shift;
+  const bottom = SEAM_BOTTOM + shift;
+
+  const golfFilter =
+    hover === "athletic"
+      ? "brightness(0.45) saturate(0.55)"
+      : hover === "golf"
+        ? "brightness(1.07) saturate(1.06)"
+        : "brightness(0.97)";
+  const athleticFilter =
+    hover === "golf"
+      ? "brightness(0.4) saturate(0.5)"
+      : hover === "athletic"
+        ? "brightness(1.08) saturate(1.05)"
+        : "brightness(1)";
+
+  return (
+    <main className="h-[100dvh] w-full overflow-hidden bg-[#06090c]">
+      {/* ===== Desktop: one composed image, diagonal split, animated seam ===== */}
+      <div className="relative hidden h-full md:block">
+        <div className="gw-fade absolute inset-0">
+          {/* Golf layer (base). */}
+          <div
+            className="absolute inset-0"
+            style={{ filter: golfFilter, transition: "filter 0.65s ease" }}
+          >
+            <div className="gw-kenburns absolute inset-0">
+              <Image
+                src="/images/gateway-hero.webp"
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Athletic layer above — same image, clipped past the seam. No
+              CSS glow on the edge: the artwork's own light streak marks the
+              divider, and a full-viewport drop-shadow filter proved expensive
+              enough that Chrome painted the whole layer black. */}
+          <div
+            className="absolute inset-0"
+            style={{
+              clipPath: `polygon(${top}% 0, 100% 0, 100% 100%, ${bottom}% 100%)`,
+              filter: athleticFilter,
+              transition:
+                "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease",
+            }}
+          >
+            <div className="gw-kenburns absolute inset-0">
+              <Image
+                src="/images/gateway-hero.webp"
+                alt=""
+                fill
+                priority
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
+          </div>
+
+          {/* Readability scrim for the CTA row. */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
+
+          {/* Soap bubbles drifting up along the seam. */}
+          <div className="pointer-events-none absolute inset-0">
+            {BUBBLES.map((b, i) => (
+              <span
+                key={i}
+                className="gw-bubble"
+                style={{
+                  left: b.left,
+                  width: b.size,
+                  height: b.size,
+                  animationDuration: `${b.duration}s`,
+                  animationDelay: `${b.delay}s`,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Choose chip under the composed center logo. */}
+        <div
+          className="gw-rise pointer-events-none absolute left-1/2 top-[65%] z-30 -translate-x-1/2"
+          style={{ animationDelay: "0.85s" }}
+        >
+          <p className="m-0 flex items-center gap-3 text-[12px] font-extrabold tracking-[0.34em] text-white/85 uppercase">
+            <span className="h-px w-9 bg-gradient-to-r from-transparent to-white/70" />
+            Choose your side
+            <span className="h-px w-9 bg-gradient-to-l from-transparent to-white/70" />
+          </p>
+        </div>
+
+        {/* Golf half. */}
+        <Link
+          href="/golf"
+          aria-label="Enter G-SCRUB Golf — Clean Shoes. Better Game."
+          className="group absolute inset-y-0 left-0 z-20 w-[48.5%] outline-none"
+          onMouseEnter={() => setHover("golf")}
+          onMouseLeave={() => setHover(null)}
+          onFocus={() => setHover("golf")}
+          onBlur={() => setHover(null)}
+          onClick={() => trackChoice("golf")}
+        >
+          <div
+            className="gw-rise absolute bottom-12 left-[clamp(24px,4vw,64px)] w-[clamp(280px,26vw,380px)] rounded-2xl border border-white/15 bg-[rgba(8,14,8,0.42)] p-6 backdrop-blur-md transition-all duration-500 group-hover:-translate-y-2 group-hover:border-[rgba(96,200,96,0.6)] group-hover:bg-[rgba(8,16,8,0.6)] group-focus-visible:ring-2 group-focus-visible:ring-white"
+            style={{ animationDelay: "0.45s" }}
+          >
+            <p className="m-0 text-[11.5px] font-extrabold tracking-[0.3em] text-[#7fd47f] uppercase">
+              Golf
+            </p>
+            <h2 className="m-0 mt-1.5 font-heading text-[clamp(21px,1.9vw,27px)] leading-[1.12] font-black text-white">
+              Clean Shoes.
+              <br />
+              Better Game.
+            </h2>
+            <p className="m-0 mt-2 text-[13.5px] leading-[1.55] text-white/75">
+              The original golf cleaning system — shoes, clubs, and gear.
+            </p>
+            <span className="mt-4 inline-flex items-center gap-2 rounded-full bg-green-primary px-5 py-2.5 font-heading text-[13.5px] font-extrabold text-white transition-all duration-300 group-hover:gap-3.5 group-hover:bg-green-primary-hover">
+              Enter Golf
+              <span aria-hidden>→</span>
+            </span>
+          </div>
+        </Link>
+
+        {/* Athletic half. */}
+        <Link
+          href="/athletic"
+          aria-label="Enter G-SCRUB Athletic Care — Built for Performance."
+          className="group absolute inset-y-0 right-0 z-20 w-[51.5%] outline-none"
+          onMouseEnter={() => setHover("athletic")}
+          onMouseLeave={() => setHover(null)}
+          onFocus={() => setHover("athletic")}
+          onBlur={() => setHover(null)}
+          onClick={() => trackChoice("athletic")}
+        >
+          <div
+            className="gw-rise absolute bottom-12 right-[clamp(24px,4vw,64px)] w-[clamp(280px,26vw,380px)] rounded-2xl border border-white/15 bg-[rgba(5,10,16,0.45)] p-6 text-right backdrop-blur-md transition-all duration-500 group-hover:-translate-y-2 group-hover:border-[rgba(24,183,230,0.65)] group-hover:bg-[rgba(5,12,20,0.62)] group-focus-visible:ring-2 group-focus-visible:ring-white"
+            style={{ animationDelay: "0.6s" }}
+          >
+            <p className="m-0 text-[11.5px] font-extrabold tracking-[0.3em] text-[#4fc7ec] uppercase">
+              Athletic Care
+            </p>
+            <h2 className="m-0 mt-1.5 font-heading text-[clamp(21px,1.9vw,27px)] leading-[1.12] font-black text-white">
+              Built for
+              <br />
+              Performance.
+            </h2>
+            <p className="m-0 mt-2 text-[13.5px] leading-[1.55] text-white/75">
+              All-sport shoe care for courts, turf, and training.
+            </p>
+            <span className="gw-pulse mt-4 inline-flex items-center gap-2 rounded-full bg-[#18b7e6] px-5 py-2.5 font-heading text-[13.5px] font-extrabold text-[#04121a] transition-all duration-300 group-hover:gap-3.5 group-hover:bg-[#3cc6ef]">
+              Enter Athletic
+              <span aria-hidden>→</span>
+            </span>
+          </div>
+        </Link>
+      </div>
+
+      {/* ===== Mobile: stacked panels (logo-free crops) + center brand badge ===== */}
+      <div className="relative flex h-full flex-col md:hidden">
+        <Link
+          href="/golf"
+          aria-label="Enter G-SCRUB Golf"
+          className="group relative flex-1 overflow-hidden outline-none"
+          onClick={() => trackChoice("golf")}
+        >
+          <div className="gw-kenburns absolute inset-0">
+            <Image
+              src="/images/gateway-golf-half.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-black/30" />
+          <div
+            className="gw-rise absolute inset-x-0 bottom-9 px-6 text-center"
+            style={{ animationDelay: "0.35s" }}
+          >
+            <p className="m-0 text-[11px] font-extrabold tracking-[0.3em] text-[#7fd47f] uppercase">
+              Golf
+            </p>
+            <h2 className="m-0 mt-1 font-heading text-[24px] font-black text-white">
+              Clean Shoes. Better Game.
+            </h2>
+            <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-green-primary px-5 py-2.5 font-heading text-[13.5px] font-extrabold text-white">
+              Enter Golf <span aria-hidden>→</span>
+            </span>
+          </div>
+        </Link>
+
+        {/* Brand badge over the split. */}
+        <div className="gw-fade pointer-events-none absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white px-5 py-3.5 shadow-[0_10px_40px_rgba(0,0,0,0.45)]">
+          <Image
+            src="/images/gscrub-logo-new.webp"
+            alt="G-SCRUB"
+            width={132}
+            height={75}
+            priority
+          />
+        </div>
+        <div className="pointer-events-none absolute left-0 right-0 top-1/2 z-20 h-[2px] -translate-y-1/2 bg-gradient-to-r from-green-primary via-white/80 to-[#18b7e6]" />
+
+        <Link
+          href="/athletic"
+          aria-label="Enter G-SCRUB Athletic Care"
+          className="group relative flex-1 overflow-hidden outline-none"
+          onClick={() => trackChoice("athletic")}
+        >
+          <div className="gw-kenburns absolute inset-0">
+            <Image
+              src="/images/gateway-athletic-half.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-black/35" />
+          <div
+            className="gw-rise absolute inset-x-0 bottom-9 px-6 text-center"
+            style={{ animationDelay: "0.5s" }}
+          >
+            <p className="m-0 text-[11px] font-extrabold tracking-[0.3em] text-[#4fc7ec] uppercase">
+              Athletic Care
+            </p>
+            <h2 className="m-0 mt-1 font-heading text-[24px] font-black text-white">
+              Built for Performance.
+            </h2>
+            <span className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#18b7e6] px-5 py-2.5 font-heading text-[13.5px] font-extrabold text-[#04121a]">
+              Enter Athletic <span aria-hidden>→</span>
+            </span>
+          </div>
+        </Link>
+      </div>
+    </main>
+  );
+}

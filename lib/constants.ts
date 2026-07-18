@@ -193,14 +193,17 @@ export function getProductBySlug(slug: string): Product | undefined {
   return products.find((p) => p.slug === slug);
 }
 
-// Nav anchors use the "/#id" form so they work from subpages (legal pages,
-// etc.) — clicking returns to the home page and scrolls to the section.
+// Nav anchors use the "/golf#id" form so they work from subpages (legal
+// pages, etc.) — the golf-line home lives at /golf now that the front page
+// is the two-line brand gateway.
 export const navLinks = [
-  { href: "/#products", label: "Products" },
-  { href: "/#how", label: "How It Works" },
-  { href: "/#story", label: "Story" },
-  { href: "/#lineup", label: "Coming Soon" },
-  { href: "/#wholesale", label: "Wholesale" },
+  { href: "/golf#products", label: "Products" },
+  { href: "/golf#how", label: "How It Works" },
+  { href: "/golf#story", label: "Story" },
+  { href: "/blog", label: "Blog" },
+  { href: "/golf#lineup", label: "Coming Soon" },
+  { href: "/golf#wholesale", label: "Wholesale" },
+  { href: "/athletic", label: "Athletic Care" },
 ];
 
 // Effective date shown on the legal pages. Update when the policies change.

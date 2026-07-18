@@ -1,0 +1,247 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import AthleticNotify from "@/components/AthleticNotify";
+import Footer from "@/components/Footer";
+import { SITE_URL } from "@/lib/constants";
+import {
+  IconFoam,
+  IconBrush,
+  IconSparkle,
+  IconDrop,
+  IconShoe,
+  IconShield,
+} from "@/components/icons";
+
+// G-SCRUB Athletic Care — Cyan Technical identity (#18b7e6 on near-black).
+// The line is in development: this page presents it and captures launch
+// interest. No prices, no availability promises, no performance claims.
+export const metadata: Metadata = {
+  title: "G-SCRUB Athletic Care | All-Sport Shoe Cleaning — Launching Soon",
+  description:
+    "G-SCRUB Athletic Care is the all-sport shoe cleaning line: foam cleaner, all-sport brush, odor control, and more. Built for Performance. Join the list to hear when it launches.",
+  alternates: {
+    canonical: `${SITE_URL}athletic`,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "G-SCRUB",
+    title: "G-SCRUB Athletic Care | Built for Performance",
+    description:
+      "The all-sport shoe cleaning line from G-SCRUB. Launching soon — join the list.",
+    images: ["/images/gateway-athletic-half.webp"],
+    url: `${SITE_URL}athletic`,
+  },
+};
+
+const LINEUP = [
+  {
+    icon: IconFoam,
+    name: "Athletic Shoe Foam Cleaner",
+    blurb: "Foaming cleaner made for sneakers, trainers, and mesh uppers.",
+  },
+  {
+    icon: IconBrush,
+    name: "All-Sport Shoe Brush",
+    blurb: "Premium bristle brush for soles, sidewalls, and stubborn dirt.",
+  },
+  {
+    icon: IconDrop,
+    name: "Direct-Apply Cleaner",
+    blurb: "Precision applicator for targeted spot cleaning.",
+  },
+  {
+    icon: IconSparkle,
+    name: "Odor Control",
+    blurb: "Keeps shoes smelling fresh between games and workouts.",
+  },
+  {
+    icon: IconShoe,
+    name: "Traction Care",
+    blurb: "Outsole care that helps keep your grip surfaces clean.",
+  },
+  {
+    icon: IconShield,
+    name: "Sole Shield",
+    blurb: "Finishing care for midsoles, trim, and toe caps.",
+  },
+];
+
+export default function AthleticPage() {
+  return (
+    <>
+      {/* Athletic top bar — dark variant, separate from the golf Header. */}
+      <header className="sticky top-0 z-[60] border-b border-white/10 bg-[rgba(6,10,14,0.82)] backdrop-blur-md">
+        <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-[13px]">
+          <Link href="/" className="flex items-center gap-2 no-underline">
+            <span className="font-heading text-[32px] leading-none font-black text-green-primary">
+              G
+            </span>
+            <span className="flex flex-col leading-none">
+              <span className="font-heading text-[19px] font-black tracking-[0.01em] whitespace-nowrap text-white">
+                G-SCRUB
+              </span>
+              <span className="mt-[3px] text-[10px] font-extrabold tracking-[0.3em] text-[#4fc7ec] uppercase">
+                Athletic Care
+              </span>
+            </span>
+          </Link>
+
+          <nav className="flex items-center gap-3 sm:gap-5">
+            <Link
+              href="/golf"
+              className="hidden text-[14px] font-semibold text-white/70 no-underline hover:text-white sm:block"
+            >
+              Golf Line
+            </Link>
+            <a
+              href="#notify"
+              className="rounded-full bg-[#18b7e6] px-5 py-[11px] font-heading text-sm font-extrabold text-[#04121a] no-underline hover:bg-[#3cc6ef]"
+            >
+              Get Launch Updates
+            </a>
+          </nav>
+        </div>
+      </header>
+
+      <main className="flex-1 bg-[#0b0b0b]">
+        {/* ===== Hero ===== */}
+        <section className="relative flex min-h-[86dvh] items-center overflow-hidden">
+          <div className="absolute inset-0">
+            <Image
+              src="/images/gateway-athletic-half.webp"
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[70%_center]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#06090c]/95 via-[#06090c]/60 to-[#06090c]/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0b0b0b] via-transparent to-black/30" />
+          </div>
+
+          <div className="relative z-10 mx-auto w-full max-w-[1200px] px-6 py-24">
+            <div className="max-w-[640px]">
+              <p className="gw-rise m-0 flex items-center gap-3 text-[12px] font-extrabold tracking-[0.32em] text-[#4fc7ec] uppercase">
+                <span className="h-px w-9 bg-[#18b7e6]" />
+                G-SCRUB Athletic Care
+              </p>
+              <h1
+                className="gw-rise m-0 mt-4 font-heading text-[clamp(38px,6vw,68px)] leading-[1.02] font-black tracking-[-0.02em] text-white"
+                style={{ animationDelay: "0.15s" }}
+              >
+                Built for
+                <br />
+                <span className="text-[#18b7e6]">Performance.</span>
+              </h1>
+              <p
+                className="gw-rise m-0 mt-5 max-w-[480px] text-[clamp(15px,1.4vw,18px)] leading-[1.65] text-white/75"
+                style={{ animationDelay: "0.3s" }}
+              >
+                The all-sport shoe care line from G-SCRUB — engineered for
+                sneakers, cleats, and trainers that live on courts, turf, and
+                pavement.
+              </p>
+              <div
+                className="gw-rise mt-8 flex flex-wrap items-center gap-4"
+                style={{ animationDelay: "0.45s" }}
+              >
+                <a
+                  href="#notify"
+                  className="gw-pulse rounded-full bg-[#18b7e6] px-7 py-3.5 font-heading text-[15px] font-extrabold text-[#04121a] no-underline hover:bg-[#3cc6ef]"
+                >
+                  Get Launch Updates
+                </a>
+                <span className="rounded-full border border-[rgba(24,183,230,0.5)] px-4 py-2 text-[11.5px] font-extrabold tracking-[0.22em] text-[#4fc7ec] uppercase">
+                  Launching Soon
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ===== Line-up ===== */}
+        <section className="athletic-grid border-t border-white/[0.06] py-[clamp(60px,8vw,110px)]">
+          <div className="mx-auto max-w-[1100px] px-6">
+            <p className="m-0 text-center text-[12px] font-extrabold tracking-[0.3em] text-[#4fc7ec] uppercase">
+              The Line-Up
+            </p>
+            <h2 className="m-0 mt-3 text-center font-heading text-[clamp(28px,4vw,44px)] leading-[1.05] font-extrabold tracking-[-0.015em] text-white">
+              One system for every sport.
+            </h2>
+            <p className="mx-auto m-0 mt-4 max-w-[560px] text-center text-base leading-[1.65] text-white/65">
+              Six pieces, one job: shoes that look ready to play. Every product
+              is in final development now.
+            </p>
+
+            <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {LINEUP.map((item) => (
+                <div
+                  key={item.name}
+                  className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(24,183,230,0.55)] hover:bg-white/[0.05]"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[rgba(24,183,230,0.35)] bg-[rgba(24,183,230,0.08)] text-[#18b7e6]">
+                    <item.icon size={26} />
+                  </div>
+                  <h3 className="m-0 mt-4 font-heading text-[17px] font-extrabold text-white">
+                    {item.name}
+                  </h3>
+                  <p className="m-0 mt-1.5 text-[14px] leading-[1.6] text-white/60">
+                    {item.blurb}
+                  </p>
+                  <p className="m-0 mt-4 text-[11px] font-extrabold tracking-[0.24em] text-[#4fc7ec] uppercase">
+                    Coming Soon
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ===== Cross-link to Golf ===== */}
+        <section className="border-t border-white/[0.06] py-[clamp(50px,6vw,80px)]">
+          <div className="mx-auto max-w-[1100px] px-6">
+            <Link
+              href="/golf"
+              className="group flex flex-col items-center justify-between gap-5 rounded-2xl border border-white/10 bg-gradient-to-r from-[rgba(42,140,42,0.14)] to-transparent p-8 no-underline transition-all duration-300 hover:border-[rgba(96,200,96,0.5)] sm:flex-row"
+            >
+              <div>
+                <p className="m-0 text-[11.5px] font-extrabold tracking-[0.3em] text-[#7fd47f] uppercase">
+                  One brand. Two games.
+                </p>
+                <p className="m-0 mt-2 font-heading text-[clamp(20px,2.4vw,28px)] font-black text-white">
+                  Play golf too? The original G-SCRUB line is live.
+                </p>
+              </div>
+              <span className="shrink-0 rounded-full bg-green-primary px-6 py-3 font-heading text-[14.5px] font-extrabold text-white transition-colors group-hover:bg-green-primary-hover">
+                Explore the Golf Line →
+              </span>
+            </Link>
+          </div>
+        </section>
+
+        {/* ===== Launch list ===== */}
+        <section
+          id="notify"
+          className="border-t border-white/[0.06] py-[clamp(60px,8vw,110px)]"
+        >
+          <div className="mx-auto max-w-[640px] px-6 text-center">
+            <p className="m-0 text-[12px] font-extrabold tracking-[0.3em] text-[#4fc7ec] uppercase">
+              Launch List
+            </p>
+            <h2 className="m-0 mt-3 mb-3.5 font-heading text-[clamp(28px,4vw,44px)] leading-[1.05] font-extrabold tracking-[-0.015em] text-white">
+              Be first when it drops.
+            </h2>
+            <p className="m-0 mb-[30px] text-base leading-[1.65] text-white/65">
+              Join the Athletic Care launch list — one email when the line goes
+              live, plus early access to launch pricing. No spam.
+            </p>
+            <AthleticNotify />
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </>
+  );
+}

@@ -106,3 +106,21 @@ export function IconChevrons({ size = 24, className }: IconProps) {
     </svg>
   );
 }
+
+export function IconShield({ size = 24, className }: IconProps) {
+  return (
+    <svg {...base(size)} className={className}>
+      <path d="M12 3.5 5.5 6v5c0 4.4 2.8 7.6 6.5 9.5 3.7-1.9 6.5-5.1 6.5-9.5V6L12 3.5Z" />
+      <path d="m9.3 11.8 2 2 3.4-3.6" />
+    </svg>
+  );
+}
+
+export function IconDrop({ size = 24, className }: IconProps) {
+  return (
+    <svg {...base(size)} className={className}>
+      <path d="M12 3.8s5.8 6.3 5.8 10.2a5.8 5.8 0 0 1-11.6 0C6.2 10.1 12 3.8 12 3.8Z" />
+      <path d="M9.4 14.2a2.7 2.7 0 0 0 2 2.6" />
+    </svg>
+  );
+}

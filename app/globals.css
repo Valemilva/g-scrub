@@ -183,3 +183,63 @@ summary {
     transform: none !important;
   }
 }
+
+/* ===== Brand gateway (front-page brand selector) ===== */
+/* Both image layers share this exact animation so they stay pixel-aligned. */
+@keyframes gwKenburns {
+  from { transform: scale(1.02); }
+  to { transform: scale(1.09); }
+}
+.gw-kenburns {
+  animation: gwKenburns 28s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes gwFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.gw-fade {
+  opacity: 0;
+  animation: gwFade 1.1s ease-out forwards;
+}
+@keyframes gwRise {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
+}
+.gw-rise {
+  opacity: 0;
+  animation: gwRise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+/* Soap bubbles drifting up the seam — sized/timed per-element inline. */
+@keyframes gwBubble {
+  0% { transform: translateY(10vh) scale(0.6); opacity: 0; }
+  10% { opacity: 0.75; }
+  85% { opacity: 0.4; }
+  100% { transform: translateY(-108vh) scale(1.05); opacity: 0; }
+}
+.gw-bubble {
+  position: absolute;
+  bottom: -8vh;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at 32% 30%,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.28) 42%,
+    rgba(255, 255, 255, 0.06) 70%
+  );
+  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.35);
+  animation: gwBubble linear infinite;
+}
+@keyframes gwPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(24, 183, 230, 0.35); }
+  50% { box-shadow: 0 0 0 7px rgba(24, 183, 230, 0); }
+}
+.gw-pulse { animation: gwPulse 2.4s ease-in-out infinite; }
+/* Cyan Technical: faint engineering grid for Athletic sections. */
+.athletic-grid {
+  background-image:
+    linear-gradient(rgba(24, 183, 230, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(24, 183, 230, 0.05) 1px, transparent 1px);
+  background-size: 44px 44px;
+}

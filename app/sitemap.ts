@@ -7,7 +7,9 @@ const base = SITE_URL.replace(/\/$/, "");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
-    "", // home
+    "", // brand gateway
+    "/golf",
+    "/athletic",
     "/how-to-use",
     "/shipping-returns",
     "/contact",
@@ -15,10 +17,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
   ].map((path) => ({
     url: `${base}${path}`,
-    changeFrequency: (path === "" ? "weekly" : "monthly") as
-      | "weekly"
-      | "monthly",
-    priority: path === "" ? 1 : 0.6,
+    changeFrequency: (path === "" || path === "/golf" || path === "/athletic"
+      ? "weekly"
+      : "monthly") as "weekly" | "monthly",
+    priority: path === "" ? 1 : path === "/golf" || path === "/athletic" ? 0.9 : 0.6,
   }));
 
   const productRoutes = products.map((p) => ({
@@ -27,24 +29,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: p.status === "Available Now" ? 0.9 : 0.5,
   }));
 
-  // The blog index is only worth submitting once it has something on it, and
-  // each post joins the sitemap the moment `npm run blog:ingest` picks it up.
-  const blogRoutes =
-    BLOG_POSTS.length === 0
-      ? []
-      : [
-          {
-            url: `${base}/blog`,
-            changeFrequency: "weekly" as const,
-            priority: 0.7,
-          },
-          ...BLOG_POSTS.map((p) => ({
-            url: `${base}/blog/${p.slug}`,
-            lastModified: p.date,
-            changeFrequency: "monthly" as const,
-            priority: 0.6,
-          })),
-        ];
+  // /blog is a permanent site section, so it's always in the sitemap. Each
+  // post joins the moment `npm run blog:ingest` picks it up.
+  const blogRoutes = [
+    {
+      url: `${base}/blog`,
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    ...BLOG_POSTS.map((p) => ({
+      url: `${base}/blog/${p.slug}`,
+      lastModified: p.date,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
 
   return [...staticRoutes, ...productRoutes, ...blogRoutes];
 }
