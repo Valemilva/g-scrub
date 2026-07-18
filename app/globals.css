@@ -236,13 +236,19 @@ summary {
   bottom: -8vh;
   border-radius: 9999px;
   pointer-events: none;
+  /* A defined rim + a bright specular highlight so each reads clearly as a
+   * soap bubble rather than a faint dot. */
+  border: 1px solid rgba(255, 255, 255, 0.55);
   background: radial-gradient(
-    circle at 32% 30%,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.28) 42%,
-    rgba(255, 255, 255, 0.06) 70%
+    circle at 30% 26%,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.35) 38%,
+    rgba(255, 255, 255, 0.08) 66%,
+    rgba(255, 255, 255, 0.02) 100%
   );
-  box-shadow: inset 0 0 6px rgba(255, 255, 255, 0.35);
+  box-shadow:
+    inset 0 0 8px rgba(255, 255, 255, 0.45),
+    0 0 8px rgba(255, 255, 255, 0.25);
   animation: gwBubble linear infinite;
 }
 .gw-bubble-sway {
