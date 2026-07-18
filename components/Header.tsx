@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import AmazonButton from "./AmazonButton";
 import { navLinks } from "@/lib/constants";
@@ -12,16 +13,20 @@ export default function Header() {
     <header className="sticky top-0 z-[60] border-b border-[rgba(17,17,17,0.1)] bg-[rgba(255,255,255,0.85)] backdrop-blur-md">
       <div className="mx-auto flex max-w-[1200px] items-center justify-between gap-5 px-6 py-[13px]">
         {/* Official lockup (new logo, Jul 2026): standalone green G letterform
-            + wordmark where "G-S" is ink and "CRUB" is the brand blue — the
-            crisp text recreation of the bubbles logo artwork. */}
+            + the real G-SCRUB wordmark artwork (bubbly CRUB). The wordmark PNG
+            has a transparent background so it sits cleanly on the light header. */}
         <Link href="/" className="flex items-center gap-2 no-underline">
           <span className="font-heading text-[32px] leading-none font-black text-green-primary">
             G
           </span>
-          <span className="font-heading text-[21px] font-black tracking-[0.01em] whitespace-nowrap">
-            <span className="text-ink">G-S</span>
-            <span className="text-[#1E9BE9]">CRUB</span>
-          </span>
+          <Image
+            src="/images/gscrub-wordmark.webp"
+            alt="G-SCRUB"
+            width={900}
+            height={205}
+            priority
+            className="h-[26px] w-auto"
+          />
         </Link>
 
         <nav className="hidden items-center gap-[30px] min-[881px]:flex">
