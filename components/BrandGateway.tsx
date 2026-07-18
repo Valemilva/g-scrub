@@ -99,7 +99,7 @@ export default function BrandGateway() {
     >
       {/* ===== Desktop: one composed image, diagonal split, animated seam ===== */}
       <div className="relative hidden h-full md:block">
-        <div className="gw-fade absolute inset-0">
+        <div className="absolute inset-0">
           {/* Golf layer (base). */}
           <div
             className="absolute inset-0"
@@ -166,6 +166,9 @@ export default function BrandGateway() {
             ))}
           </div>
         </div>
+
+        {/* Entrance curtain — fades out over the already-painted hero. */}
+        <div className="gw-cover pointer-events-none absolute inset-0 z-40 bg-[#06090c]" />
 
         {/* Choose chip under the composed center logo. */}
         <div
@@ -248,6 +251,7 @@ export default function BrandGateway() {
 
       {/* ===== Mobile: stacked panels (logo-free crops) + center brand badge ===== */}
       <div className="relative flex h-full flex-col md:hidden">
+        <div className="gw-cover pointer-events-none absolute inset-0 z-40 bg-[#06090c]" />
         <Link
           href="/golf"
           aria-label="Enter G-SCRUB Golf"

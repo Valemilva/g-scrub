@@ -205,6 +205,16 @@ summary {
   opacity: 0;
   animation: gwFade 1.1s ease-out forwards;
 }
+/* Entrance curtain: fading a solid-color overlay OUT is compositor-cheap,
+ * unlike fading the full-screen image stack IN (which stalls on a giant
+ * GPU raster and shows black for seconds on slower machines). */
+@keyframes gwCoverOut {
+  to { opacity: 0; }
+}
+.gw-cover {
+  opacity: 1;
+  animation: gwCoverOut 1s ease 0.15s forwards;
+}
 @keyframes gwRise {
   from { opacity: 0; transform: translateY(28px); }
   to { opacity: 1; transform: none; }
