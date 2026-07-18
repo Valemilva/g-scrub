@@ -254,17 +254,16 @@ export default function BrandGateway() {
           </div>
         </Link>
 
-        {/* Brand badge over the split. */}
-        <div className="gw-fade pointer-events-none absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-white px-5 py-3.5 shadow-[0_10px_40px_rgba(0,0,0,0.45)]">
-          <Image
-            src="/images/gscrub-logo-new.webp"
-            alt="G-SCRUB"
-            width={132}
-            height={75}
-            priority
-          />
+        {/* Seam: a thin brand-color divider (green → cyan) with a "Choose your
+            side" label on it — no white box, so the split stays immersive. */}
+        <div className="pointer-events-none absolute left-0 right-0 top-1/2 z-20 h-[2px] -translate-y-1/2 bg-gradient-to-r from-green-primary via-white/85 to-[#18b7e6]" />
+        <div className="gw-fade pointer-events-none absolute left-1/2 top-1/2 z-30 -translate-x-1/2 -translate-y-1/2">
+          <p className="m-0 flex items-center gap-2.5 rounded-full bg-black/45 px-4 py-2 text-[10.5px] font-extrabold tracking-[0.3em] text-white uppercase backdrop-blur-sm">
+            <span className="h-px w-5 bg-gradient-to-r from-transparent to-white/70" />
+            Choose your side
+            <span className="h-px w-5 bg-gradient-to-l from-transparent to-white/70" />
+          </p>
         </div>
-        <div className="pointer-events-none absolute left-0 right-0 top-1/2 z-20 h-[2px] -translate-y-1/2 bg-gradient-to-r from-green-primary via-white/80 to-[#18b7e6]" />
 
         {/* Soap bubbles rising over both panels. */}
         <BubbleField />
