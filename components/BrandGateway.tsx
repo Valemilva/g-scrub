@@ -73,69 +73,51 @@ export default function BrandGateway() {
   const top = SEAM_TOP + shift;
   const bottom = SEAM_BOTTOM + shift;
 
-  const golfFilter =
-    hover === "athletic"
-      ? "brightness(0.45) saturate(0.55)"
-      : hover === "golf"
-        ? "brightness(1.07) saturate(1.06)"
-        : "brightness(0.97)";
-  const athleticFilter =
-    hover === "golf"
-      ? "brightness(0.4) saturate(0.5)"
-      : hover === "athletic"
-        ? "brightness(1.08) saturate(1.05)"
-        : "brightness(1)";
+  // Dimming is done with solid overlays (cheap compositor quads), NOT CSS
+  // filters on the image layers — full-screen filters forced a multi-second
+  // software raster on slower machines and the hero opened on black.
+  const golfDim = hover === "athletic" ? 0.62 : 0;
+  const athleticDim = hover === "golf" ? 0.66 : 0;
 
   return (
     <main className="h-[100dvh] w-full overflow-hidden bg-[#06090c]">
       {/* ===== Desktop: one composed image, diagonal split, animated seam ===== */}
       <div className="relative hidden h-full md:block">
         <div className="absolute inset-0">
-          {/* Golf layer (base). */}
-          <div
-            className="absolute inset-0"
-            style={{ filter: golfFilter, transition: "filter 0.65s ease" }}
-          >
-            <div className="absolute inset-0">
-              <Image
-                src="/images/gateway-hero.webp"
-                placeholder="blur"
-                blurDataURL={BLUR_HERO}
-                alt=""
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover"
-              />
-            </div>
+          {/* Base layer: the full composed image, untouched (no filters). */}
+          <div className="absolute inset-0">
+            <Image
+              src="/images/gateway-hero.webp"
+              placeholder="blur"
+              blurDataURL={BLUR_HERO}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover"
+            />
           </div>
 
-          {/* Athletic layer above — same image, clipped past the seam. No
-              CSS glow on the edge: the artwork's own light streak marks the
-              divider, and a full-viewport drop-shadow filter proved expensive
-              enough that Chrome painted the whole layer black. */}
+          {/* Side dimmers — solid overlays clipped to each side of the seam.
+              The seam position (and both clip edges) animates on hover. */}
           <div
-            className="absolute inset-0"
+            className="absolute inset-0 bg-black"
+            style={{
+              clipPath: `polygon(0 0, ${top}% 0, ${bottom}% 100%, 0 100%)`,
+              opacity: golfDim,
+              transition:
+                "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease",
+            }}
+          />
+          <div
+            className="absolute inset-0 bg-black"
             style={{
               clipPath: `polygon(${top}% 0, 100% 0, 100% 100%, ${bottom}% 100%)`,
-              filter: athleticFilter,
+              opacity: athleticDim,
               transition:
-                "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease",
+                "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.55s ease",
             }}
-          >
-            <div className="absolute inset-0">
-              <Image
-                src="/images/gateway-hero.webp"
-                placeholder="blur"
-                blurDataURL={BLUR_HERO}
-                alt=""
-                fill
-                priority
-                sizes="100vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
+          />
 
           {/* Readability scrim for the CTA row. */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[42%] bg-gradient-to-t from-black/70 via-black/25 to-transparent" />
