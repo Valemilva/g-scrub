@@ -62,19 +62,12 @@ function trackChoice(line: "golf" | "athletic") {
 
 export default function BrandGateway() {
   const [hover, setHover] = useState<Side>(null);
-  // Ken Burns starts only after the first static paint (see .gw-live in CSS).
-  const [live, setLive] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
     const hash = window.location.hash;
     if (GOLF_ANCHORS.includes(hash)) router.replace(`/golf${hash}`);
   }, [router]);
-
-  useEffect(() => {
-    const t = setTimeout(() => setLive(true), 600);
-    return () => clearTimeout(t);
-  }, []);
 
   const shift = hover === "golf" ? SHIFT : hover === "athletic" ? -SHIFT : 0;
   const top = SEAM_TOP + shift;
@@ -94,9 +87,7 @@ export default function BrandGateway() {
         : "brightness(1)";
 
   return (
-    <main
-      className={`h-[100dvh] w-full overflow-hidden bg-[#06090c] ${live ? "gw-live" : ""}`}
-    >
+    <main className="h-[100dvh] w-full overflow-hidden bg-[#06090c]">
       {/* ===== Desktop: one composed image, diagonal split, animated seam ===== */}
       <div className="relative hidden h-full md:block">
         <div className="absolute inset-0">
@@ -105,7 +96,7 @@ export default function BrandGateway() {
             className="absolute inset-0"
             style={{ filter: golfFilter, transition: "filter 0.65s ease" }}
           >
-            <div className="gw-kenburns absolute inset-0">
+            <div className="absolute inset-0">
               <Image
                 src="/images/gateway-hero.webp"
                 placeholder="blur"
@@ -132,7 +123,7 @@ export default function BrandGateway() {
                 "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.65s ease",
             }}
           >
-            <div className="gw-kenburns absolute inset-0">
+            <div className="absolute inset-0">
               <Image
                 src="/images/gateway-hero.webp"
                 placeholder="blur"
@@ -258,7 +249,7 @@ export default function BrandGateway() {
           className="group relative flex-1 overflow-hidden outline-none"
           onClick={() => trackChoice("golf")}
         >
-          <div className="gw-kenburns absolute inset-0">
+          <div className="absolute inset-0">
             <Image
               src="/images/gateway-golf-half.webp"
               placeholder="blur"
@@ -305,7 +296,7 @@ export default function BrandGateway() {
           className="group relative flex-1 overflow-hidden outline-none"
           onClick={() => trackChoice("athletic")}
         >
-          <div className="gw-kenburns absolute inset-0">
+          <div className="absolute inset-0">
             <Image
               src="/images/gateway-athletic-half.webp"
               placeholder="blur"

@@ -185,18 +185,10 @@ summary {
 }
 
 /* ===== Brand gateway (front-page brand selector) ===== */
-/* Both image layers share this exact animation so they stay pixel-aligned. */
-@keyframes gwKenburns {
-  from { transform: scale(1.02); }
-  to { transform: scale(1.09); }
-}
-/* The drift only starts once .gw-live lands on the gateway root (one frame
- * after mount): animating two full-screen layers from the first frame forces
- * a giant GPU raster that can hold the whole hero on a black frame for
- * seconds. Painting static first, then animating, avoids the stall. */
-.gw-live .gw-kenburns {
-  animation: gwKenburns 28s ease-in-out infinite alternate;
-}
+/* NOTE: no Ken Burns / transform animation on the full-screen image layers —
+ * animating layers that large forces a giant GPU raster that can hold the
+ * hero on a black frame for seconds on slower machines. Motion lives in the
+ * seam hover, curtain, bubbles, and cards instead. */
 @keyframes gwFade {
   from { opacity: 0; }
   to { opacity: 1; }
