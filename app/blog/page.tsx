@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -50,28 +51,41 @@ export default function BlogIndexPage() {
                 <li key={post.slug}>
                   <Link
                     href={`/blog/${post.slug}`}
-                    className="group block rounded-[14px] border border-[rgba(17,17,17,0.09)] bg-white p-6 no-underline transition-colors hover:border-[rgba(42,140,42,0.35)]"
+                    className="group block overflow-hidden rounded-[14px] border border-[rgba(17,17,17,0.09)] bg-white no-underline transition-colors hover:border-[rgba(42,140,42,0.35)] sm:flex sm:items-stretch"
                   >
-                    <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-body-2">
-                      <time dateTime={post.date}>{formatPostDate(post.date)}</time>
-                      <span className="h-1 w-1 rounded-full bg-[rgba(17,17,17,0.3)]" />
-                      <span>{post.readMins} min read</span>
-                    </div>
-                    <h2 className="m-0 mt-2 font-heading text-[clamp(19px,2.4vw,23px)] leading-[1.25] font-extrabold tracking-[-0.01em] text-ink group-hover:text-green-primary">
-                      {post.title}
-                    </h2>
-                    <p className="m-0 mt-2.5 text-[15px] leading-[1.65] text-body-2">
-                      {post.description}
-                    </p>
-                    <div className="mt-4 flex flex-wrap gap-2">
-                      {post.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="rounded-full bg-bg-alt px-[11px] py-[5px] text-[11.5px] font-extrabold tracking-[0.08em] text-body uppercase"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                    {post.image && (
+                      <div className="relative aspect-[16/9] w-full shrink-0 overflow-hidden sm:aspect-auto sm:w-[220px]">
+                        <Image
+                          src={post.image}
+                          alt={post.title}
+                          fill
+                          sizes="(min-width: 640px) 220px, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6">
+                      <div className="flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[13px] text-body-2">
+                        <time dateTime={post.date}>{formatPostDate(post.date)}</time>
+                        <span className="h-1 w-1 rounded-full bg-[rgba(17,17,17,0.3)]" />
+                        <span>{post.readMins} min read</span>
+                      </div>
+                      <h2 className="m-0 mt-2 font-heading text-[clamp(19px,2.4vw,23px)] leading-[1.25] font-extrabold tracking-[-0.01em] text-ink group-hover:text-green-primary">
+                        {post.title}
+                      </h2>
+                      <p className="m-0 mt-2.5 text-[15px] leading-[1.65] text-body-2">
+                        {post.description}
+                      </p>
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {post.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="rounded-full bg-bg-alt px-[11px] py-[5px] text-[11.5px] font-extrabold tracking-[0.08em] text-body uppercase"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </Link>
                 </li>

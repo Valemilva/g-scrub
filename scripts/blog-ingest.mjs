@@ -6,7 +6,7 @@
 // (01_DOCS/G_SCRUB_BRAND_DEVELOPMENT_MEMORY.md → "Safe Claims").
 //
 // Usage: npm run blog:ingest
-import { readdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { readdirSync, readFileSync, writeFileSync, existsSync, statSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
@@ -204,6 +204,19 @@ function main() {
       fail(`${where}: 'es' overlay found — the G-SCRUB blog is English-only.`);
     }
 
+    // Optional hero image — if given, it must point at a file that actually exists in
+    // public/, so a typo'd path doesn't ship as a silently-broken <img>.
+    if (p.image !== undefined) {
+      if (typeof p.image !== "string" || !p.image.startsWith("/images/")) {
+        fail(`${where}: 'image' must be a string starting with "/images/" (e.g. "/images/gscrub-blog-foo-hero.webp").`);
+      } else {
+        const onDisk = join(ROOT, "public", p.image);
+        if (!existsSync(onDisk) || !statSync(onDisk).isFile()) {
+          fail(`${where}: 'image' points at "${p.image}", which doesn't exist under public/images/.`);
+        }
+      }
+    }
+
     const hasCallout = validateBody(p.body, where);
     if (!hasCallout) {
       fail(`${where}: post needs a closing 'callout' block (the Amazon CTA).`);
@@ -231,6 +244,7 @@ function main() {
       readMins: p.readMins,
       tags: p.tags,
       body: p.body,
+      ...(p.image !== undefined ? { image: p.image } : {}),
     });
   }
 

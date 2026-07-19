@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
@@ -25,6 +26,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!post) return { title: "Post | G-SCRUB" };
 
   const url = `${base}/blog/${post.slug}`;
+  const imageUrl = post.image ? `${base}${post.image}` : undefined;
   return {
     title: `${post.title} | G-SCRUB`,
     description: post.description,
@@ -36,11 +38,13 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
       url,
       publishedTime: post.date,
       tags: post.tags,
+      ...(imageUrl ? { images: [{ url: imageUrl, width: 1600, height: 900 }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: post.title,
       description: post.description,
+      ...(imageUrl ? { images: [imageUrl] } : {}),
     },
   };
 }
@@ -132,6 +136,19 @@ export default async function BlogPostPage({ params }: Params) {
             <span className="h-1 w-1 rounded-full bg-[rgba(17,17,17,0.3)]" />
             <span>{post.readMins} min read</span>
           </div>
+
+          {post.image && (
+            <div className="mt-7 overflow-hidden rounded-[16px]">
+              <Image
+                src={post.image}
+                alt={post.title}
+                width={1600}
+                height={900}
+                priority
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          )}
 
           <p className="mt-6 mb-0 border-l-[3px] border-green-primary pl-4 text-[17.5px] leading-[1.7] font-medium text-body">
             {post.description}

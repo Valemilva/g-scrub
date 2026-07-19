@@ -25,6 +25,7 @@ silently dropped otherwise).
 | `readMins` | number | Positive integer. |
 | `tags` | string[] | At least one, from the allowed list below. First tag shows in the breadcrumb. |
 | `body` | block[] | See below. Must contain a `callout`. |
+| `image` | string, optional | Hero image path, e.g. `"/images/gscrub-blog-<slug>-hero.webp"`. Must already exist under `public/images/` — the ingest fails if the file is missing. Renders atop the article, as the thumbnail on `/blog`, and as the `og:image`/Twitter card. Posts without one still render fine, just text-only. Landscape ~1600×900 works best. |
 
 Filename should match the slug (`shoe-care-basics.json` → `"slug": "shoe-care-basics"`).
 

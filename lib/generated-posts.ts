@@ -52,6 +52,7 @@ export const GENERATED_POSTS: BlogPost[] = [
         "type": "callout",
         "text": "G-SCRUB's foaming cleaner and brush are built for exactly this routine — a concentrated, direct-to-brush formula that helps remove grass stains and course debris, safe for most common golf shoe materials when used as directed."
       }
-    ]
+    ],
+    "image": "/images/gscrub-blog-grass-stains-hero.webp"
   }
 ];
