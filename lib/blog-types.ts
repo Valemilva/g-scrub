@@ -16,4 +16,8 @@ export type BlogPost = {
   readMins: number;
   tags: string[];
   body: BlogBlock[];
+  /** Optional hero image, path under /public (e.g. "/images/gscrub-blog-grass-stains-hero.webp").
+   * Also used as the article's og:image / twitter:image when present. Older posts without one
+   * still render fine — the header/description just render without an image block. */
+  image?: string;
 };
