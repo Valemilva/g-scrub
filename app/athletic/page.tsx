@@ -4,6 +4,7 @@ import Link from "next/link";
 import AthleticHeader from "@/components/AthleticHeader";
 import AthleticVideo from "@/components/AthleticVideo";
 import AthleticFAQ from "@/components/AthleticFAQ";
+import FreshSection from "@/components/FreshSection";
 import AthleticNotify from "@/components/AthleticNotify";
 import Footer from "@/components/Footer";
 import { SITE_URL, athleticFaqItems } from "@/lib/constants";
@@ -193,6 +194,9 @@ export default function AthleticPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== G-SCRUB FRESH (cross-line odor category) ===== */}
+        <FreshSection variant="dark" />
 
         {/* ===== Cross-link to Golf ===== */}
         <section className="border-t border-white/[0.06] py-[clamp(50px,6vw,80px)]">

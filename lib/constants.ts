@@ -269,6 +269,38 @@ export const faqItems = [
   },
 ];
 
+// ===== G-SCRUB FRESH =====
+// FRESH is a CROSS-LINE care category, not a sub-line of Athletic: the pouch
+// mockup packages it inside the Golf Care System, while its own label reads
+// "for shoes, insoles, gym bags, athletic gear". So it renders on BOTH /golf
+// and /athletic from this single source, and can be promoted to a full line
+// later by giving it its own page — no rewrite needed.
+//
+// CLAIMS RULE: only the hedged wording that's already on the physical label
+// ("helps neutralize odor at the source"). NEVER antimicrobial, antibacterial,
+// "kills bacteria/germs", or disinfect — those are regulated claims.
+export const FRESH_BRAND = {
+  name: "G-SCRUB FRESH",
+  eyebrow: "Odor Control",
+  heading: "Fresh gear, every time you play.",
+  intro:
+    "G-SCRUB FRESH is our odor-control care — a bio-enzymatic spray that helps neutralize odor at the source, on the course or on the court.",
+  color: "#5BB85B",
+};
+
+export const freshProducts = [
+  {
+    slug: "shoe-odor-spray",
+    name: "Shoe Odor Spray",
+    descriptor: "Bio-Enzymatic · Herbal Mint",
+    size: "4 fl oz / 120 mL",
+    blurb:
+      "Helps neutralize odor at the source. For shoes, insoles, gym bags, and athletic gear.",
+    image: "/images/athletic-04-odor-care.webp",
+    status: "Coming Soon",
+  },
+];
+
 // Athletic Care FAQ — same structure as the golf FAQ, adapted for the
 // all-sport line. This line is PRE-LAUNCH, so answers never claim it's on
 // sale (no Amazon), and material safety never claims leather (untested).
