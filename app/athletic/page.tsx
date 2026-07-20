@@ -14,7 +14,7 @@ import { SITE_URL, athleticFaqItems } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "G-SCRUB Athletic Care | All-Sport Shoe Cleaning — Launching Soon",
   description:
-    "G-SCRUB Athletic Care is the all-sport shoe cleaning line: foam cleaner, all-sport brush, odor control, and more. Built for Performance. Join the list to hear when it launches.",
+    "G-SCRUB Athletic Care is the all-sport shoe cleaning line: foam cleaner, all-sport brush, traction clean, shield spray, and more. Built for Performance. Join the list to hear when it launches.",
   alternates: {
     canonical: `${SITE_URL}athletic`,
   },
@@ -47,11 +47,10 @@ const LINEUP = [
     name: "Athletic Clean",
     blurb: "Direct-apply cleaner for fast, targeted spot cleaning.",
   },
-  {
-    image: "/images/athletic-04-odor-care.webp",
-    name: "Shoe Odor Care",
-    blurb: "Herbal mint spray that neutralizes odor between games.",
-  },
+  // NOTE: Shoe Odor Care is intentionally NOT listed here. It belongs to the
+  // "G-SCRUB FRESH" sub-brand (green herbal mint, not Athletic Care cyan) and
+  // its positioning/claims still need to be defined. The optimized render is
+  // kept at /images/athletic-04-odor-care.webp, ready to drop back in.
   {
     image: "/images/athletic-05-traction-clean.webp",
     name: "Traction Clean",
@@ -159,7 +158,7 @@ export default function AthleticPage() {
               One system for every sport.
             </h2>
             <p className="mx-auto m-0 mt-4 max-w-[560px] text-center text-base leading-[1.65] text-white/65">
-              Six pieces, one job: shoes that look ready to play. Every product
+              Five pieces, one job: shoes that look ready to play. Every product
               is in final development now.
             </p>
 
