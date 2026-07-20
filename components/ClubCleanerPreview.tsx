@@ -5,7 +5,9 @@ const features = [
   "Built-in scrub brush",
   "Designed for clubfaces and grooves",
   "Golf bag friendly",
-  "Pairs with the Club Cleaner Refill",
+  // Refill SKUs are on hold until their packaging is defined, so this no
+  // longer points at a specific product.
+  "Built for repeat use",
 ];
 
 export default function ClubCleanerPreview() {

@@ -22,6 +22,24 @@ const nextConfig: NextConfig = {
         destination: "/:slug*",
         permanent: true,
       },
+      {
+        // Retired SKU: the golf deodorizer became the branded G-SCRUB FRESH
+        // Shoe Odor Spray, which lives in the cross-line FRESH section.
+        source: "/products/shoe-deodorizer-spray",
+        destination: "/golf#fresh",
+        permanent: true,
+      },
+      {
+        // Refill SKUs are on hold until their packaging is defined.
+        source: "/products/shoe-deodorizer-refill",
+        destination: "/golf#fresh",
+        permanent: true,
+      },
+      {
+        source: "/products/club-cleaner-refill",
+        destination: "/golf#products",
+        permanent: true,
+      },
     ];
   },
 };

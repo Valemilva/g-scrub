@@ -131,39 +131,12 @@ export const products: Product[] = [
     longDescription:
       "The next G-SCRUB product is a refillable bottle brush built to help clean clubfaces and grooves during or after the round — cleaning solution and scrubbing power together in one golf-bag-friendly tool. For cleaning only; it does not sharpen, modify, or alter club grooves.",
   },
-  {
-    slug: "club-cleaner-refill",
-    name: "G-SCRUB Club Cleaner Refill",
-    status: "Coming Soon",
-    tagline: "Refill. Scrub. Play.",
-    description:
-      "A larger refill bottle designed to keep the club brush cleaner ready for multiple rounds.",
-    cta: "Join Launch List",
-    longDescription:
-      "A larger refill bottle designed to keep the G-SCRUB Club Brush Cleaner topped up across multiple rounds. Buy the brush bottle once, then keep it filled.",
-  },
-  {
-    slug: "shoe-deodorizer-spray",
-    name: "G-SCRUB Shoe Deodorizer Spray",
-    status: "Coming Soon",
-    tagline: "Fresh Gear, Every Round.",
-    description:
-      "A quick spray designed to help keep golf shoes smelling fresh between cleanings.",
-    cta: "Join Launch List",
-    longDescription:
-      "A quick spray designed to help keep golf shoes smelling fresh between cleanings — a light finish to the G-SCRUB routine so your gear stays course-ready.",
-  },
-  {
-    slug: "shoe-deodorizer-refill",
-    name: "G-SCRUB Shoe Deodorizer Refill",
-    status: "Coming Soon",
-    tagline: "Refill. Spray. Stay Fresh.",
-    description:
-      "A refill bottle designed to keep the Shoe Deodorizer Spray topped off round after round.",
-    cta: "Join Launch List",
-    longDescription:
-      "A refill bottle designed to keep the G-SCRUB Shoe Deodorizer Spray topped off round after round.",
-  },
+  // NOTE: the two refill SKUs (club-cleaner-refill, shoe-deodorizer-refill)
+  // are on hold until their packaging is defined — we don't list a product we
+  // can't picture yet. The old "shoe-deodorizer-spray" is superseded by the
+  // branded G-SCRUB FRESH Shoe Odor Spray (see FRESH_BRAND / freshProducts),
+  // which renders in its own cross-line section. All three have redirects in
+  // next.config.ts so their old URLs don't 404.
   {
     slug: "golf-microfiber-towel",
     name: "G-SCRUB Golf Microfiber Towel",

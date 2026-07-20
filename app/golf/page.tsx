@@ -10,7 +10,7 @@ import ProductShowcase from "@/components/ProductShowcase";
 import BrandStory from "@/components/BrandStory";
 import ProductLine from "@/components/ProductLine";
 import ClubCleanerPreview from "@/components/ClubCleanerPreview";
-import RefillSystem from "@/components/RefillSystem";
+import FreshSection from "@/components/FreshSection";
 import BundleSection from "@/components/BundleSection";
 import TrustSection from "@/components/TrustSection";
 import FAQ from "@/components/FAQ";
@@ -99,7 +99,10 @@ export default function GolfHome() {
         <ProductShowcase />
         <BrandStory />
         <ClubCleanerPreview />
-        <RefillSystem />
+        {/* G-SCRUB FRESH — cross-line odor category, same module as /athletic.
+            Sits where the refill section used to: refills are on hold until
+            their packaging is defined. */}
+        <FreshSection variant="light" />
         <BundleSection />
         <TrustSection />
         <FAQ />
