@@ -7,14 +7,6 @@ import AthleticFAQ from "@/components/AthleticFAQ";
 import AthleticNotify from "@/components/AthleticNotify";
 import Footer from "@/components/Footer";
 import { SITE_URL, athleticFaqItems } from "@/lib/constants";
-import {
-  IconFoam,
-  IconBrush,
-  IconSparkle,
-  IconDrop,
-  IconShoe,
-  IconShield,
-} from "@/components/icons";
 
 // G-SCRUB Athletic Care — Cyan Technical identity (#18b7e6 on near-black).
 // The line is in development: this page presents it and captures launch
@@ -37,36 +29,38 @@ export const metadata: Metadata = {
   },
 };
 
+// Names match the real packaging so the site says exactly what the customer
+// will receive at launch. Images are the product concept renders.
 const LINEUP = [
   {
-    icon: IconFoam,
+    image: "/images/athletic-01-foam-cleaner.webp",
     name: "Athletic Shoe Foam Cleaner",
     blurb: "Foaming cleaner made for sneakers, trainers, and mesh uppers.",
   },
   {
-    icon: IconBrush,
+    image: "/images/athletic-02-brush.webp",
     name: "All-Sport Shoe Brush",
     blurb: "Premium bristle brush for soles, sidewalls, and stubborn dirt.",
   },
   {
-    icon: IconDrop,
-    name: "Direct-Apply Cleaner",
-    blurb: "Precision applicator for targeted spot cleaning.",
+    image: "/images/athletic-03-athletic-clean.webp",
+    name: "Athletic Clean",
+    blurb: "Direct-apply cleaner for fast, targeted spot cleaning.",
   },
   {
-    icon: IconSparkle,
-    name: "Odor Control",
-    blurb: "Keeps shoes smelling fresh between games and workouts.",
+    image: "/images/athletic-04-odor-care.webp",
+    name: "Shoe Odor Care",
+    blurb: "Herbal mint spray that neutralizes odor between games.",
   },
   {
-    icon: IconShoe,
-    name: "Traction Care",
-    blurb: "Outsole care that helps keep your grip surfaces clean.",
+    image: "/images/athletic-05-traction-clean.webp",
+    name: "Traction Clean",
+    blurb: "Outsole spray that lifts dirt and helps restore grip.",
   },
   {
-    icon: IconShield,
-    name: "Sole Shield",
-    blurb: "Finishing care for midsoles, trim, and toe caps.",
+    image: "/images/athletic-06-shield-spray.webp",
+    name: "Shield Spray",
+    blurb: "Water and stain protection that repels moisture.",
   },
 ];
 
@@ -173,20 +167,28 @@ export default function AthleticPage() {
               {LINEUP.map((item) => (
                 <div
                   key={item.name}
-                  className="group rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(24,183,230,0.55)] hover:bg-white/[0.05]"
+                  className="group overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(24,183,230,0.55)] hover:bg-white/[0.05]"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[rgba(24,183,230,0.35)] bg-[rgba(24,183,230,0.08)] text-[#18b7e6]">
-                    <item.icon size={26} />
+                  <div className="relative aspect-square overflow-hidden">
+                    <Image
+                      src={item.image}
+                      alt={`G-SCRUB ${item.name}`}
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
                   </div>
-                  <h3 className="m-0 mt-4 font-heading text-[17px] font-extrabold text-white">
-                    {item.name}
-                  </h3>
-                  <p className="m-0 mt-1.5 text-[14px] leading-[1.6] text-white/60">
-                    {item.blurb}
-                  </p>
-                  <p className="m-0 mt-4 text-[11px] font-extrabold tracking-[0.24em] text-[#4fc7ec] uppercase">
-                    Coming Soon
-                  </p>
+                  <div className="p-6">
+                    <h3 className="m-0 font-heading text-[17px] font-extrabold text-white">
+                      {item.name}
+                    </h3>
+                    <p className="m-0 mt-1.5 text-[14px] leading-[1.6] text-white/60">
+                      {item.blurb}
+                    </p>
+                    <p className="m-0 mt-4 text-[11px] font-extrabold tracking-[0.24em] text-[#4fc7ec] uppercase">
+                      Coming Soon
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
