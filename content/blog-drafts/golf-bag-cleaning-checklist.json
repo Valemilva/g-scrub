@@ -1,0 +1,24 @@
+{
+  "slug": "golf-bag-cleaning-checklist",
+  "title": "What's in Your Golf Bag? The Cleaning Kit Checklist",
+  "description": "Most golfers carry more than they need and still miss the basics. Here's what actually earns a spot in the bag.",
+  "date": "2026-07-21",
+  "readMins": 3,
+  "tags": ["Gear Care", "Buying Guide"],
+  "image": "/images/gscrub-blog-bag-checklist-hero.webp",
+  "body": [
+    { "type": "p", "text": "Open most golf bags and you'll find a mix of things that get used constantly and things that have been riding along untouched since last season. When it comes to shoe and gear care specifically, the list of what actually earns its space is shorter than most golfers think." },
+    { "type": "h2", "text": "What's worth carrying" },
+    { "type": "ul", "items": [
+      "A concentrated foaming cleaner — small enough to not take up real space, effective enough to handle most rounds",
+      "A dedicated brush — one with bristles firm enough for tread and gentle enough for uppers",
+      "A separate towel for wiping, not the same one you use for your hands or clubs",
+      "A small trash bag or pouch, so a muddy brush and towel don't sit loose against everything else"
+    ] },
+    { "type": "h2", "text": "What usually isn't necessary" },
+    { "type": "p", "text": "Multiple cleaner bottles for different surfaces, a full-size towel that only gets used once, or a cleaning kit big enough that it competes for space with actual golf gear. The goal is something small enough to forget it's there until you need it — not a full detailing kit riding in a golf bag." },
+    { "type": "h2", "text": "The test for whether something belongs in the bag" },
+    { "type": "p", "text": "If it's not something you'd actually reach for after a muddy round — because it's buried, awkward to use one-handed, or takes real setup — it's dead weight. A cleaning kit only earns its spot if using it takes less effort than not bothering." },
+    { "type": "callout", "text": "G-SCRUB's Shoe Cleaner Kit is built around that exact test — a compact 4 oz foaming cleaner and a purpose-made brush, small enough to actually stay in the bag and get used." }
+  ]
+}

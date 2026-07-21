@@ -1,0 +1,24 @@
+{
+  "slug": "remove-mud-golf-shoes",
+  "title": "Best Way to Remove Mud From Golf Shoes",
+  "description": "Wet-weather rounds leave mud packed into soles and stitching. Here's how to get it out without soaking the shoe.",
+  "date": "2026-07-21",
+  "readMins": 4,
+  "tags": ["Shoe Care", "How-To"],
+  "image": "/images/gscrub-blog-remove-mud-hero.webp",
+  "body": [
+    { "type": "p", "text": "Mud is a different problem than grass or dust. It doesn't just sit on the surface — it packs into the tread, works into stitching seams, and dries into a hard shell that's much harder to move than it was when wet. A round on a soggy course can leave shoes looking worse than a month of normal wear." },
+    { "type": "h2", "text": "Don't let it dry first" },
+    { "type": "p", "text": "The single biggest mistake with muddy shoes is tossing them in the trunk and dealing with it later. Wet mud brushes off. Dried mud has to be broken up before it can be lifted, which means more scrubbing and more risk of scuffing the material in the process." },
+    { "type": "h2", "text": "The order that works" },
+    { "type": "ul", "items": [
+      "Knock off loose, wet mud first — a firm tap or a dry brush pass before any cleaner touches the shoe",
+      "Apply a foaming cleaner to what's left, focusing on the tread and any seams where mud packed in",
+      "Brush in one direction to work it out of the tread pattern instead of pressing it further in",
+      "Wipe with a separate towel, then check the outsole grooves specifically — that's where mud hides longest"
+    ] },
+    { "type": "h2", "text": "If it already dried" },
+    { "type": "p", "text": "Don't try to scrape it off dry — that's what scuffs leather and pulls at stitching. Dampen the dried mud first so it softens, then work through the same routine. It takes a little longer, but it's still gentler than forcing dry mud off with a hard edge." },
+    { "type": "callout", "text": "G-SCRUB's brush and concentrated foam are built to get into tread and stitching without soaking the shoe — the direct-to-brush formula means no separate bucket or bowl of water in a wet-weather bag." }
+  ]
+}

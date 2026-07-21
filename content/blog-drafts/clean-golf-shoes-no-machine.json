@@ -1,0 +1,24 @@
+{
+  "slug": "clean-golf-shoes-no-machine",
+  "title": "How to Clean Golf Shoes Without a Washing Machine",
+  "description": "Golf shoes and washing machines don't mix. Here's a hand-clean routine that gets the same result without the risk.",
+  "date": "2026-07-21",
+  "readMins": 3,
+  "tags": ["Shoe Care"],
+  "image": "/images/gscrub-blog-no-machine-hero.webp",
+  "body": [
+    { "type": "p", "text": "It's tempting to throw dirty golf shoes in with a load of laundry and call it done. It's also a good way to warp the sole, loosen the glue holding panels together, or leave the whole shoe smelling like wet fabric for days. Golf shoes are built from mixed materials — leather, mesh, foam midsoles, sometimes cleats — and machines are hard on all of them at once." },
+    { "type": "h2", "text": "Why hand-cleaning actually works better here" },
+    { "type": "p", "text": "A washing machine cleans everything the same way regardless of material. Hand-cleaning lets you treat the mesh upper differently than the rubber outsole, spend more time on a stubborn spot without over-processing the rest of the shoe, and skip the multi-hour dry time a machine wash requires." },
+    { "type": "h2", "text": "The routine" },
+    { "type": "ul", "items": [
+      "Foam the dirty areas directly — no soaking, no bucket needed",
+      "Brush in one direction with light pressure to lift dirt out of mesh and seams",
+      "Wipe clean with a separate towel",
+      "Air dry at room temperature — never a dryer, and never direct sun or a heater vent"
+    ] },
+    { "type": "h2", "text": "What actually needs the most care" },
+    { "type": "p", "text": "The insole and midsole foam are the parts most likely to get damaged by a machine — they can compress, warp, or separate from the shoe entirely. Hand-cleaning the upper and outsole while leaving the internal foam alone (a quick wipe is plenty) avoids that risk completely." },
+    { "type": "callout", "text": "G-SCRUB's foam-and-brush kit is built specifically for this — a full clean without water immersion, a washing machine, or a multi-hour dry." }
+  ]
+}

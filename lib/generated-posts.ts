@@ -4,6 +4,107 @@ import type { BlogPost } from "./blog-types";
 
 export const GENERATED_POSTS: BlogPost[] = [
   {
+    "slug": "clean-golf-shoes-no-machine",
+    "title": "How to Clean Golf Shoes Without a Washing Machine",
+    "description": "Golf shoes and washing machines don't mix. Here's a hand-clean routine that gets the same result without the risk.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "Shoe Care"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "It's tempting to throw dirty golf shoes in with a load of laundry and call it done. It's also a good way to warp the sole, loosen the glue holding panels together, or leave the whole shoe smelling like wet fabric for days. Golf shoes are built from mixed materials — leather, mesh, foam midsoles, sometimes cleats — and machines are hard on all of them at once."
+      },
+      {
+        "type": "h2",
+        "text": "Why hand-cleaning actually works better here"
+      },
+      {
+        "type": "p",
+        "text": "A washing machine cleans everything the same way regardless of material. Hand-cleaning lets you treat the mesh upper differently than the rubber outsole, spend more time on a stubborn spot without over-processing the rest of the shoe, and skip the multi-hour dry time a machine wash requires."
+      },
+      {
+        "type": "h2",
+        "text": "The routine"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Foam the dirty areas directly — no soaking, no bucket needed",
+          "Brush in one direction with light pressure to lift dirt out of mesh and seams",
+          "Wipe clean with a separate towel",
+          "Air dry at room temperature — never a dryer, and never direct sun or a heater vent"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "What actually needs the most care"
+      },
+      {
+        "type": "p",
+        "text": "The insole and midsole foam are the parts most likely to get damaged by a machine — they can compress, warp, or separate from the shoe entirely. Hand-cleaning the upper and outsole while leaving the internal foam alone (a quick wipe is plenty) avoids that risk completely."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's foam-and-brush kit is built specifically for this — a full clean without water immersion, a washing machine, or a multi-hour dry."
+      }
+    ],
+    "image": "/images/gscrub-blog-no-machine-hero.webp"
+  },
+  {
+    "slug": "clean-spikeless-golf-shoes",
+    "title": "How to Clean Spikeless Golf Shoes",
+    "description": "Spikeless outsoles trap dirt differently than a traditional cleated sole. Here's what to actually pay attention to.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "Shoe Care",
+      "How-To"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Spikeless golf shoes look more like a regular sneaker, and a lot of golfers treat them like one — including when it comes to cleaning. The upper materials are often similar to athletic shoes, but the outsole is a different story: those small rubber traction lugs pack dirt and grass in a way a traditional cleated sole doesn't."
+      },
+      {
+        "type": "h2",
+        "text": "Where spikeless shoes actually get dirty"
+      },
+      {
+        "type": "p",
+        "text": "The traction pattern on a spikeless outsole is made of dozens of small lugs and grooves. Grass and dirt wedge into every one of them, and unlike a cleat you can twist out and inspect, there's no single spot to focus on — it's spread across the whole sole."
+      },
+      {
+        "type": "h2",
+        "text": "The routine"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Foam the outsole first — the traction pattern holds more debris than it looks like from the top",
+          "Use a brush with bristles stiff enough to reach into the lug pattern, not just skim the surface",
+          "Work the upper separately with lighter pressure — spikeless uppers are often closer to athletic mesh than traditional golf leather",
+          "Check between lugs specifically before calling it done; that's where residue gets left behind"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Why the upper needs a lighter touch"
+      },
+      {
+        "type": "p",
+        "text": "Many spikeless shoes use knit or mesh uppers built more like a running shoe than a traditional golf shoe. That means less tolerance for harsh scrubbing and more attention to letting the foam do the lifting rather than aggressive brush pressure."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's brush is stiff enough to clear a spikeless traction pattern without being harsh on knit or mesh uppers — the same kit works across both shoe styles."
+      }
+    ],
+    "image": "/images/gscrub-blog-spikeless-hero.webp"
+  },
+  {
     "slug": "clean-white-golf-shoes",
     "title": "How to Clean White Golf Shoes Without Ruining Them",
     "description": "White golf shoes show everything. Here's how to bring them back without discoloring the leather or breaking down the mesh.",
@@ -56,6 +157,57 @@ export const GENERATED_POSTS: BlogPost[] = [
     "image": "/images/gscrub-blog-clean-white-shoes-hero.webp"
   },
   {
+    "slug": "golf-bag-cleaning-checklist",
+    "title": "What's in Your Golf Bag? The Cleaning Kit Checklist",
+    "description": "Most golfers carry more than they need and still miss the basics. Here's what actually earns a spot in the bag.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "Gear Care",
+      "Buying Guide"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Open most golf bags and you'll find a mix of things that get used constantly and things that have been riding along untouched since last season. When it comes to shoe and gear care specifically, the list of what actually earns its space is shorter than most golfers think."
+      },
+      {
+        "type": "h2",
+        "text": "What's worth carrying"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "A concentrated foaming cleaner — small enough to not take up real space, effective enough to handle most rounds",
+          "A dedicated brush — one with bristles firm enough for tread and gentle enough for uppers",
+          "A separate towel for wiping, not the same one you use for your hands or clubs",
+          "A small trash bag or pouch, so a muddy brush and towel don't sit loose against everything else"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "What usually isn't necessary"
+      },
+      {
+        "type": "p",
+        "text": "Multiple cleaner bottles for different surfaces, a full-size towel that only gets used once, or a cleaning kit big enough that it competes for space with actual golf gear. The goal is something small enough to forget it's there until you need it — not a full detailing kit riding in a golf bag."
+      },
+      {
+        "type": "h2",
+        "text": "The test for whether something belongs in the bag"
+      },
+      {
+        "type": "p",
+        "text": "If it's not something you'd actually reach for after a muddy round — because it's buried, awkward to use one-handed, or takes real setup — it's dead weight. A cleaning kit only earns its spot if using it takes less effort than not bothering."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's Shoe Cleaner Kit is built around that exact test — a compact 4 oz foaming cleaner and a purpose-made brush, small enough to actually stay in the bag and get used."
+      }
+    ],
+    "image": "/images/gscrub-blog-bag-checklist-hero.webp"
+  },
+  {
     "slug": "how-often-clean-golf-shoes",
     "title": "How Often Should You Clean Your Golf Shoes?",
     "description": "Clean too little and dirt sets in. Clean too aggressively and you wear the material down faster. Here's the actual cadence that works.",
@@ -104,6 +256,57 @@ export const GENERATED_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/gscrub-blog-how-often-clean-hero.webp"
+  },
+  {
+    "slug": "keep-white-shoes-white",
+    "title": "Keeping White Golf Shoes White Through a Full Season",
+    "description": "One good clean doesn't keep white shoes white for long. Here's the season-long habit that actually does.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "Maintenance",
+      "Course Tips"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "A single deep clean can make white shoes look new again for a round or two. Keeping them that way through a full season of regular play is a different problem — it's less about any one cleaning session and more about what happens between rounds."
+      },
+      {
+        "type": "h2",
+        "text": "It's a storage problem as much as a cleaning problem"
+      },
+      {
+        "type": "p",
+        "text": "Shoes tossed in a hot trunk between rounds take more visible wear than shoes cleaned the same amount but stored properly. Heat and trapped moisture are what set stains permanently and yellow white material over time — a shoe that goes from damp to a hot trunk to damp again, round after round, ages faster than the cleaning routine alone would predict."
+      },
+      {
+        "type": "h2",
+        "text": "The season-long habit"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Wipe down same-day, every round — this matters more over a season than any single deep clean",
+          "Let shoes fully air dry before they go back in a bag or trunk, even if that means a day's delay",
+          "Rotate two pairs if you play often, so one is always fully dry and recovered",
+          "Do a fuller brush-and-foam clean weekly, not just when they start looking dull"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "What this buys you by August"
+      },
+      {
+        "type": "p",
+        "text": "Shoes maintained this way through the season hold their white color noticeably better than shoes that get an intense clean only when they've clearly gone gray. Consistency beats intensity here — a 90-second wipe after every round adds up to less total wear than periodic deep scrubbing on shoes that were allowed to get bad first."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's kit is compact enough to make the after-every-round habit realistic — foam, brush, and wipe, done at the car before the shoes ever see a hot trunk."
+      }
+    ],
+    "image": "/images/gscrub-blog-keep-white-season-hero.webp"
   },
   {
     "slug": "post-round-shoe-routine",
@@ -162,6 +365,158 @@ export const GENERATED_POSTS: BlogPost[] = [
       }
     ],
     "image": "/images/gscrub-blog-post-round-routine-hero.webp"
+  },
+  {
+    "slug": "pre-vs-post-round-care",
+    "title": "Pre-Round vs Post-Round Shoe Care: What Actually Matters",
+    "description": "Both matter, but not equally. Here's where to actually spend your two minutes.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "Course Tips",
+      "Maintenance"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Golfers tend to fall into one of two habits: a quick check before teeing off, or a cleanup after the round is done. Both have a place, but they're not solving the same problem — and if you only have time for one, it matters which you pick."
+      },
+      {
+        "type": "h2",
+        "text": "What pre-round care actually does"
+      },
+      {
+        "type": "p",
+        "text": "A pre-round check is mostly about starting clean, not fixing anything. A quick wipe, lace check, and outsole glance takes thirty seconds and means you're not carrying yesterday's dried mud onto today's round. It's maintenance, not damage control."
+      },
+      {
+        "type": "h2",
+        "text": "What post-round care actually does"
+      },
+      {
+        "type": "p",
+        "text": "This is where the real work happens. Grass, dirt, and mud from the round are still fresh and haven't had time to set. Cleaning now takes a fraction of the effort it would take tomorrow, and it's the step that actually prevents long-term staining and material breakdown."
+      },
+      {
+        "type": "h2",
+        "text": "If you can only do one"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Post-round wins on effort-to-result — fresh dirt comes off faster than set-in dirt",
+          "Pre-round wins on convenience — it's faster, but it's not solving anything that happened last round",
+          "Skipping post-round care means every pre-round check starts from a worse baseline",
+          "The two aren't a choice between one or the other long-term — post-round is what keeps pre-round quick"
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's kit is built for the post-round window specifically — fast enough to do at the car, before dirt has any time to set."
+      }
+    ],
+    "image": "/images/gscrub-blog-pre-post-round-hero.webp"
+  },
+  {
+    "slug": "remove-mud-golf-shoes",
+    "title": "Best Way to Remove Mud From Golf Shoes",
+    "description": "Wet-weather rounds leave mud packed into soles and stitching. Here's how to get it out without soaking the shoe.",
+    "date": "2026-07-21",
+    "readMins": 4,
+    "tags": [
+      "Shoe Care",
+      "How-To"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "Mud is a different problem than grass or dust. It doesn't just sit on the surface — it packs into the tread, works into stitching seams, and dries into a hard shell that's much harder to move than it was when wet. A round on a soggy course can leave shoes looking worse than a month of normal wear."
+      },
+      {
+        "type": "h2",
+        "text": "Don't let it dry first"
+      },
+      {
+        "type": "p",
+        "text": "The single biggest mistake with muddy shoes is tossing them in the trunk and dealing with it later. Wet mud brushes off. Dried mud has to be broken up before it can be lifted, which means more scrubbing and more risk of scuffing the material in the process."
+      },
+      {
+        "type": "h2",
+        "text": "The order that works"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Knock off loose, wet mud first — a firm tap or a dry brush pass before any cleaner touches the shoe",
+          "Apply a foaming cleaner to what's left, focusing on the tread and any seams where mud packed in",
+          "Brush in one direction to work it out of the tread pattern instead of pressing it further in",
+          "Wipe with a separate towel, then check the outsole grooves specifically — that's where mud hides longest"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "If it already dried"
+      },
+      {
+        "type": "p",
+        "text": "Don't try to scrape it off dry — that's what scuffs leather and pulls at stitching. Dampen the dried mud first so it softens, then work through the same routine. It takes a little longer, but it's still gentler than forcing dry mud off with a hard edge."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's brush and concentrated foam are built to get into tread and stitching without soaking the shoe — the direct-to-brush formula means no separate bucket or bowl of water in a wet-weather bag."
+      }
+    ],
+    "image": "/images/gscrub-blog-remove-mud-hero.webp"
+  },
+  {
+    "slug": "special-cleaner-golf-shoes",
+    "title": "Do You Need a Special Cleaner for Golf Shoes?",
+    "description": "Dish soap, all-purpose spray, or something made for shoes? Here's what actually matters when picking a cleaner.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "Buying Guide"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "The honest answer: not always, but it helps more than most golfers expect. A lot of household cleaners will lift dirt off a golf shoe just fine. The difference shows up over months of repeated use, not on the first clean."
+      },
+      {
+        "type": "h2",
+        "text": "Where general-purpose cleaners fall short"
+      },
+      {
+        "type": "p",
+        "text": "Dish soap and all-purpose sprays are usually formulated for grease and grime on hard surfaces, not for repeated contact with leather, mesh, and foam. Used once, that's rarely a problem. Used every week for a season, the wrong pH or added fragrance chemicals can dry out leather or leave residue that attracts more dirt."
+      },
+      {
+        "type": "h2",
+        "text": "What a purpose-built formula actually gets you"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "A pH balanced closer to what golf shoe materials tolerate long-term",
+          "A direct-to-brush foam format instead of a spray or diluted solution — less mess, more control",
+          "Formulated for the mix of materials in one shoe (leather panel, mesh, rubber outsole) instead of one surface type",
+          "No guessing about whether today's household cleaner is the same formula as last month's bottle"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "When a general cleaner is genuinely fine"
+      },
+      {
+        "type": "p",
+        "text": "For a single quick wipe before a casual round, plain water and a soft cloth does the job. The case for a purpose-built cleaner is about the routine, not any single clean — it's the difference over a full season of regular use, not one Saturday."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's formula was built specifically for golf shoe materials — concentrated, direct-to-brush, and safe for most common golf shoe materials when used as directed."
+      }
+    ],
+    "image": "/images/gscrub-blog-special-cleaner-hero.webp"
   },
   {
     "slug": "grass-stains-golf-shoes",

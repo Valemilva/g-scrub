@@ -1,0 +1,24 @@
+{
+  "slug": "special-cleaner-golf-shoes",
+  "title": "Do You Need a Special Cleaner for Golf Shoes?",
+  "description": "Dish soap, all-purpose spray, or something made for shoes? Here's what actually matters when picking a cleaner.",
+  "date": "2026-07-21",
+  "readMins": 3,
+  "tags": ["Buying Guide"],
+  "image": "/images/gscrub-blog-special-cleaner-hero.webp",
+  "body": [
+    { "type": "p", "text": "The honest answer: not always, but it helps more than most golfers expect. A lot of household cleaners will lift dirt off a golf shoe just fine. The difference shows up over months of repeated use, not on the first clean." },
+    { "type": "h2", "text": "Where general-purpose cleaners fall short" },
+    { "type": "p", "text": "Dish soap and all-purpose sprays are usually formulated for grease and grime on hard surfaces, not for repeated contact with leather, mesh, and foam. Used once, that's rarely a problem. Used every week for a season, the wrong pH or added fragrance chemicals can dry out leather or leave residue that attracts more dirt." },
+    { "type": "h2", "text": "What a purpose-built formula actually gets you" },
+    { "type": "ul", "items": [
+      "A pH balanced closer to what golf shoe materials tolerate long-term",
+      "A direct-to-brush foam format instead of a spray or diluted solution — less mess, more control",
+      "Formulated for the mix of materials in one shoe (leather panel, mesh, rubber outsole) instead of one surface type",
+      "No guessing about whether today's household cleaner is the same formula as last month's bottle"
+    ] },
+    { "type": "h2", "text": "When a general cleaner is genuinely fine" },
+    { "type": "p", "text": "For a single quick wipe before a casual round, plain water and a soft cloth does the job. The case for a purpose-built cleaner is about the routine, not any single clean — it's the difference over a full season of regular use, not one Saturday." },
+    { "type": "callout", "text": "G-SCRUB's formula was built specifically for golf shoe materials — concentrated, direct-to-brush, and safe for most common golf shoe materials when used as directed." }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "clean-spikeless-golf-shoes",
+  "title": "How to Clean Spikeless Golf Shoes",
+  "description": "Spikeless outsoles trap dirt differently than a traditional cleated sole. Here's what to actually pay attention to.",
+  "date": "2026-07-21",
+  "readMins": 3,
+  "tags": ["Shoe Care", "How-To"],
+  "image": "/images/gscrub-blog-spikeless-hero.webp",
+  "body": [
+    { "type": "p", "text": "Spikeless golf shoes look more like a regular sneaker, and a lot of golfers treat them like one — including when it comes to cleaning. The upper materials are often similar to athletic shoes, but the outsole is a different story: those small rubber traction lugs pack dirt and grass in a way a traditional cleated sole doesn't." },
+    { "type": "h2", "text": "Where spikeless shoes actually get dirty" },
+    { "type": "p", "text": "The traction pattern on a spikeless outsole is made of dozens of small lugs and grooves. Grass and dirt wedge into every one of them, and unlike a cleat you can twist out and inspect, there's no single spot to focus on — it's spread across the whole sole." },
+    { "type": "h2", "text": "The routine" },
+    { "type": "ul", "items": [
+      "Foam the outsole first — the traction pattern holds more debris than it looks like from the top",
+      "Use a brush with bristles stiff enough to reach into the lug pattern, not just skim the surface",
+      "Work the upper separately with lighter pressure — spikeless uppers are often closer to athletic mesh than traditional golf leather",
+      "Check between lugs specifically before calling it done; that's where residue gets left behind"
+    ] },
+    { "type": "h2", "text": "Why the upper needs a lighter touch" },
+    { "type": "p", "text": "Many spikeless shoes use knit or mesh uppers built more like a running shoe than a traditional golf shoe. That means less tolerance for harsh scrubbing and more attention to letting the foam do the lifting rather than aggressive brush pressure." },
+    { "type": "callout", "text": "G-SCRUB's brush is stiff enough to clear a spikeless traction pattern without being harsh on knit or mesh uppers — the same kit works across both shoe styles." }
+  ]
+}

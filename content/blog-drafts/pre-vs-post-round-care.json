@@ -1,0 +1,24 @@
+{
+  "slug": "pre-vs-post-round-care",
+  "title": "Pre-Round vs Post-Round Shoe Care: What Actually Matters",
+  "description": "Both matter, but not equally. Here's where to actually spend your two minutes.",
+  "date": "2026-07-21",
+  "readMins": 3,
+  "tags": ["Course Tips", "Maintenance"],
+  "image": "/images/gscrub-blog-pre-post-round-hero.webp",
+  "body": [
+    { "type": "p", "text": "Golfers tend to fall into one of two habits: a quick check before teeing off, or a cleanup after the round is done. Both have a place, but they're not solving the same problem — and if you only have time for one, it matters which you pick." },
+    { "type": "h2", "text": "What pre-round care actually does" },
+    { "type": "p", "text": "A pre-round check is mostly about starting clean, not fixing anything. A quick wipe, lace check, and outsole glance takes thirty seconds and means you're not carrying yesterday's dried mud onto today's round. It's maintenance, not damage control." },
+    { "type": "h2", "text": "What post-round care actually does" },
+    { "type": "p", "text": "This is where the real work happens. Grass, dirt, and mud from the round are still fresh and haven't had time to set. Cleaning now takes a fraction of the effort it would take tomorrow, and it's the step that actually prevents long-term staining and material breakdown." },
+    { "type": "h2", "text": "If you can only do one" },
+    { "type": "ul", "items": [
+      "Post-round wins on effort-to-result — fresh dirt comes off faster than set-in dirt",
+      "Pre-round wins on convenience — it's faster, but it's not solving anything that happened last round",
+      "Skipping post-round care means every pre-round check starts from a worse baseline",
+      "The two aren't a choice between one or the other long-term — post-round is what keeps pre-round quick"
+    ] },
+    { "type": "callout", "text": "G-SCRUB's kit is built for the post-round window specifically — fast enough to do at the car, before dirt has any time to set." }
+  ]
+}
