@@ -4,6 +4,166 @@ import type { BlogPost } from "./blog-types";
 
 export const GENERATED_POSTS: BlogPost[] = [
   {
+    "slug": "clean-white-golf-shoes",
+    "title": "How to Clean White Golf Shoes Without Ruining Them",
+    "description": "White golf shoes show everything. Here's how to bring them back without discoloring the leather or breaking down the mesh.",
+    "date": "2026-07-21",
+    "readMins": 4,
+    "tags": [
+      "Shoe Care",
+      "Materials"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "White golf shoes look sharp on the first tee and rough by the ninth hole. There's no color to hide behind — every smudge of dirt, grass, and cart-path dust shows up immediately. The good news: white shoes aren't actually harder to clean than any other color. They're just less forgiving if you use the wrong approach."
+      },
+      {
+        "type": "h2",
+        "text": "Why white shows damage, not just dirt"
+      },
+      {
+        "type": "p",
+        "text": "On darker shoes, a slightly uneven clean or a faint water mark blends in. On white leather and mesh, it doesn't. That's why the biggest risk with white shoes isn't under-cleaning — it's over-correcting with something too harsh and creating a new problem: yellowing, a dull patch, or a stiff spot where the material dried unevenly."
+      },
+      {
+        "type": "h2",
+        "text": "What actually keeps white shoes white"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Clean little and often — a quick pass after most rounds beats a deep scrub once a month",
+          "Use a soft-bristle brush, not anything stiff enough to scuff the surface texture",
+          "Work in the direction of the material's grain on leather panels, not in circles",
+          "Rinse the brush as you go so you're not grinding lifted dirt back into a lighter patch",
+          "Let shoes dry at room temperature, out of direct sun — heat and UV are what actually yellow white leather over time, not cleaning"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "The mistake that causes yellowing"
+      },
+      {
+        "type": "p",
+        "text": "Most yellowing on white golf shoes doesn't come from dirt at all — it comes from oxidation after cleaning with something too alkaline, or from drying them somewhere hot and sunny \"to speed it up.\" A gentle, pH-balanced clean followed by an ordinary shaded dry does more for keeping shoes white long-term than any single deep-clean session."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's foaming cleaner is a concentrated, direct-to-brush formula built for exactly this — quick enough to use after most rounds, and safe for most common golf shoe materials when used as directed."
+      }
+    ],
+    "image": "/images/gscrub-blog-clean-white-shoes-hero.webp"
+  },
+  {
+    "slug": "how-often-clean-golf-shoes",
+    "title": "How Often Should You Clean Your Golf Shoes?",
+    "description": "Clean too little and dirt sets in. Clean too aggressively and you wear the material down faster. Here's the actual cadence that works.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "Maintenance"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "There's no single right answer, but there is a wrong one: waiting until shoes look bad enough to bother. By the time dirt is visible, grass stains and cart-path dust have usually had days to set into the material, which makes them harder to fully lift out."
+      },
+      {
+        "type": "h2",
+        "text": "The rule of thumb that actually holds up"
+      },
+      {
+        "type": "p",
+        "text": "A quick wipe-down after every round, and a fuller clean — brush plus a proper foam pass — once a week if you're playing regularly. That's it. It sounds almost too simple, but the difference between wiping shoes down same-day versus letting a week of rounds pile up is the difference between a 90-second job and a stubborn multi-stain scrub."
+      },
+      {
+        "type": "h2",
+        "text": "Signs you're overdue"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Grass or mud has visibly dried and hardened rather than just sitting on the surface",
+          "The white parts of the shoe have gone slightly gray or dull, not from age but from buildup",
+          "There's a faint smell that wasn't there a week ago — usually moisture trapped from an unwiped round",
+          "You can see a stain that wasn't there yesterday and is already harder to move than it was fresh"
+        ]
+      },
+      {
+        "type": "h2",
+        "text": "Can you clean too often?"
+      },
+      {
+        "type": "p",
+        "text": "Not from cleaning itself, but from technique — scrubbing hard every single day on the same spot can wear down material faster than the dirt would have. The fix isn't cleaning less, it's cleaning gently and consistently instead of aggressively and rarely."
+      },
+      {
+        "type": "callout",
+        "text": "G-SCRUB's kit is built for that light, frequent routine — a concentrated foam and brush combo quick enough to use after almost every round, not just when things get bad."
+      }
+    ],
+    "image": "/images/gscrub-blog-how-often-clean-hero.webp"
+  },
+  {
+    "slug": "post-round-shoe-routine",
+    "title": "The 3-Step Post-Round Shoe Cleaning Routine",
+    "description": "Foam, scrub, wipe. A cleaning routine that takes less time than untying your laces the wrong order.",
+    "date": "2026-07-21",
+    "readMins": 3,
+    "tags": [
+      "How-To",
+      "Maintenance"
+    ],
+    "body": [
+      {
+        "type": "p",
+        "text": "The best time to clean golf shoes isn't the night before your next round — it's the moment you get back to the car. Dirt and grass haven't had time to dry and set yet, which means the whole process takes less effort and less time than doing it a day or two later."
+      },
+      {
+        "type": "h2",
+        "text": "Step 1: Foam"
+      },
+      {
+        "type": "p",
+        "text": "Apply a concentrated foaming cleaner directly to the dirty areas — no need to cover the whole shoe if only the toe and outsole took the brunt of it. The foam does the work of loosening dirt and grass residue before you even touch a brush."
+      },
+      {
+        "type": "h2",
+        "text": "Step 2: Scrub"
+      },
+      {
+        "type": "p",
+        "text": "Brush in one direction with light, even pressure rather than scrubbing back and forth. One-directional strokes lift dirt out and away; back-and-forth motion tends to push it deeper into mesh and stitching instead."
+      },
+      {
+        "type": "h2",
+        "text": "Step 3: Wipe"
+      },
+      {
+        "type": "p",
+        "text": "Use a separate towel to wipe the foam and lifted dirt away — not the same cloth you used to apply anything, and not the brush itself. This is the step people skip, and it's the one that actually removes the grime instead of just spreading it around the surface."
+      },
+      {
+        "type": "h2",
+        "text": "Why this order matters"
+      },
+      {
+        "type": "ul",
+        "items": [
+          "Foam first means you're never scrubbing dry dirt straight into the material",
+          "Scrubbing before wiping means the towel is lifting loosened dirt, not fighting stuck-on residue",
+          "Doing all three same-day means tomorrow's round starts with clean shoes, not a rushed pre-round scrub"
+        ]
+      },
+      {
+        "type": "callout",
+        "text": "This exact 3-step routine is what G-SCRUB's Shoe Cleaner Kit is built around — concentrated foam, a purpose-made brush, and a quick wipe, all compact enough to keep in the golf bag."
+      }
+    ],
+    "image": "/images/gscrub-blog-post-round-routine-hero.webp"
+  },
+  {
     "slug": "grass-stains-golf-shoes",
     "title": "How to Get Grass Stains Off Golf Shoes",
     "description": "Grass stains set fast on white golf shoes. Here's the routine that lifts them without wrecking the mesh or upper underneath.",

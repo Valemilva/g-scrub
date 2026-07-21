@@ -1,0 +1,25 @@
+{
+  "slug": "clean-white-golf-shoes",
+  "title": "How to Clean White Golf Shoes Without Ruining Them",
+  "description": "White golf shoes show everything. Here's how to bring them back without discoloring the leather or breaking down the mesh.",
+  "date": "2026-07-21",
+  "readMins": 4,
+  "tags": ["Shoe Care", "Materials"],
+  "image": "/images/gscrub-blog-clean-white-shoes-hero.webp",
+  "body": [
+    { "type": "p", "text": "White golf shoes look sharp on the first tee and rough by the ninth hole. There's no color to hide behind — every smudge of dirt, grass, and cart-path dust shows up immediately. The good news: white shoes aren't actually harder to clean than any other color. They're just less forgiving if you use the wrong approach." },
+    { "type": "h2", "text": "Why white shows damage, not just dirt" },
+    { "type": "p", "text": "On darker shoes, a slightly uneven clean or a faint water mark blends in. On white leather and mesh, it doesn't. That's why the biggest risk with white shoes isn't under-cleaning — it's over-correcting with something too harsh and creating a new problem: yellowing, a dull patch, or a stiff spot where the material dried unevenly." },
+    { "type": "h2", "text": "What actually keeps white shoes white" },
+    { "type": "ul", "items": [
+      "Clean little and often — a quick pass after most rounds beats a deep scrub once a month",
+      "Use a soft-bristle brush, not anything stiff enough to scuff the surface texture",
+      "Work in the direction of the material's grain on leather panels, not in circles",
+      "Rinse the brush as you go so you're not grinding lifted dirt back into a lighter patch",
+      "Let shoes dry at room temperature, out of direct sun — heat and UV are what actually yellow white leather over time, not cleaning"
+    ] },
+    { "type": "h2", "text": "The mistake that causes yellowing" },
+    { "type": "p", "text": "Most yellowing on white golf shoes doesn't come from dirt at all — it comes from oxidation after cleaning with something too alkaline, or from drying them somewhere hot and sunny \"to speed it up.\" A gentle, pH-balanced clean followed by an ordinary shaded dry does more for keeping shoes white long-term than any single deep-clean session." },
+    { "type": "callout", "text": "G-SCRUB's foaming cleaner is a concentrated, direct-to-brush formula built for exactly this — quick enough to use after most rounds, and safe for most common golf shoe materials when used as directed." }
+  ]
+}

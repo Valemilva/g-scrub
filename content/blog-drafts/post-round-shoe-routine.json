@@ -1,0 +1,25 @@
+{
+  "slug": "post-round-shoe-routine",
+  "title": "The 3-Step Post-Round Shoe Cleaning Routine",
+  "description": "Foam, scrub, wipe. A cleaning routine that takes less time than untying your laces the wrong order.",
+  "date": "2026-07-21",
+  "readMins": 3,
+  "tags": ["How-To", "Maintenance"],
+  "image": "/images/gscrub-blog-post-round-routine-hero.webp",
+  "body": [
+    { "type": "p", "text": "The best time to clean golf shoes isn't the night before your next round — it's the moment you get back to the car. Dirt and grass haven't had time to dry and set yet, which means the whole process takes less effort and less time than doing it a day or two later." },
+    { "type": "h2", "text": "Step 1: Foam" },
+    { "type": "p", "text": "Apply a concentrated foaming cleaner directly to the dirty areas — no need to cover the whole shoe if only the toe and outsole took the brunt of it. The foam does the work of loosening dirt and grass residue before you even touch a brush." },
+    { "type": "h2", "text": "Step 2: Scrub" },
+    { "type": "p", "text": "Brush in one direction with light, even pressure rather than scrubbing back and forth. One-directional strokes lift dirt out and away; back-and-forth motion tends to push it deeper into mesh and stitching instead." },
+    { "type": "h2", "text": "Step 3: Wipe" },
+    { "type": "p", "text": "Use a separate towel to wipe the foam and lifted dirt away — not the same cloth you used to apply anything, and not the brush itself. This is the step people skip, and it's the one that actually removes the grime instead of just spreading it around the surface." },
+    { "type": "h2", "text": "Why this order matters" },
+    { "type": "ul", "items": [
+      "Foam first means you're never scrubbing dry dirt straight into the material",
+      "Scrubbing before wiping means the towel is lifting loosened dirt, not fighting stuck-on residue",
+      "Doing all three same-day means tomorrow's round starts with clean shoes, not a rushed pre-round scrub"
+    ] },
+    { "type": "callout", "text": "This exact 3-step routine is what G-SCRUB's Shoe Cleaner Kit is built around — concentrated foam, a purpose-made brush, and a quick wipe, all compact enough to keep in the golf bag." }
+  ]
+}

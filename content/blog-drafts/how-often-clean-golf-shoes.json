@@ -1,0 +1,24 @@
+{
+  "slug": "how-often-clean-golf-shoes",
+  "title": "How Often Should You Clean Your Golf Shoes?",
+  "description": "Clean too little and dirt sets in. Clean too aggressively and you wear the material down faster. Here's the actual cadence that works.",
+  "date": "2026-07-21",
+  "readMins": 3,
+  "tags": ["Maintenance"],
+  "image": "/images/gscrub-blog-how-often-clean-hero.webp",
+  "body": [
+    { "type": "p", "text": "There's no single right answer, but there is a wrong one: waiting until shoes look bad enough to bother. By the time dirt is visible, grass stains and cart-path dust have usually had days to set into the material, which makes them harder to fully lift out." },
+    { "type": "h2", "text": "The rule of thumb that actually holds up" },
+    { "type": "p", "text": "A quick wipe-down after every round, and a fuller clean — brush plus a proper foam pass — once a week if you're playing regularly. That's it. It sounds almost too simple, but the difference between wiping shoes down same-day versus letting a week of rounds pile up is the difference between a 90-second job and a stubborn multi-stain scrub." },
+    { "type": "h2", "text": "Signs you're overdue" },
+    { "type": "ul", "items": [
+      "Grass or mud has visibly dried and hardened rather than just sitting on the surface",
+      "The white parts of the shoe have gone slightly gray or dull, not from age but from buildup",
+      "There's a faint smell that wasn't there a week ago — usually moisture trapped from an unwiped round",
+      "You can see a stain that wasn't there yesterday and is already harder to move than it was fresh"
+    ] },
+    { "type": "h2", "text": "Can you clean too often?" },
+    { "type": "p", "text": "Not from cleaning itself, but from technique — scrubbing hard every single day on the same spot can wear down material faster than the dirt would have. The fix isn't cleaning less, it's cleaning gently and consistently instead of aggressively and rarely." },
+    { "type": "callout", "text": "G-SCRUB's kit is built for that light, frequent routine — a concentrated foam and brush combo quick enough to use after almost every round, not just when things get bad." }
+  ]
+}
