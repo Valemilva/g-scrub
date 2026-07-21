@@ -1,5 +1,10 @@
 import Link from "next/link";
-import { AMAZON_URL, withAffiliateTag } from "@/lib/constants";
+import {
+  AMAZON_URL,
+  BUSINESS_INFO,
+  CONTACT_EMAIL,
+  withAffiliateTag,
+} from "@/lib/constants";
 
 const linkClass =
   "text-[14.5px] text-muted-on-dark-2 no-underline hover:text-white";
@@ -28,14 +33,20 @@ export default function Footer() {
           <span className="mb-0.5 text-xs font-extrabold tracking-[0.12em] text-muted-on-dark uppercase">
             Explore
           </span>
-          <Link href="/#products" className={linkClass}>
+          <Link href="/golf#products" className={linkClass}>
             Products
           </Link>
-          <Link href="/#how" className={linkClass}>
+          <Link href="/golf#how" className={linkClass}>
             How It Works
           </Link>
-          <Link href="/#story" className={linkClass}>
+          <Link href="/golf#story" className={linkClass}>
             Story
+          </Link>
+          <Link href="/athletic" className={linkClass}>
+            Athletic Care
+          </Link>
+          <Link href="/blog" className={linkClass}>
+            Blog
           </Link>
           <a
             href={withAffiliateTag(AMAZON_URL)}
@@ -60,7 +71,7 @@ export default function Footer() {
           <Link href="/contact" className={linkClass}>
             Contact
           </Link>
-          <Link href="/#wholesale" className={linkClass}>
+          <Link href="/golf#wholesale" className={linkClass}>
             Wholesale
           </Link>
         </div>
@@ -78,8 +89,44 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Business identity. Google's Misrepresentation check looks for a
+          storefront that says plainly who runs it, where it is, how to reach
+          it, and how the purchase actually works — and cross-checks that
+          against the Merchant Center profile. Keep this in sync with
+          BUSINESS_INFO / CONTACT_EMAIL. */}
       <div className="mx-auto mt-[38px] max-w-[1200px] px-6">
-        <p className="m-0 max-w-[560px] text-[13px] leading-[1.6] text-muted-on-dark">
+        <div className="grid max-w-[900px] grid-cols-1 gap-x-10 gap-y-4 sm:grid-cols-2">
+          <address className="m-0 text-[13px] leading-[1.7] text-muted-on-dark not-italic">
+            <span className="block font-bold text-muted-on-dark-2">
+              {BUSINESS_INFO.legalName}
+            </span>
+            {BUSINESS_INFO.addressLine}
+            <br />
+            {BUSINESS_INFO.cityStateZip}, {BUSINESS_INFO.country}
+            <br />
+            <a
+              href={`mailto:${CONTACT_EMAIL}`}
+              className="text-muted-on-dark-2 no-underline hover:text-white"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </address>
+
+          <p className="m-0 text-[13px] leading-[1.7] text-muted-on-dark">
+            G-SCRUB is a golf and athletic gear care brand. Our products are
+            sold and shipped through Amazon, so orders, tracking, returns, and
+            refunds are handled there — see{" "}
+            <Link
+              href="/shipping-returns"
+              className="text-muted-on-dark-2 no-underline hover:text-white"
+            >
+              Shipping &amp; Returns
+            </Link>
+            . For anything else, email us and a person will reply.
+          </p>
+        </div>
+
+        <p className="m-0 mt-6 max-w-[560px] text-[13px] leading-[1.6] text-muted-on-dark">
           G-SCRUB products are designed for routine cleaning and gear care.
           Always follow the manufacturer&rsquo;s care instructions for your
           shoes, clubs, and equipment.

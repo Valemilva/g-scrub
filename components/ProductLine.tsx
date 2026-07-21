@@ -90,7 +90,7 @@ export default function ProductLine() {
             The G-SCRUB system keeps growing. More additions to the golf gear
             cleaning lineup are on the way —{" "}
             <Link
-              href="/#launch"
+              href="/golf#launch"
               className="font-bold text-green-primary underline-offset-2 hover:underline"
             >
               join the launch list

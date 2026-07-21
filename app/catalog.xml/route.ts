@@ -1,6 +1,17 @@
 import { products, SITE_URL } from "@/lib/constants";
 
 // Google Merchant Center product feed (Shopping RSS 2.0 + g: namespace).
+//
+// Category is 8033 = Home & Garden > Household Supplies > Shoe Care & Tools >
+// Shoe Care Kits — an exact match for what we sell. It used to be 1933
+// (Apparel & Accessories > Shoe Accessories), which put the feed under
+// Google's APPAREL rules: those require color, size, age_group and gender for
+// US traffic. The feed carried three of the four and never had `size`, which
+// is a hard disapproval. With a non-apparel category none of them apply, so
+// the placeholder color/age_group/gender attributes are gone too.
+//
+// Real GTINs must be sent when they exist — declaring identifier_exists=no on
+// a product that has a UPC suppresses it in Shopping.
 // The `link` for every item must point back to our own domain (Merchant
 // Center policy) — the actual purchase happens via the "Buy on Amazon"
 // button on that page, it is never an automatic redirect. Only products
@@ -41,11 +52,11 @@ ${additionalImages}
       <g:availability>in stock</g:availability>
       <g:price>${p.priceUSD} USD</g:price>
       <g:brand>G-SCRUB</g:brand>
-      <g:google_product_category>1933</g:google_product_category>
-      <g:identifier_exists>no</g:identifier_exists>
-      <g:age_group>adult</g:age_group>
-      <g:gender>unisex</g:gender>
-      <g:color>White</g:color>
+      <g:google_product_category>8033</g:google_product_category>${
+        p.gtin
+          ? `\n      <g:gtin>${p.gtin}</g:gtin>`
+          : `\n      <g:identifier_exists>no</g:identifier_exists>`
+      }
     </item>`;
     })
     .join("\n");

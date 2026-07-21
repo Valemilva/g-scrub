@@ -23,11 +23,11 @@ export function withAffiliateTag(url: string): string {
 
 // Real Amazon listing data for the Shoe Cleaner Kit (ASIN B0FJ7NJDZ6),
 // confirmed from the live product page. Update these numbers as reviews
-// grow — never round up or invent a count. With only 1 review so far, keep
+// grow — never round up or invent a count. The count is still tiny, so keep
 // this modest rather than a loud "X stars!" badge.
 export const AMAZON_RATING = {
   stars: 5.0,
-  reviewCount: 1,
+  reviewCount: 2,
 };
 
 // Production domain (real brand domain, with hyphen). Being transferred to
@@ -47,6 +47,17 @@ export const GA_MEASUREMENT_ID = "G-R1FMKHEDGH";
 // sales@g-scrub.com.
 export const CONTACT_EMAIL = "gscrubstore@gmail.com";
 export const WHOLESALE_EMAIL = "gscrubstore@gmail.com";
+
+// Business identity shown in the site footer. It MUST stay identical to the
+// address registered in Google Merchant Center (account 5822999866) — Google's
+// Misrepresentation check cross-references the storefront against the merchant
+// profile, and a mismatch reads as a business that can't be pinned down.
+export const BUSINESS_INFO = {
+  legalName: "G-SCRUB",
+  addressLine: "17373 Cagan Crossing Blvd",
+  cityStateZip: "Clermont, FL 34714",
+  country: "United States",
+} as const;
 
 // Full brand tagline (hero, page title, OG/Twitter). The product-level
 // tagline "Clean Shoes. Better Game." (used on the Shoe Cleaner Kit itself)
@@ -81,6 +92,10 @@ export interface Product {
   features?: string[];
   // "What's included" list.
   whatsIncluded?: string[];
+  // UPC/EAN as printed on the retail carton, mirrored from the Amazon listing.
+  // Google requires the real GTIN whenever one exists — the feed only falls
+  // back to identifier_exists=no for products that genuinely have none.
+  gtin?: string;
 }
 
 // The 7 core products of the G-SCRUB system. Only the Shoe Cleaner Kit is
@@ -97,6 +112,8 @@ export const products: Product[] = [
       "Foaming golf shoe cleaner kit designed to help remove dirt, grass, and course debris.",
     cta: "Buy on Amazon",
     amazonUrl: AMAZON_URL,
+    // UPC on the carton and on the Amazon listing (ASIN B0FJ7NJDZ6).
+    gtin: "199284115118",
     priceUSD: "23.99",
     images: [
       "/images/gscrub-kit-packshot.png",

@@ -31,7 +31,7 @@ export default function ContactPage() {
       <p>
         Interested in carrying G-SCRUB, or using it for a tournament, outing, or
         corporate gift? Head to the{" "}
-        <Link href="/#wholesale">wholesale inquiry form</Link> on our home page,
+        <Link href="/golf#wholesale">wholesale inquiry form</Link> on our home page,
         or email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> with
         your name, business, and what you&rsquo;re looking for.
       </p>
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <h2>Launch updates</h2>
       <p>
         Want to hear when new products go live?{" "}
-        <Link href="/#launch">Join the launch list</Link> and we&rsquo;ll keep
+        <Link href="/golf#launch">Join the launch list</Link> and we&rsquo;ll keep
         you posted on the upcoming club cleaner, refills, deodorizer, towel, and
         complete bundle.
       </p>

@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: Params) {
       <main className="flex-1 bg-bg">
         <div className="mx-auto max-w-[1100px] px-6 py-[clamp(32px,5vw,64px)]">
           <p className="mb-6 text-[13px] text-body-2">
-            <Link href="/#products" className="hover:text-green-primary">
+            <Link href="/golf#products" className="hover:text-green-primary">
               Products
             </Link>{" "}
             <span className="mx-1.5 text-[rgba(17,17,17,0.3)]">/</span>
@@ -145,7 +145,7 @@ export default async function ProductPage({ params }: Params) {
                   </a>
                 ) : (
                   <Link
-                    href="/#launch"
+                    href="/golf#launch"
                     className="inline-flex w-full items-center justify-center rounded-full bg-green-primary px-8 py-[18px] font-heading text-[17px] font-extrabold text-white transition-colors hover:bg-green-primary-hover sm:w-auto"
                   >
                     Join the Launch List
