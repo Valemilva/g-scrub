@@ -6,19 +6,22 @@
 // bridge). It is pure logic with no external dependencies, so it can be built
 // and tested before the DB/auth/Stripe pieces come online.
 //
-// ⚠️ NOTHING HERE IS LIVE YET. The wholesale channel launches as a WAITLIST
-// first. All prices below are TENTATIVE placeholders from the initial margin
-// discussion (2026-07-09) — Valentín will confirm the real numbers once
-// production cost (COGS) is known. Do not show these prices publicly until
-// the portal goes live and the numbers are confirmed.
+// PRICING IS REAL as of 2026-07-21 — confirmed by Valentín for the Shoe
+// Cleaner Kit, the one product currently for sale. Retail stays pinned to the
+// Amazon price so the brand price is identical on every channel.
+//
+// Shipping is charged on top and is NOT estimated here: no carrier rates or
+// package dimensions have been agreed yet, so the quote shows a product
+// subtotal and says shipping is quoted with the invoice. Inventing a number
+// would put a price on the site we can't honour.
 // ============================================================================
 
 // Suggested resale price (MSRP) that pro shops sell to golfers at — matches
 // the Amazon retail price so the brand price stays consistent across channels.
 export const WHOLESALE_MSRP_USD = 23.99;
 
-// Minimum order quantity for a wholesale order (per product).
-export const WHOLESALE_MOQ = 24;
+// Minimum order quantity for a wholesale order (per product): one dozen.
+export const WHOLESALE_MOQ = 12;
 
 // Origin the office ships from (for shipping estimates). Real carrier rates
 // (Phase 2, option A) will use this + the buyer's destination + package weight.
@@ -29,18 +32,20 @@ export const WHOLESALE_ORIGIN = {
   country: "US",
 };
 
-// TENTATIVE volume pricing. unitPriceUSD = what the pro shop pays G-SCRUB per
-// unit; the spread between this and MSRP is the pro shop's margin. Tiers are
-// evaluated high-to-low: the first tier whose minQty a quantity meets applies.
+// Volume pricing confirmed 2026-07-21. unitPriceUSD = what the pro shop pays
+// G-SCRUB per unit; the spread against MSRP is their margin. Tiers evaluate
+// high-to-low: the first tier whose minQty a quantity meets applies.
+//
+// Only these two tiers are real. Larger volumes are deliberately NOT listed —
+// they get a direct quote rather than an invented number.
 export interface WholesaleTier {
   minQty: number;
   unitPriceUSD: number;
 }
 
 export const WHOLESALE_TIERS: WholesaleTier[] = [
-  { minQty: 250, unitPriceUSD: 11.5 }, // ~52% off MSRP
-  { minQty: 100, unitPriceUSD: 12.5 }, // ~48% off MSRP
-  { minQty: WHOLESALE_MOQ, unitPriceUSD: 13.5 }, // ~44% off MSRP (24–99)
+  { minQty: 24, unitPriceUSD: 12.0 }, // 24+ — pro shop keeps ~50% at MSRP
+  { minQty: WHOLESALE_MOQ, unitPriceUSD: 13.0 }, // 12–23 — ~46% at MSRP
 ];
 
 // The per-unit wholesale price for a given quantity, or null if below MOQ.
@@ -66,59 +71,45 @@ export function wholesaleResaleMargin(qty: number): number | null {
 // plus a per-unit amount. Swap this out for live carrier rates (EasyPost /
 // Shippo / UPS) once package weight + dimensions are known (Procurement
 // Cockpit). All values TENTATIVE.
-export const WHOLESALE_SHIPPING = {
-  freeOverQty: 250, // free shipping on large orders (a carry incentive)
-  baseHandlingUSD: 12.0, // flat per-order handling
-  perUnitUSD: 0.35, // rough per-unit contribution to freight
-};
+// Wholesale ships from the Clermont office and is billed on top of the unit
+// price. No carrier rates or package dimensions are agreed yet, so we quote it
+// with the invoice instead of showing a number we can't stand behind. When
+// real rates exist (EasyPost / Shippo / UPS, using WHOLESALE_ORIGIN + the
+// buyer's destination + package weight from the Procurement Cockpit), add the
+// estimator here and surface it in WholesaleQuote.
+export const WHOLESALE_SHIPPING_NOTE =
+  "Shipping is billed on top and quoted with your invoice.";
 
-export interface ShippingEstimate {
-  costUSD: number;
-  isFree: boolean;
-  note: string;
-}
-
-// Estimate delivery shipping for a wholesale order of `qty` units.
-export function estimateWholesaleShipping(qty: number): ShippingEstimate {
-  if (qty >= WHOLESALE_SHIPPING.freeOverQty) {
-    return {
-      costUSD: 0,
-      isFree: true,
-      note: `Free shipping on orders of ${WHOLESALE_SHIPPING.freeOverQty}+ units`,
-    };
-  }
-  const cost =
-    WHOLESALE_SHIPPING.baseHandlingUSD + qty * WHOLESALE_SHIPPING.perUnitUSD;
-  return {
-    costUSD: Math.round(cost * 100) / 100,
-    isFree: false,
-    note: "Estimated shipping — final rate confirmed at fulfillment",
-  };
-}
-
-// Full order quote: line total + shipping + grand total, or null below MOQ.
+// Product subtotal for an order, or null below MOQ. Shipping is deliberately
+// not part of the total — see WHOLESALE_SHIPPING_NOTE.
 export interface WholesaleQuote {
   qty: number;
   unitPriceUSD: number;
-  lineTotalUSD: number;
-  shipping: ShippingEstimate;
-  grandTotalUSD: number;
+  /** qty × unitPrice. Shipping is added at invoicing, not here. */
+  productSubtotalUSD: number;
+  /** What the shop makes per unit reselling at MSRP. */
+  marginPerUnitUSD: number;
+  /** Same, as a 0..1 fraction. */
   resaleMargin: number;
+  /** Total the shop makes on the order if it sells through at MSRP. */
+  resaleProfitUSD: number;
+  shippingNote: string;
 }
 
 export function wholesaleQuote(qty: number): WholesaleQuote | null {
   const unit = wholesaleUnitPrice(qty);
   const margin = wholesaleResaleMargin(qty);
   if (unit === null || margin === null) return null;
-  const lineTotal = Math.round(unit * qty * 100) / 100;
-  const shipping = estimateWholesaleShipping(qty);
+  const round = (n: number) => Math.round(n * 100) / 100;
+  const marginPerUnit = WHOLESALE_MSRP_USD - unit;
   return {
     qty,
     unitPriceUSD: unit,
-    lineTotalUSD: lineTotal,
-    shipping,
-    grandTotalUSD: Math.round((lineTotal + shipping.costUSD) * 100) / 100,
+    productSubtotalUSD: round(unit * qty),
+    marginPerUnitUSD: round(marginPerUnit),
     resaleMargin: margin,
+    resaleProfitUSD: round(marginPerUnit * qty),
+    shippingNote: WHOLESALE_SHIPPING_NOTE,
   };
 }
 
