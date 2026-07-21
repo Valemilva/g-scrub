@@ -108,10 +108,17 @@ export const products: Product[] = [
     ],
     longDescription:
       "The original G-SCRUB Shoe Cleaner Kit — the first product in the growing G-SCRUB system — was created for golfers who want to keep their shoes looking fresh from the course to the clubhouse. The foaming cleaner lifts dirt, grass, and course debris, and the included brush and simple foam-scrub-wipe routine make cleanup quick enough to do right at the cart.",
+    // Claims here must be backed by the base formula's SDS, archived in
+    // 08_REFERENCES/formula-base-ecos/ (ECOS Pro 9764, rev 2020-06-16):
+    //   §2  not classified as hazardous · §9 pH 6.0-8.0, unscented
+    //   §11 skin/eye irritation criteria not met · LD50 oral 12,837 mg/kg
+    // DO NOT claim "biodegradable": §12.2 of that SDS reports no degradability
+    // data. Reinstate only if ECOS supplies an OECD 301 test (or equivalent).
+    // DO NOT claim "safe for all shoe types" — banned in the brand voice doc.
     features: [
       "Powerful foaming formula — removes dirt, grass stains, and sweat without damaging mesh, synthetic, or rubber materials.",
       "Gentle yet effective brush — ergonomic design with soft, durable bristles for tough spots while protecting your shoes.",
-      "Safe for all shoe types — alcohol-free, ammonia-free, eco-friendly, and biodegradable.",
+      "pH-neutral formula (pH 6–8) — alcohol-free, ammonia-free, no dyes, no added fragrance.",
       "Quick 3-step process — apply, scrub, and wipe clean in minutes.",
       "Compact & travel-ready — 4 oz bottle fits in any golf bag for pre- or post-round care.",
     ],
